@@ -1,48 +1,44 @@
-# EOY Project
+# EOY Project 🚀
 
-A comprehensive end-of-year project showcasing development skills and best practices.
+Un projet de fin d'année complet démontrant les compétences en développement et les meilleures pratiques.
 
-## 📋 Table of Contents
+## 📅 Roadmap Sprint (01-30 Octobre)
 
-- [About](#about)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [Development](#development)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [License](#license)
-- [Contact](#contact)
+### Phase 1: Setup & Foundation (01-06 Oct)
+- [ ] **Jour 1**: Configuration environnement + architecture de base
+- [ ] **Jour 2**: Structure projet + CI/CD minimal
 
-## About
+### Phase 2: Développement Core (07-20 Oct)
+- [ ] **Jour 3-4**: Fonctionnalités principales (MVP)
+- [ ] **Jour 5**: Tests unitaires critiques
 
-This End-of-Year project demonstrates proficiency in software development, version control, and collaborative workflows. The project serves as a capstone to showcase technical skills acquired throughout the year.
+### Phase 3: Finalisation (21-30 Oct)
+- [ ] **Jour 6**: Documentation + déploiement
+- [ ] **Jour 7**: Tests finaux + présentation
 
-## Features
+## 🎯 Objectifs Prioritaires
 
-- ✨ Modern development practices
-- 🔧 Automated testing and CI/CD
-- 📚 Comprehensive documentation
-- 🛡️ Security best practices
-- 🚀 Production-ready deployment
+### Must-Have (Critique)
+- ✅ Fonctionnalité principale opérationnelle
+- ✅ Tests de base passants
+- ✅ Déploiement fonctionnel
+- ✅ Documentation utilisateur
 
-## Getting Started
+### Should-Have (Important)
+- 🔧 CI/CD automatisé
+- 🛡️ Sécurité de base
+- 📊 Monitoring basique
 
-### Prerequisites
+### Could-Have (Si temps)
+- ✨ Fonctionnalités avancées
+- 🎨 Interface améliorée
+- 📈 Analytics
 
-Before you begin, ensure you have the following installed:
+## 🚀 Quick Start (< 30 min)
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) (version 16 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://gitlab.com/project-group9364640/eoy-project.git
-   cd eoy-project
+### Prérequis
+```bash
+# Vérification rapide
+node --version  # >= 16
+npm --version
+git --version
