@@ -5,16 +5,16 @@ Un projet de fin d'année complet démontrant les compétences en développement
 ## 📅 Roadmap Sprint (01-30 Octobre)
 
 ### Phase 1: Setup & Foundation (01-06 Oct)
-- [ ] **Jour 1**: Configuration environnement + architecture de base
-- [ ] **Jour 2**: Structure projet + CI/CD minimal
+- [ ] **JJ**: Configuration environnement + architecture de base
+- [ ] **JJ**: Structure projet + CI/CD minimal
 
 ### Phase 2: Développement Core (07-20 Oct)
-- [ ] **Jour 3-4**: Fonctionnalités principales (MVP)
-- [ ] **Jour 5**: Tests unitaires critiques
+- [ ] **JJ**: Fonctionnalités principales (MVP)
+- [ ] **JJ**: Tests unitaires critiques
 
 ### Phase 3: Finalisation (21-30 Oct)
-- [ ] **Jour 6**: Documentation + déploiement
-- [ ] **Jour 7**: Tests finaux + présentation
+- [ ] **JJ**: Documentation + déploiement
+- [ ] **JJ**: Tests finaux + présentation
 
 ## 🎯 Objectifs Prioritaires
 
