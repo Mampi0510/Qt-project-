@@ -2,14 +2,16 @@
 #define COMMANDE_HPP
 
 #include <vector>
-#include <utility>
 #include <string>
 
 class Commande {
 public:
+    //Constructeurs
     Commande() = default;
-    Commande(int idClient, const std::vector<std::pair<int,int>>& items);
+    //Surcharge du constructeur
+    Commande(int idClient, const std::vector<int>& items);
 
+    // Getters
     int getId() const;
     int getClientId() const;
     int getTotal() const;
@@ -24,8 +26,7 @@ private:
     int id_client{0};
     std::string date_commande;
     int total{0};
-    std::vector<std::pair<int,int>> items; // pair<id_plat, quantite>
-
+    std::vector<int> items;
     void calculTotal();
 };
 
