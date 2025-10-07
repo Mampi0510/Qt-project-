@@ -1338,6 +1338,24 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGZvu8azzsHMR4=",
+											"_parent": {
+												"$ref": "AAAAAAGZqVzzFZZnVW0="
+											},
+											"model": {
+												"$ref": "AAAAAAGZvu8avDsEn0I="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 981,
+											"top": 78,
+											"width": 143,
+											"height": 13,
+											"text": "#id_facture: int",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGZqV0qy5aMiYg=",
 											"_parent": {
 												"$ref": "AAAAAAGZqVzzFZZnVW0="
@@ -1348,7 +1366,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 981,
-											"top": 78,
+											"top": 93,
 											"width": 143,
 											"height": 13,
 											"text": "-id_commande: int",
@@ -1366,7 +1384,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 981,
-											"top": 93,
+											"top": 108,
 											"width": 143,
 											"height": 13,
 											"text": "-id_client: int",
@@ -1384,7 +1402,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 981,
-											"top": 108,
+											"top": 123,
 											"width": 143,
 											"height": 13,
 											"text": "-date: int",
@@ -1402,7 +1420,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 981,
-											"top": 123,
+											"top": 138,
 											"width": 143,
 											"height": 13,
 											"text": "-net_a_paye: double",
@@ -1414,7 +1432,7 @@
 									"left": 976,
 									"top": 73,
 									"width": 153,
-									"height": 68
+									"height": 83
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1438,7 +1456,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 981,
-											"top": 146,
+											"top": 161,
 											"width": 143,
 											"height": 13,
 											"text": "+imprimer()",
@@ -1456,7 +1474,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 981,
-											"top": 161,
+											"top": 176,
 											"width": 143,
 											"height": 13,
 											"text": "-Calcul_net_a_payer()",
@@ -1466,7 +1484,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 976,
-									"top": 141,
+									"top": 156,
 									"width": 153,
 									"height": 38
 								},
@@ -3508,6 +3526,16 @@
 						}
 					],
 					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGZvu8avDsEn0I=",
+							"_parent": {
+								"$ref": "AAAAAAGZqVzzE5Zf4JA="
+							},
+							"name": "id_facture",
+							"visibility": "protected",
+							"type": "int"
+						},
 						{
 							"_type": "UMLAttribute",
 							"_id": "AAAAAAGZqV0qnJaJqCA=",
