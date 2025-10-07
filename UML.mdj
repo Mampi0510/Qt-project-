@@ -1423,7 +1423,7 @@
 											"top": 138,
 											"width": 143,
 											"height": 13,
-											"text": "-net_a_paye: double",
+											"text": "-net_a_payer: double",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3572,7 +3572,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGZqVzzE5Zf4JA="
 							},
-							"name": "net_a_paye",
+							"name": "net_a_payer",
 							"visibility": "private",
 							"type": "double"
 						}
