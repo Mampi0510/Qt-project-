@@ -1,25 +1,29 @@
-#include "headers/client.hpp"
-#include "headers/commande.hpp"
+#include "client.h"
+#include "commande.h"
+#include "DetailsCommande.h"
+#include "facture.h"
+#include "plat.h"   
 #include <iostream>
-#include <vector>
+#include <string>
+
 
 int main() {
-    std::cout << "Système de gestion de commandes de restaurant - Test" << std::endl;
+    std::cout << "Système de gestion de commandes de restaurant" << std::endl;
 
-    // Créer un client
-    Client c(1, "RAKOTO", "Lita", "+33123456789");
+    client c;
+    c.commander();
 
-    // Préparer une commande :
-     vector<pair<id_plat, quantite>>
-    std::vector<std::pair<int,int>> items = { {1,2}, {3,1}, {5,4} };
+    commande cmd;
+    cmd.ajouterCommande();
 
-    try {
-        int idCmd = c.commander(items);
-        std::cout << "Commande passée avec succès, id = " << idCmd << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << "Erreur lors de la commande : " << e.what() << std::endl;
-        return 1;
-    }
+    detailsCommande dc;
+    dc.afficherDetails();
 
+    facture f;
+    f.imprimer();
+
+    plat p;
+    p.ajouterPlat();
+    
     return 0;
 }
