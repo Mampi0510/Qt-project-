@@ -1,7 +1,7 @@
 #ifndef COMMANDE_HPP
 #define COMMANDE_HPP
 
-class commande {
+class Commande {
     public:
         void ajouterCommande();
         void modifierCommande();

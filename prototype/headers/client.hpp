@@ -2,7 +2,7 @@
 #define CLIENT_HPP 
 
 
-class client {
+class Client {
     public:
         void commander();
     protected:

@@ -1,7 +1,7 @@
 #ifndef FACTURE_HPP 
 #define FACTURE_HPP
 
-class facture{
+class Facture{
     public:
         void imprimer();
     private:

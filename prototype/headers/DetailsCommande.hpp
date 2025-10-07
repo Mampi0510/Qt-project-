@@ -1,7 +1,7 @@
 #ifndef DETAILSCOMMANDE_HPP
 #define DETAILSCOMMANDE_HPP
 
-class detailsCommande {
+class DetailsCommande {
     public:
         void afficherDetails();
     private:
