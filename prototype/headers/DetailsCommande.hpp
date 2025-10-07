@@ -1,8 +1,18 @@
 #ifndef DETAILSCOMMANDE_HPP
 #define DETAILSCOMMANDE_HPP
 
-class detailsCommande {
+class DetailsCommande {
     public:
+        //constructeur
+        DetailsCommande();
+        //Suracharge du constructeur
+        DetailsCommande(int idCommande, int idPlat, int quantite, double prixUnitaire);
+        //Getters
+        int getIdCommande() const;
+        int getIdPlat() const;
+        int getQuantite() const;
+        int getPrixUnitaire() const;
+        
         void afficherDetails();
     private:
         int id_commande{0};

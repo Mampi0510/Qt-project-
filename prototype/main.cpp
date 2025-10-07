@@ -9,7 +9,7 @@
 
 int main() {
     std::cout << "Système de gestion de commandes de restaurant" << std::endl;
-
+    //Exemple simple d'utilisation des classes
     client c;
     c.commander();
 
