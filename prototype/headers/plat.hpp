@@ -1,7 +1,7 @@
 #ifndef PLAT_HPP
 #define PALT_HPP
 
-class plat{
+class Plat{
     public:
         std::string categorie;
         void ajouterPlat();
