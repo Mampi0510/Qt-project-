@@ -34,3 +34,14 @@ CREATE TABLE detailscommande(
     FOREIGN KEY (id_plat) REFERENCES plat(id_plat) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (id_commande) REFERENCES commande(id_commande) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+-- facture
+CREATE TABLE facture(
+	id_facture INT PRIMARY KEY AUTO_INCREMENT,
+    id_commande INT NOT NULL,
+    id_client INT NOT NULL ,
+	date_facture DATETIME DEFAULT CURRENT_TIMESTAMP,
+    net_a_payer DOUBLE NOT NULL,
+    FOREIGN KEY (id_commande) REFERENCES commande(id_commande) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_client) REFERENCES client(id_client) ON DELETE CASCADE ON UPDATE CASCADE
+);
