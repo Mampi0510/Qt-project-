@@ -3,7 +3,7 @@ CREATE DATABASE EOY_PROJECT;
 USE EOY_PROJECT;
 
 -- client
-CREATE TABLE client (
+CREATE TABLE Client (
 	id_client INT PRIMARY KEY AUTO_INCREMENT,
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE client (
 );
 
 -- commande
-CREATE TABLE commande (
+CREATE TABLE Commande (
 	id_commande INT PRIMARY KEY AUTO_INCREMENT,
     date_commande DATETIME DEFAULT CURRENT_TIMESTAMP,-- similar to NOW()
     total DECIMAL (10, 2) DEFAULT 0,
@@ -20,7 +20,7 @@ CREATE TABLE commande (
 );
 
 -- plat
-CREATE TABLE plat(
+CREATE TABLE Plat(
 	id_plat INT PRIMARY KEY AUTO_INCREMENT,
     nom_plat VARCHAR(50) NOT NULL,
     prix DECIMAL(8,2) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE plat(
 );
 
 -- Detailscommande
-CREATE TABLE detailscommande(
+CREATE TABLE DetailsCommande(
 	id_commande INT NOT NULL,
     id_plat INT NOT NULL,
     PRIMARY KEY (id_commande, id_plat),
@@ -37,7 +37,7 @@ CREATE TABLE detailscommande(
 );
 
 -- facture
-CREATE TABLE facture(
+CREATE TABLE Facture(
 	id_facture INT PRIMARY KEY AUTO_INCREMENT,
     id_commande INT NOT NULL,
     id_client INT NOT NULL ,
@@ -45,4 +45,21 @@ CREATE TABLE facture(
     net_a_payer DOUBLE NOT NULL,
     FOREIGN KEY (id_commande) REFERENCES commande(id_commande) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (id_client) REFERENCES client(id_client) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- Stock
+CREATE TABLE Stock(
+    id_produit INT PRIMARY KEY AUTO_INCREMENT,
+    nom_produit VARCHAR(50) NOT NULL,
+    quantite DOUBLE
+);
+
+-- DetailsStock
+CREATE TABLE DetailsStock(
+    id_produit INT NOT NULL,
+    id_plat INT NOT NULL,
+    quantite_prise DOUBLE NOT NULL,
+    PRIMARY key (id_produit, id_plat),
+    FOREIGN KEY (id_produit) REFERENCES Stock(id_produit) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (id_plat) REFERENCES plat(id_plat) ON DELETE CASCADE ON UPDATE CASCADE
 );
