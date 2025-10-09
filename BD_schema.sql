@@ -63,3 +63,8 @@ CREATE TABLE DetailsStock(
     FOREIGN KEY (id_produit) REFERENCES Stock(id_produit) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (id_plat) REFERENCES plat(id_plat) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE INDEX idx_nom_plat ON plat(nom_plat);
+CREATE INDEX idx_nom_client ON client(nom);
+CREATE INDEX idx_tel ON client(telephone);
+
