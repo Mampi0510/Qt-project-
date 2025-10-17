@@ -1,0 +1,268 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 3899,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onCompleted",
+                        "line": 74
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 465,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 257,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 109
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 293,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 319,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 125
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 275,
+                        "errorMessage": "",
+                        "functionName": "model",
+                        "line": 134
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 338,
+                        "errorMessage": "",
+                        "functionName": "delegate",
+                        "line": 135
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 10382,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 172
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 1074,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 175
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 55,
+                        "durationMicroseconds": 396,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 174
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 323,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 2160,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "onEntered",
+                        "line": 183
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 1215,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "onExited",
+                        "line": 188
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 901,
+                        "errorMessage": "Cannot access value for name menuId",
+                        "functionName": "onClicked",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 308,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 250,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 199
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 893,
+                        "errorMessage": "Cannot access value for name icon",
+                        "functionName": "text",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 807,
+                        "errorMessage": "Cannot access value for name label",
+                        "functionName": "text",
+                        "line": 210
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 1088,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 213
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 401,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 212
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 2730,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "currentIndex",
+                        "line": 231
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 274,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 230
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"dishesModel\".",
+                        "functionName": "dishesModel",
+                        "line": 242
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"clientsModel\".",
+                        "functionName": "clientsModel",
+                        "line": 243
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"ordersModel\".",
+                        "functionName": "ordersModel",
+                        "line": 244
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"dishesModel\".",
+                        "functionName": "dishesModel",
+                        "line": 249
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"clientsModel\".",
+                        "functionName": "clientsModel",
+                        "line": 254
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"dishesModel\".",
+                        "functionName": "dishesModel",
+                        "line": 259
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"clientsModel\".",
+                        "functionName": "clientsModel",
+                        "line": 260
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"ordersModel\".",
+                        "functionName": "ordersModel",
+                        "line": 261
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 343,
+                        "errorMessage": "",
+                        "functionName": "dishesModel",
+                        "line": 266
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 409,
+                        "errorMessage": "",
+                        "functionName": "ordersModel",
+                        "line": 267
+                    }
+                ],
+                "filePath": "E:/econtrol/Main.qml"
+            }
+        ],
+        "moduleId": "econtrol(appecontrol)"
+    }
+]

@@ -1,0 +1,11 @@
+module econtrol
+typeinfo appecontrol.qmltypes
+prefer :/qt/qml/econtrol/
+Main 1.0 Qml/Main.qml
+DashBoardView 1.0 Qml/DashBoardView.qml
+ClientView 1.0 Qml/ClientView.qml
+DishModelView 1.0 Qml/DishModelView.qml
+OrderView 1.0 Qml/OrderView.qml
+StatisticsView 1.0 Qml/StatisticsView.qml
+depends QtQuick
+

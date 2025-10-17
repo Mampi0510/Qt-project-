@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/econtrol">E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/econtrol</file>
+
+  </qresource>
+</RCC>
