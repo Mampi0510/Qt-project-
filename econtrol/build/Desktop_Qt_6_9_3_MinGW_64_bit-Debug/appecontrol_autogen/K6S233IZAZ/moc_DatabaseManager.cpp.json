@@ -1,0 +1,40 @@
+{
+    "classes": [
+        {
+            "className": "DatabaseManager",
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prenom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telephone",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "addClient",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "DatabaseManager",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "DatabaseManager.h",
+    "outputRevision": 69
+}

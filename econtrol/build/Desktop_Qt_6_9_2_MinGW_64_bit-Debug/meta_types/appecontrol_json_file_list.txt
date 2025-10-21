@@ -1,6 +1,0 @@
-E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/appecontrol_autogen/include/../K6S233IZAZ/moc_Commande.cpp.json
-E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/appecontrol_autogen/include/../K6S233IZAZ/moc_DetailsCommandes.cpp.json
-E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/appecontrol_autogen/include/../K6S233IZAZ/moc_Facture.cpp.json
-E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/appecontrol_autogen/include/../K6S233IZAZ/moc_Plat.cpp.json
-E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/appecontrol_autogen/include/../K6S233IZAZ/moc_Stock.cpp.json
-E:/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/appecontrol_autogen/include/../K6S233IZAZ/moc_client.cpp.json
