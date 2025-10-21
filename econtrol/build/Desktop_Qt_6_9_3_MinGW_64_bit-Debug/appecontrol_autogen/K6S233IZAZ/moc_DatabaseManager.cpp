@@ -39,17 +39,35 @@ template <> constexpr inline auto DatabaseManager::qt_create_metaobjectdata<qt_m
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "DatabaseManager",
-        "addClient",
+        "clientsChanged",
         "",
+        "getClients",
+        "QVariantList",
+        "addClient",
         "nom",
         "prenom",
-        "telephone"
+        "telephone",
+        "updateClient",
+        "id",
+        "deleteClient"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'clientsChanged'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'getClients'
+        QtMocHelpers::MethodData<QVariantList()>(3, 2, QMC::AccessPublic, 0x80000000 | 4),
         // Method 'addClient'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &, const QString &)>(1, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 3 }, { QMetaType::QString, 4 }, { QMetaType::QString, 5 },
+        QtMocHelpers::MethodData<bool(const QString &, const QString &, const QString &)>(5, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 6 }, { QMetaType::QString, 7 }, { QMetaType::QString, 8 },
+        }}),
+        // Method 'updateClient'
+        QtMocHelpers::MethodData<bool(int, const QString &, const QString &, const QString &)>(9, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 10 }, { QMetaType::QString, 6 }, { QMetaType::QString, 7 }, { QMetaType::QString, 8 },
+        }}),
+        // Method 'deleteClient'
+        QtMocHelpers::MethodData<bool(int)>(11, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 10 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -74,10 +92,21 @@ void DatabaseManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     auto *_t = static_cast<DatabaseManager *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: { bool _r = _t->addClient((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])));
+        case 0: _t->clientsChanged(); break;
+        case 1: { QVariantList _r = _t->getClients();
+            if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 2: { bool _r = _t->addClient((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 3: { bool _r = _t->updateClient((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[4])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 4: { bool _r = _t->deleteClient((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
+    }
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (DatabaseManager::*)()>(_a, &DatabaseManager::clientsChanged, 0))
+            return;
     }
 }
 
@@ -100,15 +129,21 @@ int DatabaseManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 5;
     }
     return _id;
+}
+
+// SIGNAL 0
+void DatabaseManager::clientsChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP

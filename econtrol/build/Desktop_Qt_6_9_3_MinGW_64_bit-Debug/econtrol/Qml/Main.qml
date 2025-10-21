@@ -31,6 +31,7 @@ ApplicationWindow {
         if (!dbConnected) {
             dbErrorDialog.open()
         }
+        refreshClients()
     }
 
     // Modèle de données pour les plats
@@ -68,32 +69,19 @@ ApplicationWindow {
         }
     }
 
-    // Modèle de données pour les clients
-    ListModel {
-        id: clientsModel
-        ListElement {
-            id_client: 1
-            nom: "Mahay"
-            prenom: "Mampiadana"
-            telephone: "0601020304"
-        }
-        ListElement {
-            id_client: 2
-            nom: "Tsiky"
-            prenom: "Ny Avo"
-            telephone: "0612345678"
-        }
-        ListElement {
-            id_client: 3
-            nom: "Fy"
-            prenom: "Tahiantsoa"
-            telephone: "0698765432"
-        }
-        ListElement {
-            id_client: 4
-            nom: "Délicia"
-            prenom: "Alexiane"
-            telephone: "0698765432"
+    ListModel { id: clientsModel }
+
+    function refreshClients() {
+        clientsModel.clear()
+        var data = dbManager.getClients()
+        for (var i = 0; i < data.length; ++i)
+            clientsModel.append(data[i])
+    }
+
+    Connections {
+        target: dbManager
+        function onClientsChanged() {
+            refreshClients()
         }
     }
 

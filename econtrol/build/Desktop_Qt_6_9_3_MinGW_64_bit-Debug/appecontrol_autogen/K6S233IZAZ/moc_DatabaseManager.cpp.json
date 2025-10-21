@@ -6,6 +6,12 @@
             "methods": [
                 {
                     "access": "public",
+                    "index": 1,
+                    "name": "getClients",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
                     "arguments": [
                         {
                             "name": "nom",
@@ -20,13 +26,57 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 0,
+                    "index": 2,
                     "name": "addClient",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prenom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telephone",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "updateClient",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "deleteClient",
                     "returnType": "bool"
                 }
             ],
             "object": true,
             "qualifiedClassName": "DatabaseManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "clientsChanged",
+                    "returnType": "void"
+                }
+            ],
             "superClasses": [
                 {
                     "access": "public",

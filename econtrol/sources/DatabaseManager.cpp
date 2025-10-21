@@ -24,24 +24,66 @@ bool DatabaseManager::connectToDatabase()
     return true;
 }
 
-bool DatabaseManager::addClient(const QString &nom, const QString &prenom, const QString &telephone)
-{
-    if (!db.isOpen()) {
-        qDebug() << "Base non connectée !";
-        return false;
+QVariantList DatabaseManager::getClients() {
+    QVariantList list;
+    QSqlQuery query("SELECT id, nom, prenom, telephone FROM clients");
+
+    while (query.next()) {
+        QVariantMap client;
+        client["id"] = query.value(0).toInt();
+        client["nom"] = query.value(1).toString();
+        client["prenom"] = query.value(2).toString();
+        client["telephone"] = query.value(3).toString();
+        list.append(client);
     }
 
+    return list;
+}
+
+bool DatabaseManager::addClient(const QString &nom, const QString &prenom, const QString &telephone) {
     QSqlQuery query;
-    query.prepare("INSERT INTO clients (nom, prenom, telephone) VALUES (:nom, :prenom, :telephone)");
-    query.bindValue(":nom", nom);
-    query.bindValue(":prenom", prenom);
-    query.bindValue(":telephone", telephone);
+    query.prepare("INSERT INTO clients (nom, prenom, telephone) VALUES (?, ?, ?)");
+    query.addBindValue(nom);
+    query.addBindValue(prenom);
+    query.addBindValue(telephone);
 
     if (!query.exec()) {
-        qDebug() << "Erreur d'insertion:" << query.lastError().text();
+        qWarning() << "Erreur ajout client:" << query.lastError().text();
         return false;
     }
 
-    qDebug() << "Client ajouté avec succès.";
+    emit clientsChanged();  // 🔔 Notifie QML
     return true;
 }
+
+bool DatabaseManager::updateClient(int id, const QString &nom, const QString &prenom, const QString &telephone) {
+    QSqlQuery query;
+    query.prepare("UPDATE clients SET nom=?, prenom=?, telephone=? WHERE id=?");
+    query.addBindValue(nom);
+    query.addBindValue(prenom);
+    query.addBindValue(telephone);
+    query.addBindValue(id);
+
+    if (!query.exec()) {
+        qWarning() << "Erreur maj client:" << query.lastError().text();
+        return false;
+    }
+
+    emit clientsChanged();
+    return true;
+}
+
+bool DatabaseManager::deleteClient(int id) {
+    QSqlQuery query;
+    query.prepare("DELETE FROM clients WHERE id=?");
+    query.addBindValue(id);
+
+    if (!query.exec()) {
+        qWarning() << "Erreur suppression client:" << query.lastError().text();
+        return false;
+    }
+
+    emit clientsChanged();
+    return true;
+}
+

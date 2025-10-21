@@ -51,17 +51,10 @@ Item {
             }
 
             let ok = dbManager.addClient(nomField.text, prenomField.text, telephoneField.text);
-            if (ok) {
-                console.log("✅ Client ajouté avec succès !");
-                clientsModel.append({
-                    id_client: clientsModel.count + 1,
-                    nom: nomField.text,
-                    prenom: prenomField.text,
-                    telephone: telephoneField.text
-                });
-            } else {
-                console.log("❌ Erreur lors de l'ajout !");
-            }
+                if (!ok)
+                    console.log("❌ Erreur ajout BD !");
+                else
+                    console.log("✅ Client ajouté !");
 
             nomField.text = prenomField.text = telephoneField.text = "";
         }
@@ -244,6 +237,7 @@ Item {
                                         text: "Modifier"
                                         Layout.preferredHeight: 32
 
+
                                         background: Rectangle {
                                             color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
@@ -258,7 +252,11 @@ Item {
                                             verticalAlignment: Text.AlignVCenter
                                         }
 
-                                        onClicked: clientDialog.openForEdit(index)
+                                        onClicked: {
+                                            // Exemple de modif directe
+                                            dbManager.updateClient(id_client, nom + " (modifié)", prenom, telephone)
+                                        }
+
                                     }
 
                                     Button {
@@ -279,7 +277,10 @@ Item {
                                             verticalAlignment: Text.AlignVCenter
                                         }
 
-                                        onClicked: clientsModel.remove(index)
+                                        onClicked: {
+                                            dbManager.deleteClient(id_client)
+                                        }
+
                                     }
                                 }
                             }
