@@ -1089,6 +1089,7 @@ appecontrol_autogen/timestamp: \
 	D:/Kampf/EOY/econtrol/headers/Stock.h \
 	D:/Kampf/EOY/econtrol/headers/client.h \
 	D:/Kampf/EOY/econtrol/main.cpp \
+	D:/Kampf/EOY/econtrol/resources.qrc \
 	D:/Kampf/EOY/econtrol/sources/Client.cpp \
 	D:/Kampf/EOY/econtrol/sources/Commande.cpp \
 	D:/Kampf/EOY/econtrol/sources/DatabaseManager.cpp \

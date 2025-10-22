@@ -15,6 +15,7 @@ set(CMAKE_AUTORCC ON)
 
 qt_add_executable(appecontrol
     main.cpp
+    resources.qrc
 )
 
 qt_add_qml_module(appecontrol
@@ -46,6 +47,7 @@ qt_add_qml_module(appecontrol
         Qml/DishModelView.qml
         Qml/OrderView.qml
         Qml/StatisticsView.qml
+        RESOURCES resources.qrc
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

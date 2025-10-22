@@ -6,6 +6,7 @@
     <file alias="Qml/DishModelView.qml">D:/Kampf/EOY/econtrol/Qml/DishModelView.qml</file>
     <file alias="Qml/OrderView.qml">D:/Kampf/EOY/econtrol/Qml/OrderView.qml</file>
     <file alias="Qml/StatisticsView.qml">D:/Kampf/EOY/econtrol/Qml/StatisticsView.qml</file>
+    <file alias="resources.qrc">D:/Kampf/EOY/econtrol/resources.qrc</file>
   </qresource>
 </RCC>
 

@@ -1,11 +1,14 @@
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QIcon>
 #include "headers/DatabaseManager.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+
+    app.setWindowIcon(QIcon(":/icons/resto.png"));
 
     DatabaseManager dbManager;
 

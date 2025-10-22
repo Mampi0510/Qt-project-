@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 635,
+                        "durationMicroseconds": 1061,
                         "errorMessage": "Cannot load property count from (component in D:/Kampf/EOY/econtrol/Qml/StatisticsView.qml)::ordersModel with type QVariant.",
                         "functionName": "calculateTotalRevenue",
                         "line": 279
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 1461,
+                        "durationMicroseconds": 11620,
                         "errorMessage": "Cannot load property count from (component in D:/Kampf/EOY/econtrol/Qml/StatisticsView.qml)::dishesModel with type QVariant.",
                         "functionName": "getCategoryStats",
                         "line": 287
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 281,
+                        "durationMicroseconds": 271,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 17
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 167,
+                        "durationMicroseconds": 159,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 24
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 121,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 40
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 828,
+                        "durationMicroseconds": 922,
                         "errorMessage": "method calculateTotalRevenue cannot be resolved.",
                         "functionName": "text",
                         "line": 52
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 156,
+                        "durationMicroseconds": 154,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 54
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 84,
+                        "durationMicroseconds": 85,
                         "errorMessage": "Cannot access value for name ordersModel",
                         "functionName": "text",
                         "line": 59
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 117,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 80
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 135,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 87
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 205,
+                        "durationMicroseconds": 214,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 138
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 136,
+                        "durationMicroseconds": 128,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 144
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 915,
+                        "durationMicroseconds": 956,
                         "errorMessage": "Cannot access value for name rank",
                         "functionName": "color",
                         "line": 154
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 493,
+                        "durationMicroseconds": 511,
                         "errorMessage": "Cannot access value for name rank",
                         "functionName": "text",
                         "line": 158
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 48,
-                        "durationMicroseconds": 492,
+                        "durationMicroseconds": 463,
                         "errorMessage": "Cannot access value for name rank",
                         "functionName": "color",
                         "line": 161
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 157
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 165,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 160
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 441,
+                        "durationMicroseconds": 433,
                         "errorMessage": "Cannot access value for name name",
                         "functionName": "text",
                         "line": 171
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 151,
+                        "durationMicroseconds": 147,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 173
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 443,
+                        "durationMicroseconds": 482,
                         "errorMessage": "Cannot access value for name orders",
                         "functionName": "text",
                         "line": 178
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 498,
+                        "durationMicroseconds": 506,
                         "errorMessage": "Cannot access value for name revenue",
                         "functionName": "text",
                         "line": 186
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 165,
+                        "durationMicroseconds": 184,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 191
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 50,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 137,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 188
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 133,
+                        "durationMicroseconds": 149,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 212
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 149,
+                        "durationMicroseconds": 179,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 219
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 401,
+                        "durationMicroseconds": 454,
                         "errorMessage": "method getCategoryStats cannot be resolved.",
                         "functionName": "model",
                         "line": 231
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 118,
+                        "durationMicroseconds": 128,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 240
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 581,
+                        "durationMicroseconds": 638,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 245
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 150,
+                        "durationMicroseconds": 144,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 247
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 575,
+                        "durationMicroseconds": 674,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 252
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 435,
+                        "durationMicroseconds": 366,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "width",
                         "line": 264
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 53,
-                        "durationMicroseconds": 227,
+                        "durationMicroseconds": 215,
                         "errorMessage": "",
                         "functionName": "height",
                         "line": 265
