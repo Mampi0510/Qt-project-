@@ -29,43 +29,10 @@ ApplicationWindow {
 
     Component.onCompleted: {
         refreshClients()
+        refreshPlats()
     }
 
-    // Modèle de données pour les plats
-    ListModel {
-        id: dishesModel
-        ListElement {
-            id_plat: 1
-            nom_plat: "Pizza Margherita"
-            prix: 12.99
-            categorie: "Pizza"
-        }
-        ListElement {
-            id_plat: 2
-            nom_plat: "Burger Classique"
-            prix: 10.50
-            categorie: "Burger"
-        }
-        ListElement {
-            id_plat: 3
-            nom_plat: "Salade César"
-            prix: 8.99
-            categorie: "Salade"
-        }
-        ListElement {
-            id_plat: 4
-            nom_plat: "Pâtes Carbonara"
-            prix: 11.99
-            categorie: "Pâtes"
-        }
-        ListElement {
-            id_plat: 5
-            nom_plat: "Tiramisu"
-            prix: 6.50
-            categorie: "Dessert"
-        }
-    }
-
+    // Données pour les clients
     ListModel { id: clientsModel }
 
     function refreshClients() {
@@ -82,7 +49,24 @@ ApplicationWindow {
         }
     }
 
-    // Modèle de données pour les commandes
+    // Données pour les plats
+    ListModel { id: dishesModel }
+
+    function refreshPlats() {
+        dishesModel.clear()
+        var data = dbManager.getPlats()
+        for (var i =0; i < data.length; ++i)
+            dishesModel.append(data[i])
+    }
+
+    Connections {
+        target:  dbManager
+        function onPlatsChanged() {
+            refreshPlats()
+        }
+    }
+
+    // Données pour les commandes
     ListModel {
         id: ordersModel
         Component.onCompleted: {

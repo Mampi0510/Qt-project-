@@ -56,21 +56,19 @@ Item {
 
         onAccepted: {
             if (nomField.text === "" || prenomField.text === "" || telephoneField.text === "") {
-                console.log("❌ Champs vides !");
+                console.log("Champs vides !");
                 return;
             }
 
             if (editMode) {
-                // ✅ Mode modification
                 let clientId = clientsModel.get(editIndex).id_client
                 let ok = dbManager.updateClient(clientId, nomField.text, prenomField.text, telephoneField.text)
                 if (ok)
-                    console.log("✅ Client modifié !");
+                    console.log("Client modifié !");
             } else {
-                // ✅ Mode ajout
                 let ok = dbManager.addClient(nomField.text, prenomField.text, telephoneField.text)
                 if (ok)
-                    console.log("✅ Client ajouté !");
+                    console.log("Client ajouté !");
             }
 
             // Recharge le modèle à jour

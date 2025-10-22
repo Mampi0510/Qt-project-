@@ -8,7 +8,16 @@ Item {
 
     property var dishesModel
 
-    // Dialog for adding/editing dishes
+    Connections {
+        target: dbManager
+        function onPlatsChanged() {
+            let data = dbManager.getPlats();
+            dishesModel.clear();
+            for (let i = 0; i < data.length; i++)
+                dishesModel.append(data[i]);
+        }
+    }
+
     Dialog {
         id: dishDialog
         title: editMode ? "Modifier le plat" : "Ajouter un plat"
@@ -49,50 +58,64 @@ Item {
             }
         }
 
+        function openForEdit(i) {
+            editMode = true;
+            editIndex = i;
+            let plat = dishesModel.get(i);
+
+            nomPlatField.text = plat.nom_plat;
+            prixField.text = plat.prix.toFixed(2);
+            categorieCombo.currentIndex = categorieCombo.model.indexOf(plat.categorie);
+
+            open();
+        }
+
         onAccepted: {
-            if (nomPlatField.text && prixField.text) {
-                if (editMode) {
-                    dishesModel.set(editIndex, {
-                        nom_plat: nomPlatField.text,
-                        prix: parseFloat(prixField.text),
-                        categorie: categorieCombo.currentText
-                    })
-                } else {
-                    var newId = dishesModel.count + 1
-                    dishesModel.append({
-                        id_plat: newId,
-                        nom_plat: nomPlatField.text,
-                        prix: parseFloat(prixField.text),
-                        categorie: categorieCombo.currentText
-                    })
-                }
-                resetFields()
+            if (nomPlatField.text === "" || prixField.text === "") {
+                console.log("Champs vides !");
+                return;
             }
+
+            let nom = nomPlatField.text.trim();
+            let prix = parseFloat(prixField.text);
+            let categorie = categorieCombo.currentText;
+
+            if (isNaN(prix) || prix <= 0) {
+                console.log("Prix invalide !");
+                return;
+            }
+
+            if (editMode) {
+                let platId = dishesModel.get(editIndex).id_plat;
+                let ok = dbManager.updatePlat(platId, nom, prix, categorie);
+                if (ok)
+                    console.log("Plat modifié !");
+                else
+                    console.log("Erreur modification plat !");
+            } else {
+                let ok = dbManager.addPlat(nom, prix, categorie);
+                if (ok)
+                    console.log("Plat ajouté !");
+                else
+                    console.log("Erreur ajout plat !");
+            }
+
+            let data = dbManager.getPlats();
+            dishesModel.clear();
+            for (let i = 0; i < data.length; ++i)
+                dishesModel.append(data[i]);
+
+            editMode = false;
+            editIndex = -1;
+            nomPlatField.text = prixField.text = "";
+            categorieCombo.currentIndex = -1;
         }
 
         onRejected: {
-            resetFields()
-        }
-
-        function resetFields() {
-            nomPlatField.text = ""
-            prixField.text = ""
-            categorieCombo.currentIndex = 0
-            editMode = false
-            editIndex = -1
-        }
-
-        function openForEdit(index) {
-            editMode = true
-            editIndex = index
-            var item = dishesModel.get(index)
-            nomPlatField.text = item.nom_plat
-            prixField.text = item.prix.toString()
-            var catIndex = categorieCombo.find(item.categorie)
-            if (catIndex >= 0) {
-                categorieCombo.currentIndex = catIndex
-            }
-            open()
+            editMode = false;
+            editIndex = -1;
+            nomPlatField.text = prixField.text = "";
+            categorieCombo.currentIndex = -1;
         }
     }
 
@@ -225,6 +248,7 @@ Item {
                                     }
 
                                     onClicked: dishDialog.openForEdit(index)
+
                                 }
 
                                 Button {
@@ -245,7 +269,11 @@ Item {
                                         verticalAlignment: Text.AlignVCenter
                                     }
 
-                                    onClicked: dishesModel.remove(index)
+                                    onClicked: {
+                                        let platId = dishesModel.get(index).id_plat;
+                                        let ok = dbManager.deletePlat(platId);
+                                    }
+
                                 }
                             }
                         }

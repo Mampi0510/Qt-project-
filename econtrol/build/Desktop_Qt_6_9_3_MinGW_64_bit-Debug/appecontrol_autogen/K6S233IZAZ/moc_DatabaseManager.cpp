@@ -41,6 +41,8 @@ template <> constexpr inline auto DatabaseManager::qt_create_metaobjectdata<qt_m
         "DatabaseManager",
         "clientsChanged",
         "",
+        "platsChanged",
+        "commandesChanged",
         "getClients",
         "QVariantList",
         "addClient",
@@ -49,25 +51,71 @@ template <> constexpr inline auto DatabaseManager::qt_create_metaobjectdata<qt_m
         "telephone",
         "updateClient",
         "id",
-        "deleteClient"
+        "deleteClient",
+        "getCommandes",
+        "addCommande",
+        "date_commande",
+        "total",
+        "id_client",
+        "updateCommande",
+        "deleteCommande",
+        "getPlats",
+        "addPlat",
+        "nom_plat",
+        "prix",
+        "categorie",
+        "updatePlat",
+        "deletePlat"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'clientsChanged'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'platsChanged'
+        QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'commandesChanged'
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'getClients'
-        QtMocHelpers::MethodData<QVariantList()>(3, 2, QMC::AccessPublic, 0x80000000 | 4),
+        QtMocHelpers::MethodData<QVariantList()>(5, 2, QMC::AccessPublic, 0x80000000 | 6),
         // Method 'addClient'
-        QtMocHelpers::MethodData<bool(const QString &, const QString &, const QString &)>(5, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 6 }, { QMetaType::QString, 7 }, { QMetaType::QString, 8 },
+        QtMocHelpers::MethodData<bool(const QString &, const QString &, const QString &)>(7, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 8 }, { QMetaType::QString, 9 }, { QMetaType::QString, 10 },
         }}),
         // Method 'updateClient'
-        QtMocHelpers::MethodData<bool(int, const QString &, const QString &, const QString &)>(9, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 10 }, { QMetaType::QString, 6 }, { QMetaType::QString, 7 }, { QMetaType::QString, 8 },
+        QtMocHelpers::MethodData<bool(int, const QString &, const QString &, const QString &)>(11, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 }, { QMetaType::QString, 8 }, { QMetaType::QString, 9 }, { QMetaType::QString, 10 },
         }}),
         // Method 'deleteClient'
-        QtMocHelpers::MethodData<bool(int)>(11, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 10 },
+        QtMocHelpers::MethodData<bool(int)>(13, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 },
+        }}),
+        // Method 'getCommandes'
+        QtMocHelpers::MethodData<QVariantList()>(14, 2, QMC::AccessPublic, 0x80000000 | 6),
+        // Method 'addCommande'
+        QtMocHelpers::MethodData<bool(const QDateTime &, const double, int)>(15, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QDateTime, 16 }, { QMetaType::Double, 17 }, { QMetaType::Int, 18 },
+        }}),
+        // Method 'updateCommande'
+        QtMocHelpers::MethodData<bool(int, const QDateTime &, const double, int)>(19, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 }, { QMetaType::QDateTime, 16 }, { QMetaType::Double, 17 }, { QMetaType::Int, 18 },
+        }}),
+        // Method 'deleteCommande'
+        QtMocHelpers::MethodData<bool(int)>(20, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 },
+        }}),
+        // Method 'getPlats'
+        QtMocHelpers::MethodData<QVariantList()>(21, 2, QMC::AccessPublic, 0x80000000 | 6),
+        // Method 'addPlat'
+        QtMocHelpers::MethodData<bool(const QString &, const float, const QString &)>(22, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 23 }, { QMetaType::Float, 24 }, { QMetaType::QString, 25 },
+        }}),
+        // Method 'updatePlat'
+        QtMocHelpers::MethodData<bool(int, const QString &, const float, const QString &)>(26, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 }, { QMetaType::QString, 23 }, { QMetaType::Float, 24 }, { QMetaType::QString, 25 },
+        }}),
+        // Method 'deletePlat'
+        QtMocHelpers::MethodData<bool(int)>(27, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -93,19 +141,41 @@ void DatabaseManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->clientsChanged(); break;
-        case 1: { QVariantList _r = _t->getClients();
+        case 1: _t->platsChanged(); break;
+        case 2: _t->commandesChanged(); break;
+        case 3: { QVariantList _r = _t->getClients();
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 2: { bool _r = _t->addClient((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])));
+        case 4: { bool _r = _t->addClient((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 3: { bool _r = _t->updateClient((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[4])));
+        case 5: { bool _r = _t->updateClient((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[4])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 4: { bool _r = _t->deleteClient((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 6: { bool _r = _t->deleteClient((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 7: { QVariantList _r = _t->getCommandes();
+            if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 8: { bool _r = _t->addCommande((*reinterpret_cast< std::add_pointer_t<QDateTime>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 9: { bool _r = _t->updateCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QDateTime>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[4])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 10: { bool _r = _t->deleteCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 11: { QVariantList _r = _t->getPlats();
+            if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 12: { bool _r = _t->addPlat((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 13: { bool _r = _t->updatePlat((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<float>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[4])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 14: { bool _r = _t->deletePlat((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (DatabaseManager::*)()>(_a, &DatabaseManager::clientsChanged, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (DatabaseManager::*)()>(_a, &DatabaseManager::platsChanged, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (DatabaseManager::*)()>(_a, &DatabaseManager::commandesChanged, 2))
             return;
     }
 }
@@ -129,14 +199,14 @@ int DatabaseManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 15;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 15)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 15;
     }
     return _id;
 }
@@ -145,5 +215,17 @@ int DatabaseManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void DatabaseManager::clientsChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void DatabaseManager::platsChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void DatabaseManager::commandesChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP

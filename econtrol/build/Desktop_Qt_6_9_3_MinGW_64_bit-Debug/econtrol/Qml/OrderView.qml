@@ -10,7 +10,6 @@ Item {
     property var clientsModel
     property var ordersModel
 
-    // Dialog for creating new order
     Dialog {
         id: orderDialog
         title: "Nouvelle Commande"
@@ -220,14 +219,16 @@ Item {
                 var now = new Date()
                 var dateStr = Qt.formatDateTime(now, "yyyy-MM-dd hh:mm:ss")
 
-                ordersModel.append({
-                    id_commande: newId,
-                    id_client: client.id_client,
-                    nom_client: client.nom,
-                    prenom_client: client.prenom,
-                    date_commande: dateStr,
-                    total: total
-                })
+                var ok = dbManager.addCommande(now, total,client.id_client)
+                if (ok) {
+                    console.log("commande enregistree dans la BD",client.nom)
+                    var data = dbManager.getCommandes()
+                    odersModel.clear()
+                    for (var j = 0; j < data.length; j++)
+                    ordersModel.append(data[j])
+                } else {
+                    console.log("Erreur lors de l'ajout")
+                }
 
                 orderItemsModel.clear()
                 totalText.text = "0.00 €"
