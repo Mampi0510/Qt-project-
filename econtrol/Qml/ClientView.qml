@@ -8,6 +8,16 @@ Item {
 
     property var clientsModel
 
+    Connections {
+        target: dbManager
+        function onClientsChanged() {
+            let data = dbManager.getClients();
+            clientsModel.clear();
+            for (let i = 0; i < data.length; i++)
+                clientsModel.append(data[i]);
+        }
+    }
+
     // Dialog for adding/editing clients
     Dialog {
         id: clientDialog
@@ -51,13 +61,20 @@ Item {
             }
 
             let ok = dbManager.addClient(nomField.text, prenomField.text, telephoneField.text);
-                if (!ok)
-                    console.log("❌ Erreur ajout BD !");
-                else
-                    console.log("✅ Client ajouté !");
+            if (ok) {
+                console.log("✅ Client ajouté !");
+                // 🔄 Recharge directement le modèle global
+                let data = dbManager.getClients();
+                clientsModel.clear();
+                for (let i = 0; i < data.length; i++)
+                    clientsModel.append(data[i]);
+            } else {
+                console.log("❌ Erreur ajout BD !");
+            }
 
             nomField.text = prenomField.text = telephoneField.text = "";
         }
+
 
         onRejected: {
             nomField.text = prenomField.text = telephoneField.text = "";

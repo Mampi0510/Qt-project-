@@ -26,35 +26,54 @@ bool DatabaseManager::connectToDatabase()
 
 QVariantList DatabaseManager::getClients() {
     QVariantList list;
-    QSqlQuery query("SELECT id, nom, prenom, telephone FROM clients");
+
+    if (!db.isOpen()) {
+        qWarning() << "❌ Base non connectée, impossible de charger les clients.";
+        return list;
+    }
+
+    // ✅ Table correcte : clients
+    // ✅ Colonne correcte : id_client
+    QSqlQuery query("SELECT id_client, nom, prenom, telephone FROM clients");
+
+    if (!query.exec()) {
+        qWarning() << "❌ Erreur requête SELECT:" << query.lastError().text();
+        return list;
+    }
 
     while (query.next()) {
         QVariantMap client;
-        client["id"] = query.value(0).toInt();
+        client["id_client"] = query.value(0).toInt();  // ✅ clé utilisée en QML
         client["nom"] = query.value(1).toString();
         client["prenom"] = query.value(2).toString();
         client["telephone"] = query.value(3).toString();
         list.append(client);
+
+        qDebug() << "📋 Client lu:" << client;
     }
 
+    qDebug() << "✅ Nombre de clients trouvés :" << list.size();
     return list;
 }
 
 bool DatabaseManager::addClient(const QString &nom, const QString &prenom, const QString &telephone) {
     QSqlQuery query;
+
+    // ✅ Table correcte : clients
     query.prepare("INSERT INTO clients (nom, prenom, telephone) VALUES (?, ?, ?)");
     query.addBindValue(nom);
     query.addBindValue(prenom);
     query.addBindValue(telephone);
 
     if (!query.exec()) {
-        qWarning() << "Erreur ajout client:" << query.lastError().text();
+        qWarning() << "❌ Erreur ajout client:" << query.lastError().text();
         return false;
     }
 
     emit clientsChanged();  // 🔔 Notifie QML
     return true;
 }
+
 
 bool DatabaseManager::updateClient(int id, const QString &nom, const QString &prenom, const QString &telephone) {
     QSqlQuery query;

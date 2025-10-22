@@ -28,9 +28,6 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        if (!dbConnected) {
-            dbErrorDialog.open()
-        }
         refreshClients()
     }
 
