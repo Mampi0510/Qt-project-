@@ -77,7 +77,7 @@ bool DatabaseManager::addClient(const QString &nom, const QString &prenom, const
 
 bool DatabaseManager::updateClient(int id, const QString &nom, const QString &prenom, const QString &telephone) {
     QSqlQuery query;
-    query.prepare("UPDATE clients SET nom=?, prenom=?, telephone=? WHERE id=?");
+    query.prepare("UPDATE clients SET nom=?, prenom=?, telephone=? WHERE id_client=?");
     query.addBindValue(nom);
     query.addBindValue(prenom);
     query.addBindValue(telephone);
@@ -94,7 +94,7 @@ bool DatabaseManager::updateClient(int id, const QString &nom, const QString &pr
 
 bool DatabaseManager::deleteClient(int id) {
     QSqlQuery query;
-    query.prepare("DELETE FROM clients WHERE id=?");
+    query.prepare("DELETE FROM clients WHERE id_client=?");
     query.addBindValue(id);
 
     if (!query.exec()) {

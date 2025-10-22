@@ -60,20 +60,31 @@ Item {
                 return;
             }
 
-            let ok = dbManager.addClient(nomField.text, prenomField.text, telephoneField.text);
-            if (ok) {
-                console.log("✅ Client ajouté !");
-                // 🔄 Recharge directement le modèle global
-                let data = dbManager.getClients();
-                clientsModel.clear();
-                for (let i = 0; i < data.length; i++)
-                    clientsModel.append(data[i]);
+            if (editMode) {
+                // ✅ Mode modification
+                let clientId = clientsModel.get(editIndex).id_client
+                let ok = dbManager.updateClient(clientId, nomField.text, prenomField.text, telephoneField.text)
+                if (ok)
+                    console.log("✅ Client modifié !");
             } else {
-                console.log("❌ Erreur ajout BD !");
+                // ✅ Mode ajout
+                let ok = dbManager.addClient(nomField.text, prenomField.text, telephoneField.text)
+                if (ok)
+                    console.log("✅ Client ajouté !");
             }
 
-            nomField.text = prenomField.text = telephoneField.text = "";
+            // Recharge le modèle à jour
+            let data = dbManager.getClients()
+            clientsModel.clear()
+            for (let i = 0; i < data.length; ++i)
+                clientsModel.append(data[i])
+
+            // Réinitialisation
+            editMode = false
+            editIndex = -1
+            nomField.text = prenomField.text = telephoneField.text = ""
         }
+
 
 
         onRejected: {
@@ -270,9 +281,14 @@ Item {
                                         }
 
                                         onClicked: {
-                                            // Exemple de modif directe
-                                            dbManager.updateClient(id_client, nom + " (modifié)", prenom, telephone)
+                                            clientDialog.editMode = true
+                                            clientDialog.editIndex = index
+                                            nomField.text = nom
+                                            prenomField.text = prenom
+                                            telephoneField.text = telephone
+                                            clientDialog.open()
                                         }
+
 
                                     }
 
