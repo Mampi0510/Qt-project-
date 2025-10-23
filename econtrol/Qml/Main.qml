@@ -11,7 +11,7 @@ ApplicationWindow {
     title: "Gestion de restaurant - Econtrol"
 
     Dialog {
-        id: dbErrorDialog
+        id: gdErrorDialog
         title: "Erreur de connexion"
         modal: true
         standardButtons: Dialog.Ok
@@ -38,13 +38,13 @@ ApplicationWindow {
 
     function refreshClients() {
         clientsModel.clear()
-        var data = dbManager.getClients()
+        var data = gdManager.getClients()
         for (var i = 0; i < data.length; ++i)
             clientsModel.append(data[i])
     }
 
     Connections {
-        target: dbManager
+        target: gdManager
         function onClientsChanged() {
             refreshClients()
         }
@@ -55,13 +55,13 @@ ApplicationWindow {
 
     function refreshPlats() {
         dishesModel.clear()
-        var data = dbManager.getPlats()
+        var data = gdManager.getPlats()
         for (var i =0; i < data.length; ++i)
             dishesModel.append(data[i])
     }
 
     Connections {
-        target:  dbManager
+        target:  gdManager
         function onPlatsChanged() {
             refreshPlats()
         }
@@ -72,13 +72,13 @@ ApplicationWindow {
 
     function refreshCommandes() {
         ordersModel.clear()
-        var data = dbManager.getCommandes()
+        var data = gdManager.getCommandes()
         for (var i = 0; i< data.length; ++i)
             ordersModel.append(data[i])
     }
 
     Connections {
-        target: dbManager
+        target: gdManager
         function onCommandesChanged() {
             refreshCommandes()
         }

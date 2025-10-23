@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
-#include "headers/DatabaseManager.h"
+#include "headers/GestionData.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,10 +10,10 @@ int main(int argc, char *argv[])
 
     app.setWindowIcon(QIcon(":/icons/resto.png"));
 
-    DatabaseManager dbManager;
+    DatabaseManager gdManager;
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextProperty("dbManager", &dbManager);
+    engine.rootContext()->setContextProperty("gdManager", &gdManager);
 
     engine.loadFromModule("econtrol", "Main");
 

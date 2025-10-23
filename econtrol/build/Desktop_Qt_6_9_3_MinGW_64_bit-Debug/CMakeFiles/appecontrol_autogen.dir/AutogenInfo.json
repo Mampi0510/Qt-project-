@@ -1177,12 +1177,6 @@
 			null
 		],
 		[
-			"D:/Kampf/EOY/econtrol/headers/DatabaseManager.h",
-			"MU",
-			"K6S233IZAZ/moc_DatabaseManager.cpp",
-			null
-		],
-		[
 			"D:/Kampf/EOY/econtrol/headers/DetailsCommandes.h",
 			"MU",
 			"K6S233IZAZ/moc_DetailsCommandes.cpp",
@@ -1192,6 +1186,12 @@
 			"D:/Kampf/EOY/econtrol/headers/Facture.h",
 			"MU",
 			"K6S233IZAZ/moc_Facture.cpp",
+			null
+		],
+		[
+			"D:/Kampf/EOY/econtrol/headers/GestionData.h",
+			"MU",
+			"K6S233IZAZ/moc_GestionData.cpp",
 			null
 		],
 		[
@@ -1322,9 +1322,9 @@
 		[ "D:/Kampf/EOY/econtrol/main.cpp", "MU", null ],
 		[ "D:/Kampf/EOY/econtrol/sources/Client.cpp", "MU", null ],
 		[ "D:/Kampf/EOY/econtrol/sources/Commande.cpp", "MU", null ],
-		[ "D:/Kampf/EOY/econtrol/sources/DatabaseManager.cpp", "MU", null ],
 		[ "D:/Kampf/EOY/econtrol/sources/DetailsCommandes.cpp", "MU", null ],
 		[ "D:/Kampf/EOY/econtrol/sources/Facture.cpp", "MU", null ],
+		[ "D:/Kampf/EOY/econtrol/sources/GestionData.cpp", "MU", null ],
 		[ "D:/Kampf/EOY/econtrol/sources/Plat.cpp", "MU", null ],
 		[ "D:/Kampf/EOY/econtrol/sources/Stock.cpp", "MU", null ]
 	],

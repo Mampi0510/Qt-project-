@@ -9,9 +9,9 @@ Item {
     property var clientsModel
 
     Connections {
-        target: dbManager
+        target: gdManager
         function onClientsChanged() {
-            let data = dbManager.getClients();
+            let data = gdManager.getClients();
             clientsModel.clear();
             for (let i = 0; i < data.length; i++)
                 clientsModel.append(data[i]);
@@ -62,17 +62,17 @@ Item {
 
             if (editMode) {
                 let clientId = clientsModel.get(editIndex).id_client
-                let ok = dbManager.updateClient(clientId, nomField.text, prenomField.text, telephoneField.text)
+                let ok = gdManager.updateClient(clientId, nomField.text, prenomField.text, telephoneField.text)
                 if (ok)
                     console.log("Client modifié !");
             } else {
-                let ok = dbManager.addClient(nomField.text, prenomField.text, telephoneField.text)
+                let ok = gdManager.addClient(nomField.text, prenomField.text, telephoneField.text)
                 if (ok)
                     console.log("Client ajouté !");
             }
 
             // Recharge le modèle à jour
-            let data = dbManager.getClients()
+            let data = gdManager.getClients()
             clientsModel.clear()
             for (let i = 0; i < data.length; ++i)
                 clientsModel.append(data[i])
@@ -309,7 +309,7 @@ Item {
                                         }
 
                                         onClicked: {
-                                            dbManager.deleteClient(id_client)
+                                            gdManager.deleteClient(id_client)
                                         }
 
                                     }

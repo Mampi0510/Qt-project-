@@ -223,10 +223,10 @@ Item {
                 var now = new Date()
                 var dateStr = Qt.formatDateTime(now, "dd-MM-yyyy hh:mm:ss")
 
-                var ok = dbManager.addCommande(dateStr, total,client.id_client)
+                var ok = gdManager.addCommande(dateStr, total,client.id_client)
                 if (ok) {
                     console.log("commande enregistree. Client :",client.nom)
-                    var data = dbManager.getCommandes()
+                    var data = gdManager.getCommandes()
                     ordersModel.clear()
                     for (var j = 0; j < data.length; j++)
                     ordersModel.append(data[j])

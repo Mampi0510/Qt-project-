@@ -1082,9 +1082,9 @@ appecontrol_autogen/timestamp: \
 	D:/Kampf/EOY/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	D:/Kampf/EOY/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/moc_predefs.h \
 	D:/Kampf/EOY/econtrol/headers/Commande.h \
-	D:/Kampf/EOY/econtrol/headers/DatabaseManager.h \
 	D:/Kampf/EOY/econtrol/headers/DetailsCommandes.h \
 	D:/Kampf/EOY/econtrol/headers/Facture.h \
+	D:/Kampf/EOY/econtrol/headers/GestionData.h \
 	D:/Kampf/EOY/econtrol/headers/Plat.h \
 	D:/Kampf/EOY/econtrol/headers/Stock.h \
 	D:/Kampf/EOY/econtrol/headers/client.h \
@@ -1092,9 +1092,9 @@ appecontrol_autogen/timestamp: \
 	D:/Kampf/EOY/econtrol/resources.qrc \
 	D:/Kampf/EOY/econtrol/sources/Client.cpp \
 	D:/Kampf/EOY/econtrol/sources/Commande.cpp \
-	D:/Kampf/EOY/econtrol/sources/DatabaseManager.cpp \
 	D:/Kampf/EOY/econtrol/sources/DetailsCommandes.cpp \
 	D:/Kampf/EOY/econtrol/sources/Facture.cpp \
+	D:/Kampf/EOY/econtrol/sources/GestionData.cpp \
 	D:/Kampf/EOY/econtrol/sources/Plat.cpp \
 	D:/Kampf/EOY/econtrol/sources/Stock.cpp \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

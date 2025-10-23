@@ -9,9 +9,9 @@ Item {
     property var dishesModel
 
     Connections {
-        target: dbManager
+        target: gdManager
         function onPlatsChanged() {
-            let data = dbManager.getPlats();
+            let data = gdManager.getPlats();
             dishesModel.clear();
             for (let i = 0; i < data.length; i++)
                 dishesModel.append(data[i]);
@@ -87,20 +87,20 @@ Item {
 
             if (editMode) {
                 let platId = dishesModel.get(editIndex).id_plat;
-                let ok = dbManager.updatePlat(platId, nom, prix, categorie);
+                let ok = gdManager.updatePlat(platId, nom, prix, categorie);
                 if (ok)
                     console.log("Plat modifié !");
                 else
                     console.log("Erreur modification plat !");
             } else {
-                let ok = dbManager.addPlat(nom, prix, categorie);
+                let ok = gdManager.addPlat(nom, prix, categorie);
                 if (ok)
                     console.log("Plat ajouté !");
                 else
                     console.log("Erreur ajout plat !");
             }
 
-            let data = dbManager.getPlats();
+            let data = gdManager.getPlats();
             dishesModel.clear();
             for (let i = 0; i < data.length; ++i)
                 dishesModel.append(data[i]);
@@ -271,7 +271,7 @@ Item {
 
                                     onClicked: {
                                         let platId = dishesModel.get(index).id_plat;
-                                        let ok = dbManager.deletePlat(platId);
+                                        let ok = gdManager.deletePlat(platId);
                                     }
 
                                 }

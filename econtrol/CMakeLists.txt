@@ -29,7 +29,7 @@ qt_add_qml_module(appecontrol
     sources/Plat.cpp
     sources/Facture.cpp
     sources/Stock.cpp
-    sources/DatabaseManager.cpp
+    sources/GestionData.cpp
 
     HEADERS
     headers/Client.h
@@ -38,7 +38,7 @@ qt_add_qml_module(appecontrol
     headers/Plat.h
     headers/Facture.h
     headers/Stock.h
-    headers/DatabaseManager.h
+    headers/GestionData.h
 
     QML_FILES
         Qml/Main.qml
