@@ -10,6 +10,16 @@ Item {
     property var clientsModel
     property var ordersModel
 
+    function updateTotal() {
+        var total = 0
+        for (var i = 0; i < orderItemsModel.count; i++) {
+            var item = orderItemsModel.get(i)
+            total += item.prix * item.quantite
+        }
+        orderDialog.orderTotal = total
+        console.log("Total MaJ :", total)
+    }
+
     Dialog {
         id: orderDialog
         title: "Nouvelle Commande"
@@ -64,7 +74,7 @@ Item {
                     to: 99
                     value: 1
                     Layout.preferredWidth: 100
-                    onValueModified: updateTotal()
+                    onValueModified: root.updateTotal()
                 }
 
                 Button {
@@ -93,7 +103,7 @@ Item {
                                 prix: dish.prix,
                                 quantite: quantitySpin.value
                             })
-                            updateTotal()
+                            root.updateTotal()
                         }
                     }
                 }
@@ -166,7 +176,7 @@ Item {
 
                             onClicked: {
                                 orderItemsModel.remove(index)
-                                updateTotal()
+                                root.updateTotal()
                             }
                         }
                     }
@@ -200,16 +210,6 @@ Item {
             }
         }
 
-        function updateTotal() {
-            var total = 0
-            for (var i = 0; i < orderItemsModel.count; i++) {
-                var item = orderItemsModel.get(i)
-                total += item.prix * item.quantite
-            }
-            orderTotal = total
-            console.log("Total MaJ :", total)
-        }
-
         onAccepted: {
             if (clientCombo.currentIndex >= 0 && orderItemsModel.count > 0) {
                 var client = clientsModel.get(clientCombo.currentIndex)
@@ -235,13 +235,13 @@ Item {
                 }
 
                 orderItemsModel.clear()
-                orderTotal = 0
+                orderDialog.orderTotal = 0
             }
         }
 
         onRejected: {
             orderItemsModel.clear()
-            orderTotal = 0
+            orderDialog.orderTotal = 0
         }
     }
 
