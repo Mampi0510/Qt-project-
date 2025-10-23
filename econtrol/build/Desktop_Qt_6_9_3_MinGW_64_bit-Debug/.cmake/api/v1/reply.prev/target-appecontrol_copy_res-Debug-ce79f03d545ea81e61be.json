@@ -1,11 +1,12 @@
 {
-	"backtrace" : 4,
+	"backtrace" : 5,
 	"backtraceGraph" : 
 	{
 		"commands" : 
 		[
 			"add_custom_target",
-			"_qt_internal_qml_type_registration",
+			"_qt_internal_qml_copy_files_to_build_dir",
+			"qt6_target_qml_sources",
 			"qt6_add_qml_module",
 			"qt_add_qml_module"
 		],
@@ -20,28 +21,34 @@
 				"file" : 1
 			},
 			{
-				"command" : 3,
+				"command" : 4,
 				"file" : 1,
-				"line" : 20,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 1296,
 				"parent" : 1
 			},
 			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 951,
+				"parent" : 2
+			},
+			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 833,
-				"parent" : 2
+				"line" : 3613,
+				"parent" : 3
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 3950,
-				"parent" : 3
+				"line" : 2957,
+				"parent" : 4
 			}
 		]
 	},
@@ -49,8 +56,8 @@
 	{
 		"name" : "QtInternalTargets"
 	},
-	"id" : "appecontrol_qmltyperegistration::@6890427a1f51a3e7e1df",
-	"name" : "appecontrol_qmltyperegistration",
+	"id" : "appecontrol_copy_res::@6890427a1f51a3e7e1df",
+	"name" : "appecontrol_copy_res",
 	"paths" : 
 	{
 		"build" : ".",
@@ -77,21 +84,21 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 4,
+			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_qmltyperegistration",
+			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_copy_res",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_qmltyperegistration.rule",
+			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_copy_res.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_qmltyperegistrations.cpp.rule",
+			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/appecontrol_res.txt.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

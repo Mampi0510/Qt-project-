@@ -161,7 +161,7 @@ bool DatabaseManager::updateCommande(int id, const QDateTime &date_commande, dou
     query.addBindValue(id_client);
     query.addBindValue(id);
 
-    qDebug() << "Commande modifiée (ID:" << id << ")";
+    qDebug() << " Une commande modifiée (ID:" << id << ")";
     emit commandesChanged();
     return true;
 }

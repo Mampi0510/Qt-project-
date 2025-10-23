@@ -23,7 +23,7 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 20,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
@@ -41,7 +41,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 3613,
+				"line" : 3607,
 				"parent" : 3
 			},
 			{
@@ -56,8 +56,8 @@
 	{
 		"name" : "QtInternalTargets"
 	},
-	"id" : "appecontrol_copy_res::@6890427a1f51a3e7e1df",
-	"name" : "appecontrol_copy_res",
+	"id" : "appecontrol_copy_qml::@6890427a1f51a3e7e1df",
+	"name" : "appecontrol_copy_qml",
 	"paths" : 
 	{
 		"build" : ".",
@@ -86,19 +86,19 @@
 		{
 			"backtrace" : 5,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_copy_res",
+			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_copy_qml",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_copy_res.rule",
+			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_copy_qml.rule",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/appecontrol_res.txt.rule",
+			"path" : "build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/appecontrol_qml.txt.rule",
 			"sourceGroupIndex" : 1
 		}
 	],
