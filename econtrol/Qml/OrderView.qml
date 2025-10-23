@@ -221,7 +221,7 @@ Item {
 
                 var newId = ordersModel.count + 1
                 var now = new Date()
-                var dateStr = Qt.formatDateTime(now, "dd-MM-yyyy hh:mm:ss")
+                var dateStr = Qt.formatDateTime(now, "yyyy-MM-ddThh:mm:ss")
 
                 var ok = gdManager.addCommande(dateStr, total,client.id_client)
                 if (ok) {
@@ -397,11 +397,12 @@ Item {
                                 }
 
                                 Text {
-                                    text: date_commande
+                                    text: Qt.formatDateTime(new Date(date_commande), "dd-MM-yyyy hh:mm:ss")
                                     font.pixelSize: 14
                                     color: "#717182"
                                     Layout.preferredWidth: 150
                                 }
+
 
                                 Text {
                                     text: total.toFixed(2) + " €"

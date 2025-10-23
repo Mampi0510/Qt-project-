@@ -1,5 +1,6 @@
 #include "headers/GestionData.h"
 
+
 DatabaseManager::DatabaseManager(QObject *parent)
     : QObject(parent)
 {
@@ -118,15 +119,18 @@ QVariantList DatabaseManager::getCommandes(){
     while (query.next()) {
         QVariantMap commande;
         commande["id_commande"] = query.value("id_commande").toInt();
-        commande["date_commande"] = query.value("date_commande").toString();
+
+        QDateTime dt = query.value("date_commande").toDateTime();
+        dt = dt.toLocalTime();
+        commande["date_commande"] = dt.toString(Qt::ISODate);
+
         commande["total"] = query.value("total").toDouble();
         commande["id_client"] = query.value("id_client").toInt();
         commande["nom_client"] = query.value("nom").toString();
         commande["prenom_client"] = query.value("prenom").toString();
         list.append(commande);
-
-        qDebug() << "Commande lu:" << commande;
     }
+
     qDebug() << "liste commandes :" << list.size();
     return list;
 }
@@ -134,11 +138,14 @@ QVariantList DatabaseManager::getCommandes(){
 bool DatabaseManager::addCommande(const QVariant &date_commande, const double total, int id_client) {
     QSqlQuery query;
     query.prepare("INSERT INTO commandes (date_commande, total, id_client) VALUES (?, ?, ?)");
-    QDateTime date =  QDateTime::fromString(date_commande.toString(),"yyyy-MM-dd hh:mm:ss");
+    QDateTime date =  QDateTime::fromString(date_commande.toString(),Qt::ISODate);
     if (!date.isValid()) {
         date = QDateTime::currentDateTime();
         qWarning() << "Date invalide reçue, utilisation de la date actuelle.";
     }
+    date.setTimeSpec(Qt::LocalTime);
+
+
     query.addBindValue(date);
     query.addBindValue(total);
     query.addBindValue(id_client);
