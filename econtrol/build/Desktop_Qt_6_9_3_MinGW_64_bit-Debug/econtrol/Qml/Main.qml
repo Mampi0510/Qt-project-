@@ -8,7 +8,7 @@ ApplicationWindow {
     visible: true
     width: 1280
     height: 800
-    title: "RestaurantPro"
+    title: "Gestion de restaurant - Econtrol"
 
     Dialog {
         id: dbErrorDialog
@@ -30,6 +30,7 @@ ApplicationWindow {
     Component.onCompleted: {
         refreshClients()
         refreshPlats()
+        refreshCommandes()
     }
 
     // Données pour les clients
@@ -67,41 +68,19 @@ ApplicationWindow {
     }
 
     // Données pour les commandes
-    ListModel {
-        id: ordersModel
-        Component.onCompleted: {
-            ordersModel.append({
-                id_commande: 1,
-                id_client: 1,
-                nom_client: "Délicia",
-                prenom_client: "Alexane",
-                date_commande: "2025-10-09 10:30:00",
-                total: 31.48
-            })
-            ordersModel.append({
-                id_commande: 2,
-                id_client: 2,
-                nom_client: "Fy",
-                prenom_client: "Tahiantsoa",
-                date_commande: "2025-10-09 12:15:00",
-                total: 22.48
-            })
-            ordersModel.append({
-                id_commande: 3,
-                id_client: 3,
-                nom_client: "Tsiky",
-                prenom_client: "Ny Avo",
-                date_commande: "2025-10-09 12:15:00",
-                total: 22.48
-            })
-            ordersModel.append({
-                id_commande: 4,
-                id_client: 4,
-                nom_client: "Mahay",
-                prenom_client: "Mampiadana",
-                date_commande: "2025-10-09 12:15:00",
-                total: 22.48
-            })
+    ListModel { id: ordersModel }
+
+    function refreshCommandes() {
+        ordersModel.clear()
+        var data = dbManager.getCommandes()
+        for (var i = 0; i< data.length; ++i)
+            ordersModel.append(data[i])
+    }
+
+    Connections {
+        target: dbManager
+        function onCommandesChanged() {
+            refreshCommandes()
         }
     }
 
@@ -159,12 +138,12 @@ ApplicationWindow {
                         }
                         ListElement {
                             menuId: "dishes"
-                            label: "Gestion des plats"
+                            label: "Plats"
                             icon: "🍽️"
                         }
                         ListElement {
                             menuId: "clients"
-                            label: "Gestion des clients"
+                            label: "Clients"
                             icon: "👥"
                         }
                         ListElement {

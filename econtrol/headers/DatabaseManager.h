@@ -21,7 +21,7 @@ public:
 
     // proprietes commandes
     Q_INVOKABLE QVariantList getCommandes();
-    Q_INVOKABLE bool addCommande(const QDateTime &date_commande,const double total, int id_client);
+    Q_INVOKABLE bool addCommande(const QVariant &date_commande,const double total, int id_client);
     Q_INVOKABLE bool updateCommande(int id, const QDateTime &date_commande,const double total, int id_client);
     Q_INVOKABLE bool deleteCommande(int id);
 

@@ -20,6 +20,8 @@ Item {
         width: 600
         height: 500
 
+        property real orderTotal: 0
+
         ColumnLayout {
             anchors.fill: parent
             spacing: 16
@@ -62,6 +64,7 @@ Item {
                     to: 99
                     value: 1
                     Layout.preferredWidth: 100
+                    onValueModified: updateTotal()
                 }
 
                 Button {
@@ -189,7 +192,7 @@ Item {
 
                 Text {
                     id: totalText
-                    text: "0.00 €"
+                    text: orderDialog.orderTotal.toFixed(2) + " €"
                     font.pixelSize: 24
                     font.weight: Font.Medium
                     color: "#030213"
@@ -203,7 +206,8 @@ Item {
                 var item = orderItemsModel.get(i)
                 total += item.prix * item.quantite
             }
-            totalText.text = total.toFixed(2) + " €"
+            orderTotal = total
+            console.log("Total MaJ :", total)
         }
 
         onAccepted: {
@@ -217,13 +221,13 @@ Item {
 
                 var newId = ordersModel.count + 1
                 var now = new Date()
-                var dateStr = Qt.formatDateTime(now, "yyyy-MM-dd hh:mm:ss")
+                var dateStr = Qt.formatDateTime(now, "dd-MM-yyyy hh:mm:ss")
 
-                var ok = dbManager.addCommande(now, total,client.id_client)
+                var ok = dbManager.addCommande(dateStr, total,client.id_client)
                 if (ok) {
-                    console.log("commande enregistree dans la BD",client.nom)
+                    console.log("commande enregistree. Client :",client.nom)
                     var data = dbManager.getCommandes()
-                    odersModel.clear()
+                    ordersModel.clear()
                     for (var j = 0; j < data.length; j++)
                     ordersModel.append(data[j])
                 } else {
@@ -231,13 +235,13 @@ Item {
                 }
 
                 orderItemsModel.clear()
-                totalText.text = "0.00 €"
+                orderTotal = 0
             }
         }
 
         onRejected: {
             orderItemsModel.clear()
-            totalText.text = "0.00 €"
+            orderTotal = 0
         }
     }
 

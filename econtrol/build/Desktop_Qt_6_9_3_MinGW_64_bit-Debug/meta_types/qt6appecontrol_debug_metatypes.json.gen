@@ -212,7 +212,7 @@
                         "arguments": [
                             {
                                 "name": "date_commande",
-                                "type": "QDateTime"
+                                "type": "QVariant"
                             },
                             {
                                 "name": "total",

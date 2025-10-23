@@ -104,14 +104,25 @@ bool DatabaseManager::deleteClient(int id) {
 QVariantList DatabaseManager::getCommandes(){
     QVariantList list;
 
-    QSqlQuery query("SELECT id_commande, date_commande, total, id_client FROM commandes");
+    QSqlQuery query(R"(
+        SELECT c.id_commande, c.date_commande, c.total, cl.id_client, cl.nom, cl.prenom FROM commandes c
+        JOIN clients cl ON c.id_client = cl.id_client
+        ORDER BY c.id_commande DESC
+    )");
+
+    if (!query.exec()) {
+        qWarning() << "Erreur SELECT commandes:" << query.lastError().text();
+        return list;
+    }
 
     while (query.next()) {
         QVariantMap commande;
-        commande["id_commande"] = query.value(0).toInt();
-        commande["date_commande"] = query.value(1).toDateTime();
-        commande["total"] = query.value(2).toDouble();
-        commande["id_client"] = query.value(3).toInt();
+        commande["id_commande"] = query.value("id_commande").toInt();
+        commande["date_commande"] = query.value("date_commande").toString();
+        commande["total"] = query.value("total").toDouble();
+        commande["id_client"] = query.value("id_client").toInt();
+        commande["nom_client"] = query.value("nom").toString();
+        commande["prenom_client"] = query.value("prenom").toString();
         list.append(commande);
 
         qDebug() << "Commande lu:" << commande;
@@ -120,10 +131,15 @@ QVariantList DatabaseManager::getCommandes(){
     return list;
 }
 
-bool DatabaseManager::addCommande(const QDateTime &date_commande, const double total, int id_client) {
+bool DatabaseManager::addCommande(const QVariant &date_commande, const double total, int id_client) {
     QSqlQuery query;
     query.prepare("INSERT INTO commandes (date_commande, total, id_client) VALUES (?, ?, ?)");
-    query.addBindValue(date_commande);
+    QDateTime date =  QDateTime::fromString(date_commande.toString(),"yyyy-MM-dd hh:mm:ss");
+    if (!date.isValid()) {
+        date = QDateTime::currentDateTime();
+        qWarning() << "Date invalide reçue, utilisation de la date actuelle.";
+    }
+    query.addBindValue(date);
     query.addBindValue(total);
     query.addBindValue(id_client);
 

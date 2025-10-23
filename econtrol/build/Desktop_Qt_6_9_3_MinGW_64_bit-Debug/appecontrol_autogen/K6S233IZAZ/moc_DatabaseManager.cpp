@@ -54,6 +54,7 @@ template <> constexpr inline auto DatabaseManager::qt_create_metaobjectdata<qt_m
         "deleteClient",
         "getCommandes",
         "addCommande",
+        "QVariant",
         "date_commande",
         "total",
         "id_client",
@@ -92,29 +93,29 @@ template <> constexpr inline auto DatabaseManager::qt_create_metaobjectdata<qt_m
         // Method 'getCommandes'
         QtMocHelpers::MethodData<QVariantList()>(14, 2, QMC::AccessPublic, 0x80000000 | 6),
         // Method 'addCommande'
-        QtMocHelpers::MethodData<bool(const QDateTime &, const double, int)>(15, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QDateTime, 16 }, { QMetaType::Double, 17 }, { QMetaType::Int, 18 },
+        QtMocHelpers::MethodData<bool(const QVariant &, const double, int)>(15, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { 0x80000000 | 16, 17 }, { QMetaType::Double, 18 }, { QMetaType::Int, 19 },
         }}),
         // Method 'updateCommande'
-        QtMocHelpers::MethodData<bool(int, const QDateTime &, const double, int)>(19, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 12 }, { QMetaType::QDateTime, 16 }, { QMetaType::Double, 17 }, { QMetaType::Int, 18 },
+        QtMocHelpers::MethodData<bool(int, const QDateTime &, const double, int)>(20, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 }, { QMetaType::QDateTime, 17 }, { QMetaType::Double, 18 }, { QMetaType::Int, 19 },
         }}),
         // Method 'deleteCommande'
-        QtMocHelpers::MethodData<bool(int)>(20, 2, QMC::AccessPublic, QMetaType::Bool, {{
+        QtMocHelpers::MethodData<bool(int)>(21, 2, QMC::AccessPublic, QMetaType::Bool, {{
             { QMetaType::Int, 12 },
         }}),
         // Method 'getPlats'
-        QtMocHelpers::MethodData<QVariantList()>(21, 2, QMC::AccessPublic, 0x80000000 | 6),
+        QtMocHelpers::MethodData<QVariantList()>(22, 2, QMC::AccessPublic, 0x80000000 | 6),
         // Method 'addPlat'
-        QtMocHelpers::MethodData<bool(const QString &, const float, const QString &)>(22, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 23 }, { QMetaType::Float, 24 }, { QMetaType::QString, 25 },
+        QtMocHelpers::MethodData<bool(const QString &, const float, const QString &)>(23, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 24 }, { QMetaType::Float, 25 }, { QMetaType::QString, 26 },
         }}),
         // Method 'updatePlat'
-        QtMocHelpers::MethodData<bool(int, const QString &, const float, const QString &)>(26, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 12 }, { QMetaType::QString, 23 }, { QMetaType::Float, 24 }, { QMetaType::QString, 25 },
+        QtMocHelpers::MethodData<bool(int, const QString &, const float, const QString &)>(27, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 }, { QMetaType::QString, 24 }, { QMetaType::Float, 25 }, { QMetaType::QString, 26 },
         }}),
         // Method 'deletePlat'
-        QtMocHelpers::MethodData<bool(int)>(27, 2, QMC::AccessPublic, QMetaType::Bool, {{
+        QtMocHelpers::MethodData<bool(int)>(28, 2, QMC::AccessPublic, QMetaType::Bool, {{
             { QMetaType::Int, 12 },
         }}),
     };
@@ -153,7 +154,7 @@ void DatabaseManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 7: { QVariantList _r = _t->getCommandes();
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 8: { bool _r = _t->addCommande((*reinterpret_cast< std::add_pointer_t<QDateTime>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3])));
+        case 8: { bool _r = _t->addCommande((*reinterpret_cast< std::add_pointer_t<QVariant>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 9: { bool _r = _t->updateCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QDateTime>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[4])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;

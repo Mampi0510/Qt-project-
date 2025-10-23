@@ -53,7 +53,7 @@ Item {
             ComboBox {
                 id: categorieCombo
                 Layout.fillWidth: true
-                model: ["Pizza", "Burger", "Salade", "Pâtes", "Dessert", "Boisson", "Entrée"]
+                model: ["Pizza", "Burger", "Salade", "Pâtes", "Dessert", "Boisson", "Poisson"]
                 currentIndex: 0
             }
         }
