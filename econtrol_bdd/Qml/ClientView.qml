@@ -1,10 +1,262 @@
 import QtQuick 2.15
+
+
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs
+import Client 1.0
+
 
 Item {
     id: root
+
+    Client {
+        id: clientController
+    }
+
+    MessageDialog {
+        id: deleteDialog
+        title: "Confirmation"
+        text: "Voulez-vous vraiment supprimer ce client ?"
+        informativeText: "Cette action est irréversible."
+        buttons: MessageDialog.Ok | MessageDialog.Cancel
+
+        property int clientIndex: -1
+
+        onAccepted: {
+            if (clientIndex >= 0) {
+                var id = clientsModel.get(clientIndex).id_client
+                var ok = clientController.supprimerClient(id)
+                if (ok) {
+                    refreshClients()
+                    console.log(" Client supprimé avec succès")
+                } else {
+                    console.log(" Échec de la suppression")
+                }
+                clientIndex = -1
+            }
+        }
+
+        onRejected: clientIndex = -1
+    }
+
+
+    property var clientsModel: ListModel {}
+
+    Component.onCompleted: {
+        refreshClients()
+    }
+
+    function refreshClients() {
+        var data = clientController.getAllClients()
+        clientsModel.clear()
+        for (var i = 0; i < data.length; ++i) {
+            clientsModel.append(data[i])
+        }
+    }
+
+    Dialog {
+        id: clientDialog
+        title: editMode ? "Modifier le client" : "Ajouter un client"
+        standardButtons: Dialog.Save | Dialog.Cancel
+
+        property bool editMode: false
+        property int editIndex: -1
+        property int editId: -1
+
+        modal: true
+        anchors.centerIn: parent
+        width: 400
+
+        ColumnLayout {
+            spacing: 16
+            width: parent.width
+
+            TextField { id: nomField; Layout.fillWidth: true; placeholderText: "Nom" }
+            TextField { id: prenomField; Layout.fillWidth: true; placeholderText: "Prénom" }
+            TextField { id: telephoneField; Layout.fillWidth: true; placeholderText: "Téléphone" }
+        }
+
+        onAccepted: {
+            if (nomField.text && prenomField.text && telephoneField.text) {
+                var ok
+                if (editMode) {
+                    ok = clientController.modifierClient(editId, nomField.text, prenomField.text, telephoneField.text)
+                } else {
+                    ok = clientController.ajouterClient(nomField.text, prenomField.text, telephoneField.text)
+                }
+
+                if (ok) {
+                    refreshClients()
+                    resetFields()
+                } else {
+                    console.log("❌ Échec de l’opération")
+                }
+            }
+        }
+
+        onRejected: resetFields()
+
+        function resetFields() {
+            nomField.text = ""
+            prenomField.text = ""
+            telephoneField.text = ""
+            editMode = false
+            editIndex = -1
+            editId = -1
+        }
+
+        function openForEdit(index) {
+            editMode = true
+            editIndex = index
+            var item = clientsModel.get(index)
+            editId = item.id_client
+            nomField.text = item.nom
+            prenomField.text = item.prenom
+            telephoneField.text = item.telephone
+            open()
+        }
+    }
+
+    ScrollView {
+        anchors.fill: parent
+        contentWidth: availableWidth
+        clip: true
+
+        ColumnLayout {
+            width: parent.width
+            spacing: 24
+
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.topMargin: 24
+                Layout.leftMargin: 24
+                Layout.rightMargin: 24
+
+                Text {
+                    text: "Gestion des Clients"
+                    font.pixelSize: 32
+                    font.weight: Font.Medium
+                    color: "#030213"
+                    Layout.fillWidth: true
+                }
+
+                Button {
+                    text: "+ Ajouter un client"
+                    onClicked: {
+                        clientDialog.resetFields()
+                        clientDialog.open()
+                    }
+                }
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 500
+                Layout.leftMargin: 24
+                Layout.rightMargin: 24
+                Layout.bottomMargin: 24
+                color: "#ffffff"
+                radius: 10
+                border.color: "#e5e5e5"
+                border.width: 1
+
+                ColumnLayout {
+                    anchors.fill: parent
+                    anchors.margins: 20
+                    spacing: 16
+
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 40
+                        color: "#f9f9fa"
+                        radius: 6
+
+                        RowLayout {
+                            anchors.fill: parent
+                            anchors.leftMargin: 16
+                            anchors.rightMargin: 16
+                            spacing: 16
+
+                            Text { text: "ID"; Layout.preferredWidth: 60 }
+                            Text { text: "Nom"; Layout.fillWidth: true }
+                            Text { text: "Prénom"; Layout.fillWidth: true }
+                            Text { text: "Téléphone"; Layout.preferredWidth: 120 }
+                            Text { text: "Actions"; Layout.preferredWidth: 180 }
+                        }
+                    }
+
+                    ListView {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        model: clientsModel
+                        spacing: 8
+                        clip: true
+
+                        delegate: Rectangle {
+                            width: ListView.view.width
+                            height: 60
+                            color: "transparent"
+
+                            RowLayout {
+                                anchors.fill: parent
+                                anchors.leftMargin: 16
+                                anchors.rightMargin: 16
+                                spacing: 16
+
+                                Text { text: id_client; Layout.preferredWidth: 60 }
+                                Text { text: nom; Layout.fillWidth: true }
+                                Text { text: prenom; Layout.fillWidth: true }
+                                Text { text: telephone; Layout.preferredWidth: 120 }
+
+                                RowLayout {
+                                    Layout.preferredWidth: 180
+                                    spacing: 8
+
+                                    Button {
+                                        text: "Modifier"
+                                        onClicked: clientDialog.openForEdit(index)
+                                    }
+
+                                    Button {
+                                        text: "Supprimer"
+                                        onClicked: {
+                                            deleteDialog.clientIndex = index
+                                            deleteDialog.open()
+                                        }
+                                    }
+
+                                }
+                            }
+
+                            Rectangle {
+                                anchors.bottom: parent.bottom
+                                width: parent.width
+                                height: 1
+                                color: "#e5e5e5"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Dialogs
+import Client 1.0
+
+Item {
+    id: root
+
+    Client {
+        id: clientController
+    }
 
     property var clientsModel
 
@@ -48,24 +300,20 @@ Item {
         // fonction a remplacer en cpp
         onAccepted: {
             if (nomField.text && prenomField.text && telephoneField.text) {
-                if (editMode) {
-                    clientsModel.set(editIndex, {
-                        nom: nomField.text,
-                        prenom: prenomField.text,
-                        telephone: telephoneField.text
-                    })
+                // Appel à la fonction C++ d’insertion
+                var ok = clientController.ajouterClient(nomField.text, prenomField.text, telephoneField.text)
+
+                if (ok) {
+                    console.log("✅ Client ajouté avec succès")
+                    nomField.text = ""
+                    prenomField.text = ""
+                    telephoneField.text = ""
                 } else {
-                    var newId = clientsModel.count + 1
-                    clientsModel.append({
-                        id_client: newId,
-                        nom: nomField.text,
-                        prenom: prenomField.text,
-                        telephone: telephoneField.text
-                    })
+                    console.log("❌ Échec de l’ajout du client")
                 }
-                resetFields()
             }
         }
+
 
 
         //Fonction a remplacer en cpp

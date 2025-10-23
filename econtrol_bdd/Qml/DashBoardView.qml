@@ -1,10 +1,12 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-
+import QtQuick.Dialogs
+import Plat 1.0
 Item {
     id: root
-
+    Plat {
+}
     property var dishesModel
     property var clientsModel
     property var ordersModel

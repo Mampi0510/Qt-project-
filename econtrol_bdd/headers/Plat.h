@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <connection.h>
 
 
 class Plat: public QObject{
@@ -27,9 +28,9 @@ class Plat: public QObject{
         double getPrix() const;
         QString getCategorie() const;
 
-        Q_INVOKABLE void ajouterPlat();
-        Q_INVOKABLE void modifierPlat();
-        Q_INVOKABLE void supprimerPlat();
+         void ajouterPlat();
+         void modifierPlat();
+         void supprimerPlat();
 
     signals:
         void idPlatChanged();

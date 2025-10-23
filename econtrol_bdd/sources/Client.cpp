@@ -1,56 +1,64 @@
 #include "headers/Client.h"
 #include <QString>
 
-
-Client::Client(QObject *parent):
-    QObject(parent),
+Client::Client(QObject *parent)
+    : QObject(parent),
     idClient(0),
     nom(""),
     prenom(""),
-    telephone(""){
+    telephone("")
+{
 }
-Client::~Client(){}
 
-    //setters
-    void Client::setIdClient(int &Id){
-        if(idClient != Id)
-            idClient = Id;
+Client::~Client() {} // ✅ Définition du destructeur
+
+// --- SETTERS ---
+void Client::setIdClient(int id) {
+    if (idClient != id) {
+        idClient = id;
         emit idClientChanged();
     }
-    void Client::setNom(QString &Nom){
-        if(nom != Nom){
-            nom = Nom;
-            emit nomChanged();
-        }
-    }
-    void Client::setPrenom(QString &Prenom){
-        if(prenom != Prenom){
-            prenom = Prenom;
-            emit prenomChanged();
-        }
-    }
-    void Client::setTelephone(QString &Telephone){
-        if(telephone != Telephone){
-            telephone = Telephone;
-            emit telephoneChanged();
-        }
-    }
+}
 
-    //getters
-    int Client::getIdClient() const{
-        return idClient;
+void Client::setNom(const QString &Nom) {
+    if (nom != Nom) {
+        nom = Nom;
+        emit nomChanged();
     }
-    QString Client::getNom() const{
-        return nom;
-    }
-    QString Client::getPrenom() const{
-        return prenom;
-    }
-    QString Client::getTelephone() const{
-        return telephone;
-    }
+}
 
+void Client::setPrenom(const QString &Prenom) {
+    if (prenom != Prenom) {
+        prenom = Prenom;
+        emit prenomChanged();
+    }
+}
 
-    void Client::ajouterClient(){}
-    void Client::modifierClient(){}
-    void Client::supprimerClient(){}
+void Client::setTelephone(const QString &Telephone) {
+    if (telephone != Telephone) {
+        telephone = Telephone;
+        emit telephoneChanged();
+    }
+}
+
+// --- GETTERS ---
+int Client::getIdClient() const {
+    return idClient;
+}
+
+QString Client::getNom() const {
+    return nom;
+}
+
+QString Client::getPrenom() const {
+    return prenom;
+}
+
+QString Client::getTelephone() const {
+    return telephone;
+}
+
+// --- Méthodes de gestion (à implémenter plus tard) ---
+void Client::ajouterClient() {}
+void Client::modifierClient() {}
+void Client::supprimerClient() {}

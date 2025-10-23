@@ -1,11 +1,10 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
-#include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlQuery>
 
 static bool my_connection(){
-    QSqlDatabase bdd = QSqlDatabase::addDatabase("QMySQL");
+    QSqlDatabase bdd = QSqlDatabase::addDatabase("QMYSQL");
     bdd.setHostName("localhost");
     bdd.setUserName("root");
     bdd.setDatabaseName("econtrol_db");

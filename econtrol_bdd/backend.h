@@ -3,7 +3,8 @@
 
 #include <QObject>
 #include <QString>
-#include "connection.h"
+#include <QVariantList>
+#include <connection.h>
 class Backend : public QObject
 {
     Q_OBJECT
@@ -14,6 +15,9 @@ signals:
 
 public slots:
     void requete(QString name, QString lastname, int age);
+    QVariantList getAllData();
+    bool deleteData(int id);
+    bool updateData(int id, QString nom, QString prenom, int age);
 };
 
 #endif // BACKEND_H

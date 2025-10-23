@@ -15,7 +15,7 @@ ApplicationWindow {
         id: dishesModel
         ListElement {
             id_plat: 1
-            nom_plat: "Pizza Margherita"
+            nom_plat: "Pizza Margheritaaaaaaaau"
             prix: 12.99
             categorie: "Pizza"
         }

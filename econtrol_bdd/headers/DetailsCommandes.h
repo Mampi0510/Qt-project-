@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <connection.h>
 
 
 class DetailsCommandes: public QObject{

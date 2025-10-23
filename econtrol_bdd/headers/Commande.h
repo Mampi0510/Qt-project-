@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QDateTime>
 #include <QString>
-
+#include <connection.h>
 
 class Commande: public QObject{
     Q_OBJECT

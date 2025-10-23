@@ -4,6 +4,7 @@
 #include <QObject>
 #include <qdatetime.h>
 #include <QString>
+#include <connection.h>
 
 
 class Facture: public QObject{
