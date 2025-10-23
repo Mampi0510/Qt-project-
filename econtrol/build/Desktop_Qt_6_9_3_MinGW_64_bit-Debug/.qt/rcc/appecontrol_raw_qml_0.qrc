@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="/qt/qml/econtrol/">
+    <file alias="Qml/Main.qml">D:/Kampf/EOY/econtrol/Qml/Main.qml</file>
+    <file alias="Qml/DashBoardView.qml">D:/Kampf/EOY/econtrol/Qml/DashBoardView.qml</file>
+    <file alias="Qml/ClientView.qml">D:/Kampf/EOY/econtrol/Qml/ClientView.qml</file>
+    <file alias="Qml/DishModelView.qml">D:/Kampf/EOY/econtrol/Qml/DishModelView.qml</file>
+    <file alias="Qml/OrderView.qml">D:/Kampf/EOY/econtrol/Qml/OrderView.qml</file>
+    <file alias="Qml/StatisticsView.qml">D:/Kampf/EOY/econtrol/Qml/StatisticsView.qml</file>
+    <file alias="resources.qrc">D:/Kampf/EOY/econtrol/resources.qrc</file>
+  </qresource>
+</RCC>
+
