@@ -2,57 +2,11 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Dialogs
-import Plat 1.0
 
 Item {
     id: root
-    Plat {
-        id: platController
-    }
 
-    MessageDialog {
-        id: deleteDialog
-        title: "Confirmation"
-        text: "Voulez-vous vraiment supprimer ce plat ?"
-        informativeText: "Cette action est irréversible."
-        buttons: MessageDialog.Ok | MessageDialog.Cancel
-
-        property int platIndex: -1
-
-        onAccepted: {
-            console.log(platIndex)
-            if (platIndex >= 0) {
-
-                var id = platsModel.get(platIndex).id_plat
-                var ok = platController.supprimerPlat(id)
-                if (ok) {
-                    refreshPlats()
-                    console.log("Plat supprimé avec succès")
-                } else {
-                    console.log("Échec de la suppression")
-                }
-                platIndex = -1
-            }
-        }
-
-        onRejected: platIndex = -1
-    }
-
-
-
-    property var dishesModel: ListModel {}
-
-    Component.onCompleted: {
-        refreshPlats()
-    }
-
-    function refreshPlats() {
-        var data = platController.getAllPlats()
-        dishesModel.clear()
-        for (var i = 0; i < data.length; ++i) {
-            dishesModel.append(data[i])
-        }
-    }
+    property var dishesModel
 
     // Dialog for adding/editing dishes
     Dialog {
@@ -97,34 +51,22 @@ Item {
 
         onAccepted: {
             if (nomPlatField.text && prixField.text) {
-                var ok
                 if (editMode) {
-                   /* dishesModel.set(editIndex, {
-                        nom_plat: nomPlatField.text,
-                        prix: parseFloat(prixField.text),
-                        categorie: categorieCombo.currentText
-                    })*/
-
-
+                    dishesModel.set(editIndex, {
+                                        "nom_plat": nomPlatField.text,
+                                        "prix": parseFloat(prixField.text),
+                                        "categorie": categorieCombo.currentText
+                                    })
                 } else {
-                   /* var newId = dishesModel.count + 1
+                    var newId = dishesModel.count + 1
                     dishesModel.append({
-                        id_plat: newId,
-                        nom_plat: nomPlatField.text,
-                        prix: parseFloat(prixField.text),
-                        categorie: categorieCombo.currentText
-                    })*/
-                    ok = platController.ajouterPlat(nomPlatField.text, prixField.text, categorieCombo.currentText)
-
+                                           "id_plat": newId,
+                                           "nom_plat": nomPlatField.text,
+                                           "prix": parseFloat(prixField.text),
+                                           "categorie": categorieCombo.currentText
+                                       })
                 }
-
-                if (ok) {
-                    refreshPlats()
-                    resetFields()
-                } else {
-                    console.log("Échec de l’opération")
-                }
-
+                resetFields()
             }
         }
 
@@ -258,7 +200,9 @@ Item {
                                 color: "#030213"
                             }
 
-                            Item { Layout.fillHeight: true }
+                            Item {
+                                Layout.fillHeight: true
+                            }
 
                             RowLayout {
                                 Layout.fillWidth: true
@@ -303,10 +247,7 @@ Item {
                                         verticalAlignment: Text.AlignVCenter
                                     }
 
-                                    onClicked: {
-                                        deleteDialog.platIndex = index
-                                        deleteDialog.open()
-                                    }
+                                    onClicked: dishesModel.remove(index)
                                 }
                             }
                         }

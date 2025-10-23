@@ -45,5 +45,4 @@ class Plat: public QObject{
         QString categorie;
         
 };
-
 #endif

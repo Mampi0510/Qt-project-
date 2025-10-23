@@ -27,11 +27,6 @@ public:
     void setPrenom(const QString &prenom);
     void setTelephone(const QString &telephone);
 
-    //Méthodes publiques pour plus tard (CRUD)
-    void ajouterClient();
-    void modifierClient();
-    void supprimerClient();
-
 signals:
     void idClientChanged();
     void nomChanged();

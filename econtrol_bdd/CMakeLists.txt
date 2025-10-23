@@ -11,6 +11,7 @@ find_package(Qt6 REQUIRED COMPONENTS Widgets Sql)
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
 qt_standard_project_setup(REQUIRES 6.8)
+qt_add_resources(resources sql/econtrol_db.sql)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)

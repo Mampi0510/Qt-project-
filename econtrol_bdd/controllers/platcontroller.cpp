@@ -41,7 +41,7 @@ QVariantList PlatController::getAllPlats()
     }
     return list;
 }
-
+/*
 bool PlatController::supprimerClient(int id)
 {
     QSqlQuery query;
@@ -53,3 +53,4 @@ bool PlatController::supprimerClient(int id)
     }
     return true;
 }
+*/

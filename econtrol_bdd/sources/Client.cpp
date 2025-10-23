@@ -10,7 +10,7 @@ Client::Client(QObject *parent)
 {
 }
 
-Client::~Client() {} // ✅ Définition du destructeur
+Client::~Client() {}
 
 // --- SETTERS ---
 void Client::setIdClient(int id) {
@@ -57,8 +57,3 @@ QString Client::getPrenom() const {
 QString Client::getTelephone() const {
     return telephone;
 }
-
-// --- Méthodes de gestion (à implémenter plus tard) ---
-void Client::ajouterClient() {}
-void Client::modifierClient() {}
-void Client::supprimerClient() {}
