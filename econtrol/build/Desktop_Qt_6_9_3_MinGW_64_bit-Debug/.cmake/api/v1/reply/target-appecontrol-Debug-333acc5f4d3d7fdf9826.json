@@ -464,6 +464,47 @@
 				"parent" : 69
 			},
 			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 20,
+				"file" : 23,
+				"line" : 1,
+				"parent" : 71
+			},
+			{
+				"command" : 19,
+				"file" : 0,
+				"line" : 877,
+				"parent" : 72
+			},
+			{
+				"command" : 18,
+				"file" : 0,
+				"line" : 799,
+				"parent" : 73
+			},
+			{
+				"command" : 17,
+				"file" : 0,
+				"line" : 799,
+				"parent" : 74
+			},
+			{
+				"command" : 16,
+				"file" : 10,
+				"line" : 4516,
+				"parent" : 75
+			},
+			{
+				"command" : 13,
+				"file" : 10,
+				"line" : 4291,
+				"parent" : 76
+			},
+			{
 				"command" : 14,
 				"file" : 10,
 				"line" : 3613,
@@ -473,47 +514,6 @@
 				"command" : 13,
 				"file" : 10,
 				"line" : 2976,
-				"parent" : 71
-			},
-			{
-				"file" : 1,
-				"line" : -1,
-				"parent" : 0
-			},
-			{
-				"command" : 20,
-				"file" : 23,
-				"line" : 1,
-				"parent" : 73
-			},
-			{
-				"command" : 19,
-				"file" : 0,
-				"line" : 877,
-				"parent" : 74
-			},
-			{
-				"command" : 18,
-				"file" : 0,
-				"line" : 799,
-				"parent" : 75
-			},
-			{
-				"command" : 17,
-				"file" : 0,
-				"line" : 799,
-				"parent" : 76
-			},
-			{
-				"command" : 16,
-				"file" : 10,
-				"line" : 4516,
-				"parent" : 77
-			},
-			{
-				"command" : 13,
-				"file" : 10,
-				"line" : 4291,
 				"parent" : 78
 			},
 			{
@@ -724,7 +724,7 @@
 				"command" : 30,
 				"file" : 0,
 				"line" : 871,
-				"parent" : 74
+				"parent" : 72
 			},
 			{
 				"command" : 23,
@@ -1157,23 +1157,23 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "appecontrol_autogen::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 70,
 			"id" : "appecontrol_copy_qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 77,
+			"id" : "appecontrol_qmlimportscan::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "appecontrol_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 72,
+			"backtrace" : 79,
 			"id" : "appecontrol_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 79,
-			"id" : "appecontrol_qmlimportscan::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "appecontrol_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appecontrol::@6890427a1f51a3e7e1df",

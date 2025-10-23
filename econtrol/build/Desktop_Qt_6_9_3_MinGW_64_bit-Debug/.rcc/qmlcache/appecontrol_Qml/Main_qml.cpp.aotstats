@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 501,
+                        "durationMicroseconds": 514,
                         "errorMessage": "Cannot access value for name gdManager",
                         "functionName": "refreshClients",
                         "line": 39
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 512,
+                        "durationMicroseconds": 399,
                         "errorMessage": "Cannot access value for name gdManager",
                         "functionName": "refreshPlats",
                         "line": 56
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 393,
+                        "durationMicroseconds": 385,
                         "errorMessage": "Cannot access value for name gdManager",
                         "functionName": "refreshCommandes",
                         "line": 73
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 23,
-                        "durationMicroseconds": 254,
+                        "durationMicroseconds": 286,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "wrapMode",
                         "line": 22
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 181,
+                        "durationMicroseconds": 204,
                         "errorMessage": "",
                         "functionName": "onCompleted",
                         "line": 30
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 51,
+                        "durationMicroseconds": 57,
                         "errorMessage": "Cannot access value for name gdManager",
                         "functionName": "target",
                         "line": 47
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 53,
+                        "durationMicroseconds": 58,
                         "errorMessage": "method refreshClients cannot be resolved.",
                         "functionName": "onClientsChanged",
                         "line": 48
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 18,
-                        "durationMicroseconds": 43,
+                        "durationMicroseconds": 60,
                         "errorMessage": "Cannot access value for name gdManager",
                         "functionName": "target",
                         "line": 64
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 44,
+                        "durationMicroseconds": 46,
                         "errorMessage": "method refreshPlats cannot be resolved.",
                         "functionName": "onPlatsChanged",
                         "line": 65
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 17,
-                        "durationMicroseconds": 42,
+                        "durationMicroseconds": 48,
                         "errorMessage": "Cannot access value for name gdManager",
                         "functionName": "target",
                         "line": 81
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 51,
                         "errorMessage": "method refreshCommandes cannot be resolved.",
                         "functionName": "onCommandesChanged",
                         "line": 82
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 88,
+                        "durationMicroseconds": 89,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 90
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 77,
+                        "durationMicroseconds": 78,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 102
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 55,
+                        "durationMicroseconds": 60,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 115
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 38,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 113,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 118
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 28,
-                        "durationMicroseconds": 82,
+                        "durationMicroseconds": 87,
                         "errorMessage": "",
                         "functionName": "model",
                         "line": 127
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "delegate",
                         "line": 128
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 202,
+                        "durationMicroseconds": 244,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 165
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 231,
+                        "durationMicroseconds": 312,
                         "errorMessage": "Cannot access value for name currentView",
                         "functionName": "color",
                         "line": 168
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 55,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 139,
                         "errorMessage": "",
                         "functionName": "horizontalCenter",
                         "line": 167
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 46,
-                        "durationMicroseconds": 93,
+                        "durationMicroseconds": 97,
                         "errorMessage": "",
                         "functionName": "cursorShape",
                         "line": 174
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 269,
+                        "durationMicroseconds": 422,
                         "errorMessage": "Cannot access value for name currentView",
                         "functionName": "onEntered",
                         "line": 176
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 241,
+                        "durationMicroseconds": 316,
                         "errorMessage": "Cannot access value for name currentView",
                         "functionName": "onExited",
                         "line": 181
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 220,
+                        "durationMicroseconds": 208,
                         "errorMessage": "Cannot access value for name menuId",
                         "functionName": "onClicked",
                         "line": 186
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 62,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 172
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 56,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 192
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 213,
+                        "durationMicroseconds": 215,
                         "errorMessage": "Cannot access value for name icon",
                         "functionName": "text",
                         "line": 198
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 234,
+                        "durationMicroseconds": 210,
                         "errorMessage": "Cannot access value for name label",
                         "functionName": "text",
                         "line": 203
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 261,
+                        "durationMicroseconds": 263,
                         "errorMessage": "Cannot access value for name currentView",
                         "functionName": "color",
                         "line": 206
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 174,
+                        "durationMicroseconds": 175,
                         "errorMessage": "Cannot access value for name currentView",
                         "functionName": "currentIndex",
                         "line": 224
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 67,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
                         "functionName": "dishesModel",
                         "line": 235
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 65,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "clientsModel",
                         "line": 236
@@ -294,7 +294,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 61,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "ordersModel",
                         "line": 237
@@ -302,7 +302,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 60,
+                        "durationMicroseconds": 61,
                         "errorMessage": "",
                         "functionName": "dishesModel",
                         "line": 242
@@ -318,7 +318,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 98,
                         "errorMessage": "",
                         "functionName": "dishesModel",
                         "line": 252
@@ -326,7 +326,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 69,
+                        "durationMicroseconds": 59,
                         "errorMessage": "",
                         "functionName": "clientsModel",
                         "line": 253
@@ -334,7 +334,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 66,
+                        "durationMicroseconds": 58,
                         "errorMessage": "",
                         "functionName": "ordersModel",
                         "line": 254
@@ -342,7 +342,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 83,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "dishesModel",
                         "line": 259
