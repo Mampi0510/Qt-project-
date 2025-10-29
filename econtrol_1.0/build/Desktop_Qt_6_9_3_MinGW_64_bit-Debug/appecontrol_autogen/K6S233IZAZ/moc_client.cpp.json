@@ -1,0 +1,108 @@
+{
+    "classes": [
+        {
+            "className": "Client",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "ClientRoles",
+                    "values": [
+                        "IdRole",
+                        "NomRole",
+                        "PrenomRole",
+                        "TelephoneRole"
+                    ]
+                }
+            ],
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 0,
+                    "isConst": true,
+                    "name": "get",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "chargerClients",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prenom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telephone",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "ajouterClient",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prenom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "telephone",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "modifierClient",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "supprimerClient",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "Client",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "client.h",
+    "outputRevision": 69
+}

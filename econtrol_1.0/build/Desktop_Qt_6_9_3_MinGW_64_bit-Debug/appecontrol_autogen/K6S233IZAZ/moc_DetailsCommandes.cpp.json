@@ -1,0 +1,97 @@
+{
+    "classes": [
+        {
+            "className": "DetailsCommande",
+            "lineNumber": 7,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        },
+                        {
+                            "name": "idPlat",
+                            "type": "int"
+                        },
+                        {
+                            "name": "quantite",
+                            "type": "int"
+                        },
+                        {
+                            "name": "prixUnitaire",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 0,
+                    "name": "ajouterDetail",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        },
+                        {
+                            "name": "idPlat",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "supprimerDetail",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "supprimerDetailParCommande",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "name": "get",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "getDetailsByCommande",
+                    "returnType": "QVariantList"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "DetailsCommande",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "DetailsCommandes.h",
+    "outputRevision": 69
+}
