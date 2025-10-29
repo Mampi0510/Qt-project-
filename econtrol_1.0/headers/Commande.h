@@ -36,6 +36,9 @@ private:
 
     QVector<QVariantMap> m_commandes;
     DetailsCommande* m_detailsCommande;
+
+signals:
+    void countChanged();
 };
 
 #endif // COMMANDE_H

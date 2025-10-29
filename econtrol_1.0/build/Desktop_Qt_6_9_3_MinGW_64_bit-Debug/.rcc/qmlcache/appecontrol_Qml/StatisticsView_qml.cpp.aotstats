@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 2432,
+                        "durationMicroseconds": 2512,
                         "errorMessage": "Cannot access value for name commandeModel",
                         "functionName": "calculateTotalRevenue",
                         "line": 184
@@ -14,7 +14,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 4665,
+                        "durationMicroseconds": 7585,
                         "errorMessage": "Cannot access value for name platModel",
                         "functionName": "getPlatStats",
                         "line": 193
@@ -22,7 +22,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 5,
-                        "durationMicroseconds": 3774,
+                        "durationMicroseconds": 2804,
                         "errorMessage": "Cannot access value for name platModel",
                         "functionName": "getCategoryStats",
                         "line": 219
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 200,
+                        "durationMicroseconds": 187,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 7
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 160,
+                        "durationMicroseconds": 162,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 15
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 132,
+                        "durationMicroseconds": 129,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 21
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 102,
+                        "durationMicroseconds": 130,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 36
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 752,
+                        "durationMicroseconds": 2093,
                         "errorMessage": "method calculateTotalRevenue cannot be resolved.",
                         "functionName": "text",
                         "line": 41
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 99,
-                        "durationMicroseconds": 156,
+                        "durationMicroseconds": 368,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 41
@@ -94,7 +94,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 34,
-                        "durationMicroseconds": 561,
+                        "durationMicroseconds": 648,
                         "errorMessage": "Cannot access value for name commandeModel",
                         "functionName": "text",
                         "line": 42
@@ -102,7 +102,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 112,
+                        "durationMicroseconds": 167,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 58
@@ -110,7 +110,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 96,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 198,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 62
@@ -118,7 +118,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 949,
+                        "durationMicroseconds": 1246,
                         "errorMessage": "method getPlatStats cannot be resolved.",
                         "functionName": "model",
                         "line": 70
@@ -126,7 +126,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 185,
+                        "durationMicroseconds": 203,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 73
@@ -134,7 +134,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 598,
+                        "durationMicroseconds": 104,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 79
@@ -142,7 +142,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 794,
+                        "durationMicroseconds": 900,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "color",
                         "line": 88
@@ -150,7 +150,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 47,
-                        "durationMicroseconds": 399,
+                        "durationMicroseconds": 391,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "text",
                         "line": 92
@@ -158,7 +158,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 48,
-                        "durationMicroseconds": 425,
+                        "durationMicroseconds": 2216,
                         "errorMessage": "Cannot access value for name index",
                         "functionName": "color",
                         "line": 95
@@ -166,7 +166,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 59,
-                        "durationMicroseconds": 126,
+                        "durationMicroseconds": 145,
                         "errorMessage": "",
                         "functionName": "centerIn",
                         "line": 91
@@ -174,7 +174,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 54,
-                        "durationMicroseconds": 134,
+                        "durationMicroseconds": 211,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 94
@@ -182,7 +182,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 50,
-                        "durationMicroseconds": 458,
+                        "durationMicroseconds": 853,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 102
@@ -190,7 +190,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 103,
-                        "durationMicroseconds": 177,
+                        "durationMicroseconds": 280,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 102
@@ -198,7 +198,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 50,
-                        "durationMicroseconds": 570,
+                        "durationMicroseconds": 501,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 103
@@ -206,7 +206,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 43,
-                        "durationMicroseconds": 488,
+                        "durationMicroseconds": 492,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 107
@@ -214,7 +214,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 58,
-                        "durationMicroseconds": 142,
+                        "durationMicroseconds": 133,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
                         "line": 112
@@ -222,7 +222,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 50,
-                        "durationMicroseconds": 116,
+                        "durationMicroseconds": 119,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 109
@@ -230,7 +230,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 108,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 132
@@ -238,7 +238,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 97,
-                        "durationMicroseconds": 130,
+                        "durationMicroseconds": 116,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 136
@@ -246,7 +246,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 36,
-                        "durationMicroseconds": 492,
+                        "durationMicroseconds": 386,
                         "errorMessage": "method getCategoryStats cannot be resolved.",
                         "functionName": "model",
                         "line": 146
@@ -254,7 +254,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 51,
-                        "durationMicroseconds": 121,
+                        "durationMicroseconds": 103,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 155
@@ -262,7 +262,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 50,
-                        "durationMicroseconds": 468,
+                        "durationMicroseconds": 476,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 159
@@ -270,7 +270,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 103,
-                        "durationMicroseconds": 123,
+                        "durationMicroseconds": 127,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 159
@@ -278,7 +278,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 50,
-                        "durationMicroseconds": 444,
+                        "durationMicroseconds": 1658,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "text",
                         "line": 160
@@ -286,7 +286,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 52,
-                        "durationMicroseconds": 692,
+                        "durationMicroseconds": 655,
                         "errorMessage": "Cannot access value for name modelData",
                         "functionName": "width",
                         "line": 169

@@ -85,6 +85,7 @@ void Commande::chargerCommandes()
     }
 
     endResetModel();
+    emit countChanged();
     qDebug() << "Commandes chargées:" << m_commandes.size();
 }
 
