@@ -1,5 +1,5 @@
-E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/K6S233IZAZ/moc_GestionData.cpp: E:/econtrol/headers/GestionData.h \
-  E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/moc_predefs.h \
+D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/K6S233IZAZ/moc_GestionData.cpp: D:/Kampf/EOY/econtrol_1.0/headers/GestionData.h \
+  D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/moc_predefs.h \
   C:/Qt/6.9.3/mingw_64/include/QtCore/QAbstractListModel \
   C:/Qt/6.9.3/mingw_64/include/QtCore/QDateTime \
   C:/Qt/6.9.3/mingw_64/include/QtCore/QDebug \
@@ -352,9 +352,9 @@ E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/K6S233
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  E:/econtrol/headers/Client.h \
-  E:/econtrol/headers/Commande.h \
-  E:/econtrol/headers/DetailsCommandes.h \
-  E:/econtrol/headers/Facture.h \
-  E:/econtrol/headers/Plat.h \
-  E:/econtrol/headers/Stock.h
+  D:/Kampf/EOY/econtrol_1.0/headers/Client.h \
+  D:/Kampf/EOY/econtrol_1.0/headers/Commande.h \
+  D:/Kampf/EOY/econtrol_1.0/headers/DetailsCommandes.h \
+  D:/Kampf/EOY/econtrol_1.0/headers/Facture.h \
+  D:/Kampf/EOY/econtrol_1.0/headers/Plat.h \
+  D:/Kampf/EOY/econtrol_1.0/headers/Stock.h

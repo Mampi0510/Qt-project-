@@ -1,9 +1,9 @@
 --resource
-E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/rcc/qmake_econtrol.qrc
+D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/rcc/qmake_econtrol.qrc
 --resource
-E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/rcc/appecontrol_raw_qml_0.qrc
+D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/rcc/appecontrol_raw_qml_0.qrc
 --resource
-E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/rcc/appecontrol_raw_qml_0_extra_qmldirs.qrc
+D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/rcc/appecontrol_raw_qml_0_extra_qmldirs.qrc
 /qt/qml/econtrol/Qml/Main.qml
 /qt/qml/econtrol/Qml/DashBoardView.qml
 /qt/qml/econtrol/Qml/ClientView.qml
