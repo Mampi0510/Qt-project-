@@ -10,6 +10,7 @@
 class Plat : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
 
 public:
     enum PlatRoles {
@@ -34,6 +35,9 @@ public:
 
 private:
     QList<QVariantMap> m_plats;
+
+signals:
+    void countChanged();
 };
 
 #endif // PLAT_H

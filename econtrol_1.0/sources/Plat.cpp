@@ -66,6 +66,7 @@ void Plat::chargerPlats() {
     }
 
     endResetModel();
+    emit countChanged();
     qDebug() << "Plats chargés:" << m_plats.size();
 }
 
@@ -83,6 +84,7 @@ bool Plat::ajouterPlat(const QString &nom, double prix, const QString &categorie
     }
 
     chargerPlats();
+    emit countChanged();
     return true;
 }
 
@@ -101,6 +103,7 @@ bool Plat::modifierPlat(int id, const QString &nom, double prix, const QString &
     }
 
     chargerPlats();
+    emit countChanged();
     return true;
 }
 
@@ -116,5 +119,6 @@ bool Plat::supprimerPlat(int id) {
     }
 
     chargerPlats();
+    emit countChanged();
     return true;
 }

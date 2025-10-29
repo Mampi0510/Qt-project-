@@ -22,6 +22,16 @@ int main(int argc, char *argv[])
     // Les modèles sont maintenant initialisés à la demande
     QQmlApplicationEngine engine;
 
+    qmlRegisterType<Client>("econtrol", 1, 0, "Client");
+    qmlRegisterType<Plat>("econtrol", 1, 0, "Plat");
+    qmlRegisterType<Commande>("econtrol", 1, 0, "Commande");
+    qmlRegisterType<DetailsCommande>("econtrol", 1, 0, "DetailsCommande");
+
+    Client clientModel;
+    Plat platModel;
+    Commande commandeModel;
+    DetailsCommande detailsCommandeModel;
+
     engine.rootContext()->setContextProperty("gdManager", gdManager);
     engine.rootContext()->setContextProperty("clientModel", gdManager->clientsModel());
     engine.rootContext()->setContextProperty("commandeModel", gdManager->ordersModel());
