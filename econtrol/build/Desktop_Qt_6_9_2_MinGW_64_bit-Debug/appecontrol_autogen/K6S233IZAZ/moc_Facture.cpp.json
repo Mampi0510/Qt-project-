@@ -1,0 +1,143 @@
+{
+    "classes": [
+        {
+            "className": "Facture",
+            "lineNumber": 9,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "afficherFacture",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "idFacture",
+                    "notify": "idFactureChanged",
+                    "read": "getIdFacture",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setIdFacture"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "commandeId",
+                    "notify": "commandeIdChanged",
+                    "read": "getCommandeId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setCommandeId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "clientId",
+                    "notify": "clientIdChanged",
+                    "read": "getClientId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "write": "setClientId"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "date",
+                    "notify": "dateChanged",
+                    "read": "getDate",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QDateTime",
+                    "user": false,
+                    "write": "setDate"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "montantNet",
+                    "notify": "montantNetChanged",
+                    "read": "getMontantNet",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setMontantNet"
+                }
+            ],
+            "qualifiedClassName": "Facture",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "idFactureChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "commandeIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "clientIdChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 3,
+                    "name": "dateChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "name": "montantNetChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "index": 5,
+                    "name": "calculMontantNet",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "Facture.h",
+    "outputRevision": 69
+}

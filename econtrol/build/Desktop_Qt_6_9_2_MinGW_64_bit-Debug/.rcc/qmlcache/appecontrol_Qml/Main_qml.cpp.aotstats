@@ -1,0 +1,364 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 9689,
+                        "errorMessage": "Cannot access value for name gdManager",
+                        "functionName": "refreshClients",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 1626,
+                        "errorMessage": "Cannot access value for name gdManager",
+                        "functionName": "refreshPlats",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 5,
+                        "durationMicroseconds": 1532,
+                        "errorMessage": "Cannot access value for name gdManager",
+                        "functionName": "refreshCommandes",
+                        "line": 73
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"standardButtons\".",
+                        "functionName": "standardButtons",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 21,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"accepted\".",
+                        "functionName": "onAccepted",
+                        "line": 27
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 23,
+                        "durationMicroseconds": 933,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "wrapMode",
+                        "line": 22
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 757,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 218,
+                        "errorMessage": "Cannot access value for name gdManager",
+                        "functionName": "target",
+                        "line": 47
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 281,
+                        "errorMessage": "method refreshClients cannot be resolved.",
+                        "functionName": "onClientsChanged",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 202,
+                        "errorMessage": "Cannot access value for name gdManager",
+                        "functionName": "target",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 204,
+                        "errorMessage": "method refreshPlats cannot be resolved.",
+                        "functionName": "onPlatsChanged",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 190,
+                        "errorMessage": "Cannot access value for name gdManager",
+                        "functionName": "target",
+                        "line": 81
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 227,
+                        "errorMessage": "method refreshCommandes cannot be resolved.",
+                        "functionName": "onCommandesChanged",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 391,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 381,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 264,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 467,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 118
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 313,
+                        "errorMessage": "",
+                        "functionName": "model",
+                        "line": 127
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 307,
+                        "errorMessage": "",
+                        "functionName": "delegate",
+                        "line": 128
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 3775,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 165
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 972,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 168
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 55,
+                        "durationMicroseconds": 721,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 167
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 364,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 174
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 1085,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "onEntered",
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 1018,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "onExited",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 995,
+                        "errorMessage": "Cannot access value for name menuId",
+                        "functionName": "onClicked",
+                        "line": 186
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 285,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 172
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 231,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 192
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 810,
+                        "errorMessage": "Cannot access value for name icon",
+                        "functionName": "text",
+                        "line": 198
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 840,
+                        "errorMessage": "Cannot access value for name label",
+                        "functionName": "text",
+                        "line": 203
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 1080,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 206
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 332,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 762,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "currentIndex",
+                        "line": 224
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 275,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 223
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 325,
+                        "errorMessage": "",
+                        "functionName": "dishesModel",
+                        "line": 235
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 269,
+                        "errorMessage": "",
+                        "functionName": "clientsModel",
+                        "line": 236
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 237,
+                        "errorMessage": "",
+                        "functionName": "ordersModel",
+                        "line": 237
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 232,
+                        "errorMessage": "",
+                        "functionName": "dishesModel",
+                        "line": 242
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 229,
+                        "errorMessage": "",
+                        "functionName": "clientsModel",
+                        "line": 247
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 420,
+                        "errorMessage": "",
+                        "functionName": "dishesModel",
+                        "line": 252
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 259,
+                        "errorMessage": "",
+                        "functionName": "clientsModel",
+                        "line": 253
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 239,
+                        "errorMessage": "",
+                        "functionName": "ordersModel",
+                        "line": 254
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 232,
+                        "errorMessage": "",
+                        "functionName": "dishesModel",
+                        "line": 259
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 218,
+                        "errorMessage": "",
+                        "functionName": "ordersModel",
+                        "line": 260
+                    }
+                ],
+                "filePath": "E:/project/eoy-project/econtrol/Qml/Main.qml"
+            }
+        ],
+        "moduleId": "econtrol(appecontrol)"
+    }
+]

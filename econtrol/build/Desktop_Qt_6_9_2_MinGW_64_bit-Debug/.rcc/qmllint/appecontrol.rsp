@@ -1,0 +1,17 @@
+--bare
+-I
+E:/project/eoy-project/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug
+-I
+C:/Qt/6.9.3/mingw_64/qml
+--resource
+E:/project/eoy-project/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/.qt/rcc/qmake_econtrol.qrc
+--resource
+E:/project/eoy-project/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/.qt/rcc/appecontrol_raw_qml_0.qrc
+--resource
+E:/project/eoy-project/econtrol/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/.qt/rcc/appecontrol_raw_qml_0_extra_qmldirs.qrc
+E:/project/eoy-project/econtrol/Qml/Main.qml
+E:/project/eoy-project/econtrol/Qml/DashBoardView.qml
+E:/project/eoy-project/econtrol/Qml/ClientView.qml
+E:/project/eoy-project/econtrol/Qml/DishModelView.qml
+E:/project/eoy-project/econtrol/Qml/OrderView.qml
+E:/project/eoy-project/econtrol/Qml/StatisticsView.qml
