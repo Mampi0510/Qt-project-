@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/qt/qml/econtrol/">
+    <file alias="Qml/Main.qml">E:/econtrol/Qml/Main.qml</file>
+    <file alias="Qml/DashBoardView.qml">E:/econtrol/Qml/DashBoardView.qml</file>
+    <file alias="Qml/ClientView.qml">E:/econtrol/Qml/ClientView.qml</file>
+    <file alias="Qml/DishModelView.qml">E:/econtrol/Qml/DishModelView.qml</file>
+    <file alias="Qml/OrderView.qml">E:/econtrol/Qml/OrderView.qml</file>
+    <file alias="Qml/StatisticsView.qml">E:/econtrol/Qml/StatisticsView.qml</file>
+    <file alias="Qml/StockView.qml">E:/econtrol/Qml/StockView.qml</file>
+    <file alias="resources.qrc">E:/econtrol/resources.qrc</file>
+  </qresource>
+</RCC>
+

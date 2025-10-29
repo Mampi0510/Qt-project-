@@ -1,0 +1,38 @@
+{
+    "classes": [
+        {
+            "className": "GestionData",
+            "lineNumber": 13,
+            "object": true,
+            "qualifiedClassName": "GestionData",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "databaseConnected",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "databaseError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "GestionData.h",
+    "outputRevision": 69
+}

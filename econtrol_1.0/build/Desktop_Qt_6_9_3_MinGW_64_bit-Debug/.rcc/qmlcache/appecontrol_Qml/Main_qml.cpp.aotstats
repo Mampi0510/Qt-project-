@@ -1,0 +1,180 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"width\".",
+                        "functionName": "width",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 13,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"height\".",
+                        "functionName": "height",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 1892,
+                        "errorMessage": "",
+                        "functionName": "viewMap",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 557,
+                        "errorMessage": "Cannot access value for name clientModel",
+                        "functionName": "onCompleted",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 526,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 34
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 932,
+                        "errorMessage": "",
+                        "functionName": "preferredWidth",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 298,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 408,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 285,
+                        "errorMessage": "",
+                        "functionName": "model",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 342,
+                        "errorMessage": "",
+                        "functionName": "delegate",
+                        "line": 68
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 776,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 1033,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 395,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 99
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 847,
+                        "errorMessage": "Cannot access value for name menuId",
+                        "functionName": "onClicked",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 255,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 228,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 104
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 14437,
+                        "errorMessage": "Cannot access value for name label",
+                        "functionName": "text",
+                        "line": 112
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 1083,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 360,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 391,
+                        "errorMessage": "Cannot access value for name viewMap",
+                        "functionName": "currentIndex",
+                        "line": 135
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 428,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 133
+                    }
+                ],
+                "filePath": "E:/econtrol/Qml/Main.qml"
+            }
+        ],
+        "moduleId": "econtrol(appecontrol)"
+    }
+]
