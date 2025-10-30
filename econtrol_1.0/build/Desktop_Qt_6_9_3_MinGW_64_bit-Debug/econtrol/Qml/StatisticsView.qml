@@ -103,14 +103,18 @@ Item {
                                     Text { text: modelData.nb_commandes + " commandes"; font.pixelSize: 14; color: "#717182" }
                                 }
 
-                                Text {
-                                    text: modelData.total_revenue.toFixed(2) + " €"
-                                    font.pixelSize: 18
-                                    font.weight: Font.Medium
-                                    color: "#030213"
-                                    Layout.preferredWidth: 120
-                                    horizontalAlignment: Text.AlignRight
+                                Item {
+                                    Layout.fillWidth: true
+                                    Text {
+                                        anchors.right: parent.right
+                                        anchors.verticalCenter: parent.verticalCenter
+                                        text: modelData.total_revenue.toFixed(2) + " €"
+                                        font.pixelSize: 18
+                                        font.weight: Font.Medium
+                                        color: "#030213"
+                                    }
                                 }
+
                             }
                         }
                     }
@@ -157,7 +161,11 @@ Item {
                                     spacing: 8
 
                                     Text { text: modelData.category; font.pixelSize: 16; font.weight: Font.Medium; color: "#030213" }
-                                    Text { text: modelData.count + " plat(s)"; font.pixelSize: 14; color: "#717182" }
+                                    Text {
+                                        text: modelData.count + " vendu(s) — " + modelData.totalSales.toFixed(2) + " €"
+                                        font.pixelSize: 14
+                                        color: "#717182"
+                                    }
 
                                     Rectangle {
                                         Layout.fillWidth: true
@@ -166,7 +174,7 @@ Item {
                                         radius: 4
 
                                         Rectangle {
-                                            width: parent.width * (modelData.count / platModel.count)
+                                            width: parent.width * (modelData.count / (Math.max(1, detailsCommandeModel.count)))
                                             height: parent.height
                                             color: "#030213"
                                             radius: 4
@@ -205,7 +213,6 @@ Item {
             for (var j = 0; j < detailsCommandeModel.count; j++) {
                 var detail = detailsCommandeModel.get(j)
 
-                // 🔍 Adaptation automatique des noms de rôles possibles
                 var idPlat = detail.id_plat !== undefined ? detail.id_plat :
                              detail.idPlat !== undefined ? detail.idPlat :
                              detail.plat_id !== undefined ? detail.plat_id : -1
@@ -240,16 +247,40 @@ Item {
 
     function getCategoryStats() {
         var categories = {}
+
+        // Parcourt les plats
         for (var i = 0; i < platModel.count; i++) {
-            var cat = platModel.get(i).categorie
-            if (categories[cat]) categories[cat]++
-            else categories[cat] = 1
+            var plat = platModel.get(i)
+            var cat = plat.categorie || "Autre"
+            var idPlat = plat.id_plat || plat.idPlat
+
+            // Initialise si besoin
+            if (!categories[cat]) {
+                categories[cat] = { category: cat, count: 0, totalSales: 0 }
+            }
+
+            // Calcule les ventes pour ce plat
+            for (var j = 0; j < detailsCommandeModel.count; j++) {
+                var detail = detailsCommandeModel.get(j)
+                var detailIdPlat = detail.id_plat || detail.idPlat
+                var qte = detail.quantite || detail.qte || 0
+                var prix = detail.prix_unitaire || detail.prix || 0
+
+                if (detailIdPlat === idPlat) {
+                    categories[cat].count += qte
+                    categories[cat].totalSales += qte * prix
+                }
+            }
         }
 
+        // Convertit en tableau trié par count décroissant
         var result = []
         for (var key in categories) {
-            result.push({ category: key, count: categories[key] })
+            result.push(categories[key])
         }
+        result.sort(function(a, b) { return b.count - a.count })
+
         return result
     }
+
 }

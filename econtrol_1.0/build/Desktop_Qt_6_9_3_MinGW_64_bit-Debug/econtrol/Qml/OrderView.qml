@@ -103,7 +103,6 @@ Item {
                             Text { text: "N°"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 60 }
                             Text { text: "Client"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.fillWidth: true }
                             Text { text: "Date"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 140 }
-                            Text { text: "Total"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 80 }
                             Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 160 }
                         }
                     }
@@ -130,7 +129,6 @@ Item {
                                 Text { text: "#" + id_commande; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: 60 }
                                 Text { text: getClientName(id_client); font.pixelSize: 14; color: "#030213"; Layout.fillWidth: true }
                                 Text { text: formatDateTime(date_commande); font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: 140 }
-                                Text { text: total.toFixed(2) + " €"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 80 }
 
                                 RowLayout {
                                     Layout.preferredWidth: 200
@@ -355,7 +353,7 @@ Item {
     // POPUP FACTURE
     Popup {
         id: factureDialog
-        width: 620
+        width: 520
         height: 640
         modal: true
         focus: true
@@ -396,13 +394,6 @@ Item {
                     Layout.alignment: Qt.AlignHCenter
                     color: "#0b0b10"
                 }
-                Text {
-                    text: "Restaurant Gastronomique"
-                    font.pixelSize: 13
-                    color: "#7a7a80"
-                    horizontalAlignment: Text.AlignHCenter
-                    Layout.alignment: Qt.AlignHCenter
-                }
             }
 
             Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: "#e5e5e5" }
@@ -431,16 +422,17 @@ Item {
                 Layout.fillWidth: true
                 spacing: 2
 
-            RowLayout {
-                Layout.fillWidth: true
-                spacing: 8
-                Layout.alignment: Qt.AlignVCenter
+            GridLayout {
+                    Layout.fillWidth: true
+                    columns: 4
+                    columnSpacing: 10
 
-                Text { text: "Article"; font.bold: true; Layout.fillWidth: true; color: "#2b2b30" }
-                   Text { text: "Qté"; font.bold: true; Layout.preferredWidth: 50; horizontalAlignment: Text.AlignHCenter; color: "#2b2b30" }
-                   Text { text: "Prix U."; font.bold: true; Layout.preferredWidth: 80; horizontalAlignment: Text.AlignRight; color: "#2b2b30" }
-                   Text { text: "Total"; font.bold: true; Layout.preferredWidth: 80; horizontalAlignment: Text.AlignRight; color: "#2b2b30" }
+                    Text { text: "Article"; font.bold: true; Layout.column: 0; Layout.preferredWidth: 230 }
+                    Text { text: "Qté";     font.bold: true; Layout.column: 1; Layout.preferredWidth: 40; horizontalAlignment: Text.AlignHCenter }
+                    Text { text: "Prix U."; font.bold: true; Layout.column: 2; Layout.preferredWidth: 60; horizontalAlignment: Text.AlignRight }
+                    Text { text: "Total";   font.bold: true; Layout.column: 3; Layout.preferredWidth: 60; horizontalAlignment: Text.AlignRight }
             }
+
             Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: "#f0f0f0" }
             }
 
@@ -451,35 +443,53 @@ Item {
                 spacing: 6
                 clip: true
 
-                delegate: RowLayout {
-                    Layout.fillWidth: true
-                    spacing: 8
+                delegate: Item {
+                    width: ListView.view.width
+                    height: 34
 
-                    Text {
-                        text: (nom_plat || ("Plat #" + id_plat))
-                        Layout.fillWidth: true
-                        font.pixelSize: 13
-                        horizontalAlignment: Text.AlignLeft
-                    }
-                    Text {
-                        text: "x" + quantite
-                        Layout.preferredWidth: 50
-                        horizontalAlignment: Text.AlignHCenter
-                        font.pixelSize: 13
-                    }
-                    Text {
-                        text: prix_unitaire.toFixed(2) + " €"
-                        Layout.preferredWidth: 80
-                        horizontalAlignment: Text.AlignRight
-                        font.pixelSize: 13
-                    }
-                    Text {
-                        text: (prix_unitaire * quantite).toFixed(2) + " €"
-                        Layout.preferredWidth: 80
-                        horizontalAlignment: Text.AlignRight
-                        font.pixelSize: 13
+                    GridLayout {
+                        anchors.fill: parent
+                        columns: 4
+                        columnSpacing: 6
+
+                        Text {
+                            text: (nom_plat || ("Plat #" + id_plat))
+                            elide: Text.ElideRight
+                            verticalAlignment: Text.AlignVCenter
+                            Layout.column: 0
+                            Layout.preferredWidth: 200
+                            font.pixelSize: 13
+                        }
+
+                        Text {
+                            text: "x" + quantite
+                            Layout.column: 1
+                            Layout.preferredWidth: 40
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            font.pixelSize: 13
+                        }
+
+                        Text {
+                            text: prix_unitaire.toFixed(2) + " €"
+                            Layout.column: 2
+                            Layout.preferredWidth: 60
+                            horizontalAlignment: Text.AlignRight
+                            verticalAlignment: Text.AlignVCenter
+                            font.pixelSize: 13
+                        }
+
+                        Text {
+                            text: (prix_unitaire * quantite).toFixed(2) + " €"
+                            Layout.column: 3
+                            Layout.preferredWidth: 60
+                            horizontalAlignment: Text.AlignRight
+                            verticalAlignment: Text.AlignVCenter
+                            font.pixelSize: 13
+                        }
                     }
                 }
+
 
             }
 
@@ -559,9 +569,9 @@ Item {
             }
 
             // mettre à jour textes visibles
-            factureNumTxt.text = "N° Facture : #" + (factureData.id || "")
-            factureClientTxt.text = "Client : " + (factureData.client || "")
-            factureDateTxt.text = "Date : " + (factureData.date || "")
+            factureNumTxt.text = (factureData.id || "")
+            factureClientTxt.text = (factureData.client || "")
+            factureDateTxt.text = (factureData.date || "")
             factureTotalTxt.text = factureData.total ? factureData.total.toFixed(2) + " €" : ""
 
             open()
