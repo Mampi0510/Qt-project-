@@ -27,11 +27,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<Commande>("econtrol", 1, 0, "Commande");
     qmlRegisterType<DetailsCommande>("econtrol", 1, 0, "DetailsCommande");
 
-    Client clientModel;
-    Plat platModel;
-    Commande commandeModel;
-    DetailsCommande detailsCommandeModel;
-
     engine.rootContext()->setContextProperty("gdManager", gdManager);
     engine.rootContext()->setContextProperty("clientModel", gdManager->clientsModel());
     engine.rootContext()->setContextProperty("commandeModel", gdManager->ordersModel());

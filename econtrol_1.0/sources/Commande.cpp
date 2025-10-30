@@ -89,8 +89,11 @@ void Commande::chargerCommandes()
     qDebug() << "Commandes chargées:" << m_commandes.size();
 }
 
-bool Commande::ajouterCommande(int clientId, const QString &date, double total)
+bool Commande::ajouterCommande(int clientId, const QString &date, double total, const QVariantList &plats)
 {
+    qDebug() << "[COMMANDE::ajouterCommande] appelé depuis QML ? clientId=" << clientId
+             << " date=" << date << " total=" << total << " plats_count=" << plats.size();
+
     if (clientId <= 0) return false;
 
     QSqlDatabase db = GestionData::instance()->getDatabase();
@@ -107,8 +110,22 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total)
         return false;
     }
 
-
     int newId = query.lastInsertId().toInt();
+    qDebug() << "[COMMANDE] Nouvelle commande ajoutée ID:" << newId;
+
+    if (m_detailsCommande) {
+        for (const QVariant &v : plats) {
+            QVariantMap plat = v.toMap();
+            int idPlat = plat["id_plat"].toInt();
+            int quantite = plat["quantite"].toInt();
+            double prixUnitaire = plat["prix"].toDouble();
+
+            qDebug() << "[COMMANDE] Ajout du plat" << idPlat << "x" << quantite;
+            m_detailsCommande->ajouterDetail(newId, idPlat, quantite, prixUnitaire);
+        }
+    }
+
+    // Mise à jour du modèle
     beginInsertRows(QModelIndex(), m_commandes.size(), m_commandes.size());
     QVariantMap newCmd;
     newCmd["id_commande"] = newId;
@@ -120,6 +137,7 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total)
 
     return true;
 }
+
 
 bool Commande::modifierCommande(int id, int clientId, const QString &date, double total)
 {

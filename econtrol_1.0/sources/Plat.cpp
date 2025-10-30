@@ -6,7 +6,7 @@ Plat::Plat(QObject *parent)
     : QAbstractListModel(parent)
 {
 
-    QTimer::singleShot(0, this, &Plat::chargerPlats);
+    chargerPlats();
 }
 
 

@@ -219,6 +219,7 @@ Item {
                     onClicked: {
                         if (dishCombo.currentIndex >= 0) {
                             let dish = platModel.get(dishCombo.currentIndex)
+                            console.log("[QML] Plat sélectionné :", JSON.stringify(dish))
                             orderItems.append({
                                 id_plat: dish.id_plat,
                                 nom_plat: dish.nom_plat,
@@ -226,6 +227,8 @@ Item {
                                 quantite: qtySpin.value
                             })
                             updateTotal()
+                        } else {
+                            console.log("[QML] Aucun plat sélectionné !")
                         }
                     }
                 }
@@ -299,7 +302,17 @@ Item {
             var total = parseFloat(totalText.text.replace(" €", ""))
             var now = new Date()
             var dateTime = Qt.formatDateTime(now, "yyyy-MM-dd hh:mm:ss")
-            commandeModel.ajouterCommande(client.id_client, dateTime, total)
+            var plats = []
+            for (var i = 0; i < orderItems.count; i++) {
+                var item = orderItems.get(i)
+                plats.push({
+                    "id_plat": item.id_plat,
+                    "quantite": item.quantite,
+                    "prix": item.prix
+                })
+            }
+            console.log("[QML] Envoi commande avec", plats.length, "plats ->", JSON.stringify(plats))
+            commandeModel.ajouterCommande(client.id_client, dateTime, total, plats)
             orderItems.clear()
             orderDialog.orderTotal = 0
         }

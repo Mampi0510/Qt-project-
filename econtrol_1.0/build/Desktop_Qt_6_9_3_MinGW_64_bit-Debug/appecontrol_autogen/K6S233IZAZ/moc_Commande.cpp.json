@@ -31,6 +31,10 @@
                         {
                             "name": "total",
                             "type": "double"
+                        },
+                        {
+                            "name": "plats",
+                            "type": "QVariantList"
                         }
                     ],
                     "index": 2,

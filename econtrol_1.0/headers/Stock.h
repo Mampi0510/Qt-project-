@@ -27,6 +27,7 @@ public:
     Q_INVOKABLE bool ajouterProduit(const QString &nom, double quantite);
     Q_INVOKABLE bool modifierProduit(int id, const QString &nom, double quantite);
     Q_INVOKABLE bool supprimerProduit(int id);
+    Q_INVOKABLE bool reduireStockPourPlat(int idPlat, double quantiteCommandee);
 
 private:
     void chargerStock();

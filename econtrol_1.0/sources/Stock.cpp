@@ -183,3 +183,44 @@ bool Stock::supprimerProduit(int id)
 
     return true;
 }
+
+bool Stock::reduireStockPourPlat(int idPlat, double quantiteCommandee)
+{
+    qDebug() << "[STOCK::reduireStockPourPlat] idPlat=" << idPlat << " qte=" << quantiteCommandee;
+
+    QSqlDatabase db = GestionData::instance()->getDatabase();
+    if (!db.isOpen()) return false;
+
+    // Trouver les produits liés à ce plat et la quantité utilisée par unité
+    QSqlQuery query(db);
+    query.prepare("SELECT id_produit, quantite_prise FROM detailsstock WHERE id_plat=?");
+    query.addBindValue(idPlat);
+
+    if (!query.exec()) {
+        qWarning() << "Erreur lecture detailsstock:" << query.lastError().text();
+        return false;
+    }
+
+    // Pour chaque ingrédient du plat, on diminue le stock
+    while (query.next()) {
+        int idProduit = query.value("id_produit").toInt();
+        double qteUtilisee = query.value("quantite_prise").toDouble();
+        double totalAretirer = qteUtilisee * quantiteCommandee;
+
+        QSqlQuery update(db);
+        update.prepare("UPDATE stock SET quantite = quantite - ? WHERE id_produit=?");
+        update.addBindValue(totalAretirer);
+        update.addBindValue(idProduit);
+
+        if (!update.exec()) {
+            qWarning() << "Erreur maj stock:" << update.lastError().text();
+            return false;
+        }
+    }
+
+    // Recharger le modèle pour mettre à jour l’affichage dans QML
+    chargerStock();
+    return true;
+}
+
+

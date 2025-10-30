@@ -25,7 +25,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE QVariantMap get(int index) const;
-    Q_INVOKABLE bool ajouterCommande(int clientId, const QString &date, double total);
+    Q_INVOKABLE bool ajouterCommande(int clientId, const QString &date, double total, const QVariantList &plats);
     Q_INVOKABLE bool modifierCommande(int id, int clientId, const QString &date, double total);
     Q_INVOKABLE bool supprimerCommande(int id);
 
