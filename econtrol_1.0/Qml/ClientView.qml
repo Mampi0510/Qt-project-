@@ -78,11 +78,11 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "ID"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 60 }
-                            Text { text: "Nom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.fillWidth: true }
-                            Text { text: "Prénom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.fillWidth: true }
-                            Text { text: "Téléphone"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 120 }
-                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 180 }
+                            Text { text: "ID"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth:  parent.width * 0.07 }
+                            Text { text: "Nom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
+                            Text { text: "Prénom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
+                            Text { text: "Téléphone"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.22 }
+                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
                         }
                     }
 
@@ -105,13 +105,13 @@ Item {
                                 anchors.rightMargin: 16
                                 spacing: 16
 
-                                Text { text: id_client; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: 60 }
-                                Text { text: nom; font.pixelSize: 14; color: "#030213"; Layout.fillWidth: true }
-                                Text { text: prenom; font.pixelSize: 14; color: "#030213"; Layout.fillWidth: true }
-                                Text { text: telephone; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: 120 }
+                                Text { text: id_client; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.07 }
+                                Text { text: nom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
+                                Text { text: prenom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
+                                Text { text: telephone; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: parent.width * 0.22 }
 
                                 RowLayout {
-                                    Layout.preferredWidth: 180
+                                    Layout.preferredWidth: parent.width * 0.25
                                     spacing: 8
 
                                     Button {

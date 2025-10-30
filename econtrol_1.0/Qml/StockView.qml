@@ -58,16 +58,17 @@ Item {
                 border.color: "#e5e5e5"
                 border.width: 1
 
-                ListView {
+                ColumnLayout {
                     anchors.fill: parent
-                    model: stockModel
-                    spacing: 8
-                    clip: true
+                    anchors.margins: 20
+                    spacing: 16
 
-                    delegate: Rectangle {
-                        width: ListView.view.width
-                        height: 80
-                        color: "transparent"
+                    // En-tête
+                    Rectangle {
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 40
+                        color: "#f9f9fa"
+                        radius: 6
 
                         RowLayout {
                             anchors.fill: parent
@@ -75,67 +76,114 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            ColumnLayout {
-                                Layout.fillWidth: true
+                            Text { text: "Produit"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.45 }
+                            Text { text: "Quantité"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
+                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.30 }
+                        }
+                    }
 
-                                Text {
-                                    text: nom_produit
-                                    font.pixelSize: 16
-                                    font.weight: Font.Medium
-                                    color: "#030213"
-                                }
+                    // Liste des produits
+                    ListView {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+                        model: stockModel
+                        spacing: 8
+                        clip: true
 
-                                Text {
-                                    text: quantite.toString() + " unités"
-                                    font.pixelSize: 14
-                                    color: "#717182"
-                                }
-                            }
+                        delegate: Rectangle {
+                            width: ListView.view.width
+                            height: 70
+                            color: "transparent"
 
                             RowLayout {
-                                Layout.preferredWidth: 180
-                                spacing: 8
+                                anchors.fill: parent
+                                anchors.leftMargin: 16
+                                anchors.rightMargin: 16
+                                spacing: 16
 
-                                Button {
-                                    text: "Modifier"
-                                    Layout.preferredHeight: 32
-                                    background: Rectangle {
-                                        color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
-                                        radius: 6
-                                    }
-                                    contentItem: Text {
-                                        text: parent.text
-                                        font.pixelSize: 13
+                                // Produit
+                                ColumnLayout {
+                                    Layout.preferredWidth: parent.width * 0.45
+                                    spacing: 2
+
+                                    Text {
+                                        text: nom_produit
+                                        font.pixelSize: 15
                                         font.weight: Font.Medium
                                         color: "#030213"
-                                        anchors.centerIn: parent
+                                        elide: Text.ElideRight
                                     }
-                                    onClicked: stockDialog.openForEdit(index)
+
+                                    Text {
+                                        text: (Number(quantite).toFixed(quantite % 1 === 0 ? 0 : 2)) + " unités"
+                                        font.pixelSize: 13
+                                        color: "#717182"
+                                    }
                                 }
 
-                                Button {
-                                    text: "Supprimer"
-                                    Layout.preferredHeight: 32
-                                    background: Rectangle {
-                                        color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
-                                        radius: 6
-                                    }
-                                    contentItem: Text {
-                                        text: parent.text
-                                        font.pixelSize: 13
-                                        font.weight: Font.Medium
-                                        color: "#ffffff"
+                                // Colonne quantité
+                                Item {
+                                    Layout.preferredWidth: parent.width * 0.25
+                                    Text {
                                         anchors.centerIn: parent
+                                        text: Number(quantite).toFixed(quantite % 1 === 0 ? 0 : 2)
+                                        font.pixelSize: 15
+                                        color: "#030213"
                                     }
-                                    onClicked: stockModel.supprimerProduit(id_produit)
+                                }
+
+                                // Actions
+                                RowLayout {
+                                    Layout.preferredWidth: parent.width * 0.30
+                                    spacing: 8
+                                    Button {
+                                        text: "Modifier"
+                                        Layout.preferredHeight: 32
+                                        background: Rectangle {
+                                            color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
+                                            radius: 6
+                                        }
+                                        contentItem: Text {
+                                            text: parent.text
+                                            font.pixelSize: 13
+                                            font.weight: Font.Medium
+                                            color: "#030213"
+                                            anchors.centerIn: parent
+                                        }
+                                        onClicked: stockDialog.openForEdit(index)
+                                    }
+
+                                    Button {
+                                        text: "Supprimer"
+                                        Layout.preferredHeight: 32
+                                        background: Rectangle {
+                                            color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
+                                            radius: 6
+                                        }
+                                        contentItem: Text {
+                                            text: parent.text
+                                            font.pixelSize: 13
+                                            font.weight: Font.Medium
+                                            color: "#ffffff"
+                                            anchors.centerIn: parent
+                                        }
+                                        onClicked: stockModel.supprimerProduit(id_produit)
+                                    }
                                 }
                             }
-                        }
 
-                        Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 1; color: "#e5e5e5" }
+                            // Ligne de séparation
+                            Rectangle {
+                                anchors.bottom: parent.bottom
+                                width: parent.width
+                                height: 1
+                                color: "#e5e5e5"
+                            }
+                        }
                     }
                 }
             }
+
         }
     }
 

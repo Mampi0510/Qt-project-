@@ -152,7 +152,7 @@ Item {
                                     color: "#030213";
                                     Layout.fillWidth: true
                                 }
-                                Text { text: date_commande; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: 150 }
+                                Text { text: formatDate(date_commande); font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: 150 }
                                 Text { text: total.toFixed(2) + " €"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 100; horizontalAlignment: Text.AlignRight }
                             }
 
@@ -177,7 +177,7 @@ Item {
 
     function formatDate(dateString) {
         if (!dateString) return ""
-        var date = new Date(dateString)
-        return date.toLocaleDateString(Qt.locale(), "dd/MM/yyyy HH:mm")
+        var d = new Date(dateString)
+        return Qt.formatDateTime(d, "dd/MM/yyyy hh:mm:ss")
     }
 }

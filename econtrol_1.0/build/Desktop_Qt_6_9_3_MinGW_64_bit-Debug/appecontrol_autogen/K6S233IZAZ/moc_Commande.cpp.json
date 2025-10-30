@@ -76,6 +76,13 @@
                     "index": 4,
                     "name": "supprimerCommande",
                     "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "isConst": true,
+                    "name": "detailsModel",
+                    "returnType": "DetailsCommande*"
                 }
             ],
             "object": true,
@@ -92,6 +99,19 @@
                     "scriptable": true,
                     "stored": true,
                     "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "detailsModel",
+                    "read": "detailsModel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "DetailsCommande*",
                     "user": false
                 }
             ],

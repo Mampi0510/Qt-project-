@@ -75,6 +75,7 @@ void DetailsCommande::chargerDetails()
     }
 
     endResetModel();
+    emit countChanged();
     qDebug() << "Détails commandes chargés:" << m_details.size();
 }
 
@@ -117,6 +118,7 @@ bool DetailsCommande::ajouterDetail(int idCommande, int idPlat, int quantite, do
     newDetail["prix_unitaire"] = prixUnitaire;
     m_details.append(newDetail);
     endInsertRows();
+    emit countChanged();
 
     return true;
 }
@@ -175,7 +177,7 @@ bool DetailsCommande::supprimerDetailParCommande(int idCommande)
             endRemoveRows();
         }
     }
-
+    emit countChanged();
     return true;
 }
 

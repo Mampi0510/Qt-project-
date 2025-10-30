@@ -77,6 +77,13 @@
                         "index": 4,
                         "name": "supprimerCommande",
                         "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "isConst": true,
+                        "name": "detailsModel",
+                        "returnType": "DetailsCommande*"
                     }
                 ],
                 "object": true,
@@ -93,6 +100,19 @@
                         "scriptable": true,
                         "stored": true,
                         "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "detailsModel",
+                        "read": "detailsModel",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "DetailsCommande*",
                         "user": false
                     }
                 ],
@@ -120,7 +140,7 @@
         "classes": [
             {
                 "className": "DetailsCommande",
-                "lineNumber": 7,
+                "lineNumber": 6,
                 "methods": [
                     {
                         "access": "public",
@@ -142,7 +162,7 @@
                                 "type": "double"
                             }
                         ],
-                        "index": 0,
+                        "index": 1,
                         "name": "ajouterDetail",
                         "returnType": "bool"
                     },
@@ -158,7 +178,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 1,
+                        "index": 2,
                         "name": "supprimerDetail",
                         "returnType": "bool"
                     },
@@ -170,7 +190,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 2,
+                        "index": 3,
                         "name": "supprimerDetailParCommande",
                         "returnType": "bool"
                     },
@@ -182,7 +202,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 3,
+                        "index": 4,
                         "isConst": true,
                         "name": "get",
                         "returnType": "QVariantMap"
@@ -195,13 +215,43 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 4,
+                        "index": 5,
                         "name": "getDetailsByCommande",
                         "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "chargerDetails",
+                        "returnType": "void"
                     }
                 ],
                 "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "count",
+                        "notify": "countChanged",
+                        "read": "rowCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    }
+                ],
                 "qualifiedClassName": "DetailsCommande",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "countChanged",
+                        "returnType": "void"
+                    }
+                ],
                 "superClasses": [
                     {
                         "access": "public",

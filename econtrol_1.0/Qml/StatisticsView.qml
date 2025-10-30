@@ -192,6 +192,11 @@ Item {
 
     function getPlatStats() {
         var stats = []
+        console.log("→ Chargement statistiques des plats...")
+
+        // Vérifie la présence des données
+        console.log("plats:", platModel.count, "détails:", detailsCommandeModel.count)
+
         for (var i = 0; i < platModel.count; i++) {
             var platItem = platModel.get(i)
             var nb = 0
@@ -199,22 +204,39 @@ Item {
 
             for (var j = 0; j < detailsCommandeModel.count; j++) {
                 var detail = detailsCommandeModel.get(j)
-                if (detail.id_plat === platItem.id_plat) {
-                    nb += detail.quantite
-                    total += detail.quantite * detail.prix_unitaire
+
+                // 🔍 Adaptation automatique des noms de rôles possibles
+                var idPlat = detail.id_plat !== undefined ? detail.id_plat :
+                             detail.idPlat !== undefined ? detail.idPlat :
+                             detail.plat_id !== undefined ? detail.plat_id : -1
+
+                var quantite = detail.quantite !== undefined ? detail.quantite :
+                               detail.qte !== undefined ? detail.qte : 0
+
+                var prix = detail.prix_unitaire !== undefined ? detail.prix_unitaire :
+                           detail.prix !== undefined ? detail.prix : 0
+
+                if (idPlat === platItem.id_plat || idPlat === platItem.idPlat) {
+                    nb += quantite
+                    total += quantite * prix
                 }
             }
 
             stats.push({
-                id: platItem.id_plat,
-                nom_plat: platItem.nom_plat,
+                id: platItem.id_plat || platItem.idPlat,
+                nom_plat: platItem.nom_plat || platItem.nomPlat,
                 nb_commandes: nb,
                 total_revenue: total
             })
         }
-        stats.sort(function(a,b){return b.nb_commandes - a.nb_commandes})
+
+        // Tri décroissant par nombre de commandes
+        stats.sort(function(a,b){ return b.nb_commandes - a.nb_commandes })
+
+        console.log("→ Résultat stats plats:", JSON.stringify(stats))
         return stats
     }
+
 
     function getCategoryStats() {
         var categories = {}

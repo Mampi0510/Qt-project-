@@ -124,23 +124,6 @@ Item {
                                     spacing: 8
 
                                     Button {
-                                        text: "Modifier"
-                                        Layout.preferredHeight: 32
-                                        background: Rectangle {
-                                            color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
-                                            radius: 6
-                                        }
-                                        contentItem: Text {
-                                            text: parent.text
-                                            font.pixelSize: 13
-                                            font.weight: Font.Medium
-                                            color: "#030213"
-                                            anchors.centerIn: parent
-                                        }
-                                        onClicked: orderDialog.openForEdit(index)
-                                    }
-
-                                    Button {
                                         text: "Supprimer"
                                         Layout.preferredHeight: 32
                                         background: Rectangle {

@@ -3,7 +3,6 @@
 #include <QQmlContext>
 #include <QIcon>
 #include <QDebug>
-
 #include "headers/GestionData.h"
 
 int main(int argc, char *argv[])
