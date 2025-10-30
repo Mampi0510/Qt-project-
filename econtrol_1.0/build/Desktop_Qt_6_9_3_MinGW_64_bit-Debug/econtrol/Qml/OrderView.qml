@@ -6,6 +6,15 @@ Item {
     id: root
     anchors.fill: parent
 
+    function updateTotal() {
+        var total = 0
+        for (var i = 0; i < orderItems.count; i++) {
+            var item = orderItems.get(i)
+            total += item.prix * item.quantite
+        }
+        orderDialog.orderTotal = total
+    }
+
     ScrollView {
         anchors.fill: parent
         contentWidth: availableWidth
@@ -167,6 +176,8 @@ Item {
         width: 500
         height: 450
 
+        property real orderTotal: 0
+
         ColumnLayout {
             anchors.fill: parent
             spacing: 16
@@ -219,6 +230,11 @@ Item {
                     }
                 }
             }
+            ListModel { id: orderItems }
+
+            Component.onCompleted: {
+                orderItems.countChanged.connect(updateTotal)
+            }
 
             ListView {
                 Layout.fillWidth: true
@@ -227,7 +243,7 @@ Item {
                 spacing: 6
                 clip: true
 
-                ListModel { id: orderItems }
+                onCountChanged: updateTotal()
 
                 delegate: Rectangle {
                     width: ListView.view.width
@@ -242,6 +258,30 @@ Item {
                         Text { text: nom_plat; font.pixelSize: 14; color: "#030213"; Layout.fillWidth: true }
                         Text { text: "x" + quantite; font.pixelSize: 14; color: "#030213" }
                         Text { text: (prix * quantite).toFixed(2) + " €"; font.pixelSize: 14; color: "#030213" }
+
+                        Button {
+                            text: "×"
+                            Layout.preferredWidth: 32
+                            Layout.preferredHeight: 32
+                            background: Rectangle {
+                                color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
+                                radius: 6
+                            }
+                            contentItem: Text {
+                                text: parent.text
+                                font.pixelSize: 16
+                                font.weight: Font.Bold
+                                color: "white"
+                                horizontalAlignment: Text.AlignHCenter
+                                verticalAlignment: Text.AlignVCenter
+                                anchors.centerIn: parent
+                            }
+                            onClicked: {
+                                orderItems.remove(index)
+                                updateTotal()
+                            }
+                        }
+
                     }
                 }
             }
@@ -249,17 +289,8 @@ Item {
             RowLayout {
                 Layout.fillWidth: true
                 Text { text: "Total:"; font.pixelSize: 16; font.weight: Font.Medium; Layout.fillWidth: true }
-                Text { id: totalText; text: "0.00 €"; font.pixelSize: 18; font.weight: Font.Medium }
+                Text { id: totalText; text: orderDialog.orderTotal.toFixed(2) + " €"; font.pixelSize: 18; font.weight: Font.Medium }
             }
-        }
-
-        function updateTotal() {
-            var total = 0
-            for (var i = 0; i < orderItems.count; i++) {
-                var item = orderItems.get(i)
-                total += item.prix * item.quantite
-            }
-            totalText.text = total.toFixed(2) + " €"
         }
 
         onAccepted: {
@@ -270,12 +301,12 @@ Item {
             var dateTime = Qt.formatDateTime(now, "yyyy-MM-dd hh:mm:ss")
             commandeModel.ajouterCommande(client.id_client, dateTime, total)
             orderItems.clear()
-            totalText.text = "0.00 €"
+            orderDialog.orderTotal = 0
         }
 
         onRejected: {
             orderItems.clear()
-            totalText.text = "0.00 €"
+            orderDialog.orderTotal = 0
         }
     }
 
