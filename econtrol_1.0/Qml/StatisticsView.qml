@@ -6,6 +6,59 @@ Item {
     id: root
     anchors.fill: parent
 
+    // Propriétés pour les counts
+    property int platCount: platModel ? platModel.rowCount() : 0
+    property int clientCount: clientModel ? clientModel.rowCount() : 0
+    property int commandeCount: commandeModel ? commandeModel.rowCount() : 0
+    property double totalRevenue: 0.0
+
+    // Chargement automatique au démarrage
+    Component.onCompleted: {
+        console.log("StatisticsView initialisé")
+
+        // Forcer le chargement des modèles
+        if (platModel && platModel.chargerPlats) {
+            platModel.chargerPlats()
+        }
+        if (clientModel && clientModel.chargerClients) {
+            clientModel.chargerClients()
+        }
+        if (commandeModel && commandeModel.chargerCommandes) {
+            commandeModel.chargerCommandes()
+        }
+        if (detailsCommandeModel && detailsCommandeModel.chargerDetails) {
+            detailsCommandeModel.chargerDetails()
+        }
+
+        // Calculer le revenu total
+        totalRevenue = calculateTotalRevenue()
+    }
+
+    // Connexions pour les changements de données
+    Connections {
+        target: platModel
+        function onRowCountChanged() {
+            platCount = platModel.rowCount()
+            totalRevenue = calculateTotalRevenue()
+        }
+    }
+
+    Connections {
+        target: commandeModel
+        function onRowCountChanged() {
+            commandeCount = commandeModel.rowCount()
+            totalRevenue = calculateTotalRevenue()
+        }
+    }
+
+    Connections {
+        target: detailsCommandeModel
+        ignoreUnknownSignals: true
+        function onDataChanged() {
+            totalRevenue = calculateTotalRevenue()
+        }
+    }
+
     ScrollView {
         anchors.fill: parent
         contentWidth: availableWidth
@@ -15,6 +68,7 @@ Item {
             width: parent.width
             spacing: 24
 
+            // Header
             Text {
                 text: "Statistiques & Analytics"
                 font.pixelSize: 32
@@ -24,6 +78,7 @@ Item {
                 Layout.leftMargin: 24
             }
 
+            // Carte Revenu Total
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 140
@@ -37,12 +92,28 @@ Item {
                     anchors.margins: 24
                     spacing: 5
 
-                    Text { text: "Revenu Total"; font.pixelSize: 16; color: "#ffffff"; opacity: 0.8 }
-                    Text { text: calculateTotalRevenue() + " €"; font.pixelSize: 48; font.weight: Font.Medium; color: "#ffffff" }
-                    Text { text: commandeModel.count + " commandes au total"; font.pixelSize: 14; color: "#ffffff"; opacity: 0.7 }
+                    Text {
+                        text: "Revenu Total"
+                        font.pixelSize: 16;
+                        color: "#ffffff";
+                        opacity: 0.8
+                    }
+                    Text {
+                        text: totalRevenue.toFixed(2) + " €"
+                        font.pixelSize: 48;
+                        font.weight: Font.Medium;
+                        color: "#ffffff"
+                    }
+                    Text {
+                        text: commandeCount + " commandes au total";
+                        font.pixelSize: 14;
+                        color: "#ffffff";
+                        opacity: 0.7
+                    }
                 }
             }
 
+            // Section Plats Populaires
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 500
@@ -59,18 +130,29 @@ Item {
                     anchors.margins: 20
                     spacing: 16
 
-                    Text { text: "Plats les Plus Populaires"; font.pixelSize: 20; font.weight: Font.Medium; color: "#030213" }
-                    Text { text: "Classement basé sur le nombre de commandes"; font.pixelSize: 14; color: "#717182" }
+                    Text {
+                        text: "Plats les Plus Populaires"
+                        font.pixelSize: 20;
+                        font.weight: Font.Medium;
+                        color: "#030213"
+                    }
+                    Text {
+                        text: "Classement basé sur le nombre de commandes"
+                        font.pixelSize: 14;
+                        color: "#717182"
+                    }
 
                     ListView {
+                        id: popularDishesList
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         spacing: 12
                         clip: true
+                        boundsBehavior: Flickable.StopAtBounds
                         model: getPlatStats()
 
                         delegate: Rectangle {
-                            width: ListView.view.width
+                            width: popularDishesList.width
                             height: 80
                             color: "#f9f9fa"
                             radius: 8
@@ -99,12 +181,22 @@ Item {
                                 ColumnLayout {
                                     Layout.fillWidth: true
                                     spacing: 4
-                                    Text { text: modelData.nom_plat; font.pixelSize: 16; font.weight: Font.Medium; color: "#030213" }
-                                    Text { text: modelData.nb_commandes + " commandes"; font.pixelSize: 14; color: "#717182" }
+                                    Text {
+                                        text: modelData.nom_plat || "Plat inconnu"
+                                        font.pixelSize: 16;
+                                        font.weight: Font.Medium;
+                                        color: "#030213"
+                                        elide: Text.ElideRight
+                                    }
+                                    Text {
+                                        text: modelData.nb_commandes + " commandes";
+                                        font.pixelSize: 14;
+                                        color: "#717182"
+                                    }
                                 }
 
                                 Text {
-                                    text: modelData.total_revenue.toFixed(2) + " €"
+                                    text: (modelData.total_revenue || 0).toFixed(2) + " €"
                                     font.pixelSize: 18
                                     font.weight: Font.Medium
                                     color: "#030213"
@@ -113,10 +205,20 @@ Item {
                                 }
                             }
                         }
+
+                        // Message si pas de données
+                        Label {
+                            anchors.centerIn: parent
+                            text: "Aucune donnée disponible pour les plats populaires"
+                            font.pixelSize: 16
+                            color: "#717182"
+                            visible: popularDishesList.count === 0
+                        }
                     }
                 }
             }
 
+            // Section Distribution par Catégorie
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 400
@@ -133,7 +235,12 @@ Item {
                     anchors.margins: 20
                     spacing: 16
 
-                    Text { text: "Distribution par Catégorie"; font.pixelSize: 20; font.weight: Font.Medium; color: "#030213" }
+                    Text {
+                        text: "Distribution par Catégorie"
+                        font.pixelSize: 20;
+                        font.weight: Font.Medium;
+                        color: "#030213"
+                    }
 
                     GridLayout {
                         Layout.fillWidth: true
@@ -156,8 +263,17 @@ Item {
                                     anchors.margins: 16
                                     spacing: 8
 
-                                    Text { text: modelData.category; font.pixelSize: 16; font.weight: Font.Medium; color: "#030213" }
-                                    Text { text: modelData.count + " plat(s)"; font.pixelSize: 14; color: "#717182" }
+                                    Text {
+                                        text: modelData.category || "Non catégorisé"
+                                        font.pixelSize: 16;
+                                        font.weight: Font.Medium;
+                                        color: "#030213"
+                                    }
+                                    Text {
+                                        text: modelData.count + " plat(s)";
+                                        font.pixelSize: 14;
+                                        color: "#717182"
+                                    }
 
                                     Rectangle {
                                         Layout.fillWidth: true
@@ -166,7 +282,7 @@ Item {
                                         radius: 4
 
                                         Rectangle {
-                                            width: parent.width * (modelData.count / platModel.count)
+                                            width: parent.width * (modelData.count / Math.max(platCount, 1))
                                             height: parent.height
                                             color: "#030213"
                                             radius: 4
@@ -175,6 +291,16 @@ Item {
                                 }
                             }
                         }
+
+                        // Message si pas de catégories
+                        Label {
+                            Layout.columnSpan: 2
+                            Layout.alignment: Qt.AlignCenter
+                            text: "Aucune catégorie disponible"
+                            font.pixelSize: 16
+                            color: "#717182"
+                            visible: platCount === 0
+                        }
                     }
                 }
             }
@@ -182,26 +308,37 @@ Item {
     }
 
     function calculateTotalRevenue() {
-        var total = 0
-        for (var i = 0; i < commandeModel.count; i++) {
+        if (!commandeModel) return 0.0
+
+        var total = 0.0
+        for (var i = 0; i < commandeModel.rowCount(); i++) {
             var cmd = commandeModel.get(i)
-            if (cmd.total !== undefined) total += cmd.total
+            if (cmd && cmd.total !== undefined) {
+                total += cmd.total
+            }
         }
-        return total.toFixed(2)
+        return total
     }
 
     function getPlatStats() {
         var stats = []
-        for (var i = 0; i < platModel.count; i++) {
-            var platItem = platModel.get(i)
-            var nb = 0
-            var total = 0
 
-            for (var j = 0; j < detailsCommandeModel.count; j++) {
+        if (!platModel || !detailsCommandeModel) {
+            return stats
+        }
+
+        for (var i = 0; i < platModel.rowCount(); i++) {
+            var platItem = platModel.get(i)
+            if (!platItem) continue
+
+            var nb = 0
+            var total = 0.0
+
+            for (var j = 0; j < detailsCommandeModel.rowCount(); j++) {
                 var detail = detailsCommandeModel.get(j)
-                if (detail.id_plat === platItem.id_plat) {
-                    nb += detail.quantite
-                    total += detail.quantite * detail.prix_unitaire
+                if (detail && detail.id_plat === platItem.id_plat) {
+                    nb += detail.quantite || 0
+                    total += (detail.quantite || 0) * (detail.prix_unitaire || 0)
                 }
             }
 
@@ -212,22 +349,44 @@ Item {
                 total_revenue: total
             })
         }
-        stats.sort(function(a,b){return b.nb_commandes - a.nb_commandes})
+
+        // Trier par nombre de commandes (décroissant)
+        stats.sort(function(a, b){
+            return (b.nb_commandes || 0) - (a.nb_commandes || 0)
+        })
+
         return stats
     }
 
     function getCategoryStats() {
         var categories = {}
-        for (var i = 0; i < platModel.count; i++) {
-            var cat = platModel.get(i).categorie
-            if (categories[cat]) categories[cat]++
-            else categories[cat] = 1
+
+        if (!platModel) {
+            return []
         }
 
+        // Compter les plats par catégorie
+        for (var i = 0; i < platModel.rowCount(); i++) {
+            var plat = platModel.get(i)
+            if (!plat) continue
+
+            var cat = plat.categorie || "Non catégorisé"
+            if (categories[cat]) {
+                categories[cat]++
+            } else {
+                categories[cat] = 1
+            }
+        }
+
+        // Convertir en tableau
         var result = []
         for (var key in categories) {
-            result.push({ category: key, count: categories[key] })
+            result.push({
+                category: key,
+                count: categories[key]
+            })
         }
+
         return result
     }
 }
