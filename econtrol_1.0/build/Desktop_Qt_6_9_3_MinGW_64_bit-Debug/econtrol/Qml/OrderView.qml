@@ -1,10 +1,23 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
+import QtQuick.Effects
 
 Item {
     id: root
     anchors.fill: parent
+
+    property var factureData: ({})
+    property var detailsData: ({})
+
+    Connections {
+            target: commandeModel
+            function onCountChanged() {
+                console.log("Commande rowCount changed:", commandeModel.rowCount())
+                commandeCount = commandeModel.rowCount()
+            }
+        }
+
 
     function updateTotal() {
         var total = 0
@@ -120,8 +133,25 @@ Item {
                                 Text { text: total.toFixed(2) + " €"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 80 }
 
                                 RowLayout {
-                                    Layout.preferredWidth: 160
+                                    Layout.preferredWidth: 200
                                     spacing: 8
+
+                                    Button {
+                                        text: "Facture"
+                                        Layout.preferredHeight: 32
+                                        background: Rectangle {
+                                            color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
+                                            radius: 6
+                                        }
+                                        contentItem: Text {
+                                            text: parent.text
+                                            font.pixelSize: 13
+                                            font.weight: Font.Medium
+                                            color: "#ffffff"
+                                            anchors.centerIn: parent
+                                        }
+                                        onClicked: factureDialog.openFacture(id_commande)
+                                    }
 
                                     Button {
                                         text: "Supprimer"
@@ -140,6 +170,7 @@ Item {
                                         onClicked: commandeModel.supprimerCommande(id_commande)
                                     }
                                 }
+
                             }
 
                             Rectangle { anchors.bottom: parent.bottom; width: parent.width; height: 1; color: "#e5e5e5" }
@@ -320,4 +351,221 @@ Item {
         var d = new Date(dateString)
         return Qt.formatDateTime(d, "dd/MM/yyyy hh:mm:ss")
     }
+
+    // POPUP FACTURE
+    Popup {
+        id: factureDialog
+        width: 620
+        height: 640
+        modal: true
+        focus: true
+        anchors.centerIn: parent
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+
+        property var factureData: ({})
+        ListModel { id: factureItemsModel }
+
+        background: Rectangle {
+            color: "#ffffff"
+            radius: 14
+            border.color: "#e5e5e5"
+            border.width: 1
+            layer.enabled: true
+            layer.smooth: true
+            layer.effect: MultiEffect {
+                   shadowEnabled: true
+                   shadowColor: "#33000000"
+                   shadowBlur: 0.6
+                   shadowVerticalOffset: 6
+               }
+        }
+
+        ColumnLayout {
+            anchors.fill: parent
+            anchors.margins: 28
+            spacing: 16
+
+            ColumnLayout {
+                Layout.fillWidth: true
+                spacing: 6
+                Text {
+                    text: "FACTURE"
+                    font.pixelSize: 26
+                    font.bold: true
+                    horizontalAlignment: Text.AlignHCenter
+                    Layout.alignment: Qt.AlignHCenter
+                    color: "#0b0b10"
+                }
+                Text {
+                    text: "Restaurant Gastronomique"
+                    font.pixelSize: 13
+                    color: "#7a7a80"
+                    horizontalAlignment: Text.AlignHCenter
+                    Layout.alignment: Qt.AlignHCenter
+                }
+            }
+
+            Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: "#e5e5e5" }
+
+            GridLayout {
+                Layout.fillWidth: true
+                columns: 2
+                columnSpacing: 12
+                rowSpacing: 6
+
+                Text { text: "N° Facture :" ; font.bold: true; color: "#030213" }
+                Text { id: factureNumTxt; text: "#" + (factureData.id || ""); color: "#030213" }
+
+                Text { text: "Date :" ; font.bold: true; color: "#030213" }
+                Text { id: factureDateTxt; text: (factureData.date || ""); color: "#030213" }
+
+                Text { text: "Client :" ; font.bold: true; color: "#030213" }
+                Text { id: factureClientTxt; text: (factureData.client || ""); color: "#030213" }
+            }
+
+            Rectangle { Layout.fillWidth: true; height: 1; color: "#efefef" }
+
+            Text { text: "DÉTAIL DES ARTICLES"; font.pixelSize: 16; font.bold: true; color: "#030213" }
+
+            Column {
+                Layout.fillWidth: true
+                spacing: 2
+
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 8
+                Layout.alignment: Qt.AlignVCenter
+
+                Text { text: "Article"; font.bold: true; Layout.fillWidth: true; color: "#2b2b30" }
+                   Text { text: "Qté"; font.bold: true; Layout.preferredWidth: 50; horizontalAlignment: Text.AlignHCenter; color: "#2b2b30" }
+                   Text { text: "Prix U."; font.bold: true; Layout.preferredWidth: 80; horizontalAlignment: Text.AlignRight; color: "#2b2b30" }
+                   Text { text: "Total"; font.bold: true; Layout.preferredWidth: 80; horizontalAlignment: Text.AlignRight; color: "#2b2b30" }
+            }
+            Rectangle { Layout.fillWidth: true; Layout.preferredHeight: 1; color: "#f0f0f0" }
+            }
+
+            ListView {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                model: factureItemsModel
+                spacing: 6
+                clip: true
+
+                delegate: RowLayout {
+                    Layout.fillWidth: true
+                    spacing: 8
+
+                    Text {
+                        text: (nom_plat || ("Plat #" + id_plat))
+                        Layout.fillWidth: true
+                        font.pixelSize: 13
+                        horizontalAlignment: Text.AlignLeft
+                    }
+                    Text {
+                        text: "x" + quantite
+                        Layout.preferredWidth: 50
+                        horizontalAlignment: Text.AlignHCenter
+                        font.pixelSize: 13
+                    }
+                    Text {
+                        text: prix_unitaire.toFixed(2) + " €"
+                        Layout.preferredWidth: 80
+                        horizontalAlignment: Text.AlignRight
+                        font.pixelSize: 13
+                    }
+                    Text {
+                        text: (prix_unitaire * quantite).toFixed(2) + " €"
+                        Layout.preferredWidth: 80
+                        horizontalAlignment: Text.AlignRight
+                        font.pixelSize: 13
+                    }
+                }
+
+            }
+
+            Rectangle { color: "#e5e5e5"; height: 1; Layout.fillWidth: true }
+
+            RowLayout {
+                Layout.fillWidth: true
+                Text { text: "TOTAL :"; font.pixelSize: 16; font.bold: true; Layout.fillWidth: true; color: "#030213" }
+                Text { id: factureTotalTxt; text: factureData.total ? factureData.total.toFixed(2) + " €" : ""; font.pixelSize: 16; font.bold: true; color: "#030213" }
+            }
+
+            Button {
+                text: "Fermer"
+                Layout.fillWidth: true
+                Layout.preferredHeight: 40
+                onClicked: factureDialog.close()
+            }
+        }
+
+        // Fonction pour ouvrir et remplir la facture
+        function openFacture(idCommande) {
+            console.log("[FACTURE] openFacture idCommande =", idCommande)
+            factureData = {}
+            factureItemsModel.clear()
+
+            // récupération des détails via le modèle C++ (devrait retourner QVariantList ou similaire)
+            var rawDetails = []
+            if (detailsCommandeModel && typeof detailsCommandeModel.getDetailsByCommande === "function") {
+                rawDetails = detailsCommandeModel.getDetailsByCommande(idCommande)
+            } else {
+                console.warn("[FACTURE] detailsCommandeModel non disponible ou getDetailsByCommande manquant")
+            }
+
+            // recherche de la commande dans commandeModel (par id_commande)
+            var commande = null
+            if (commandeModel) {
+                for (var i = 0; i < commandeModel.rowCount(); i++) {
+                    var c = commandeModel.get(i)
+                    if (c.id_commande === idCommande) { commande = c; break }
+                }
+            }
+
+            if (commande) {
+                factureData = {
+                    id: idCommande,
+                    client: getClientName(commande.id_client),
+                    date: formatDateTime(commande.date_commande),
+                    total: commande.total
+                }
+            } else {
+                factureData = { id: idCommande, client: "Inconnu", date: "", total: 0 }
+                console.warn("[FACTURE] commande introuvable pour id =", idCommande)
+            }
+
+            // remplir factureItemsModel depuis rawDetails
+            // rawDetails peut être un QVariantList d'objets contenant id_plat, quantite, prix_unitaire
+            for (var j = 0; j < rawDetails.length; j++) {
+                var d = rawDetails[j]
+                // si ton DetailsCommande renvoie des clés différentes, adapte ici
+                var idp = d.id_plat !== undefined ? d.id_plat : (d.platId || d.idPlat || d.id)
+                var q   = d.quantite !== undefined ? d.quantite : (d.qty || d.quantity || 1)
+                var pu  = d.prix_unitaire !== undefined ? d.prix_unitaire : (d.prix || d.prixUnitaire || d.prix_u || 0)
+
+                // essayer de récupérer le nom du plat depuis platModel si disponible
+                var nom = "Plat #" + idp
+                if (platModel) {
+                    for (var k = 0; k < platModel.rowCount(); k++) {
+                        var p = platModel.get(k)
+                        if (p.id_plat === idp || p.id === idp) {
+                            nom = p.nom_plat || p.nom || nom
+                            break
+                        }
+                    }
+                }
+
+                factureItemsModel.append({ id_plat: idp, nom_plat: nom, quantite: q, prix_unitaire: pu })
+            }
+
+            // mettre à jour textes visibles
+            factureNumTxt.text = "N° Facture : #" + (factureData.id || "")
+            factureClientTxt.text = "Client : " + (factureData.client || "")
+            factureDateTxt.text = "Date : " + (factureData.date || "")
+            factureTotalTxt.text = factureData.total ? factureData.total.toFixed(2) + " €" : ""
+
+            open()
+        }
+    }
+
 }

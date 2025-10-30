@@ -135,6 +135,13 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total, 
     m_commandes.append(newCmd);
     endInsertRows();
 
+    // Générer automatiquement une facture après ajout de la commande
+    auto factureModel = GestionData::instance()->factureModel();
+    if (factureModel) {
+        factureModel->genererFacture(newId);
+        qDebug() << "[COMMANDE] Facture générée automatiquement pour la commande" << newId;
+    }
+
     return true;
 }
 
