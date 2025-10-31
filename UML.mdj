@@ -1338,12 +1338,20 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
+<<<<<<< HEAD
 											"_id": "AAAAAAGZvu8azzsHMR4=",
+=======
+											"_id": "AAAAAAGZvvDyf6hSku0=",
+>>>>>>> ead41ba7c65b9c5e8d26de3eb5de20370cdd5604
 											"_parent": {
 												"$ref": "AAAAAAGZqVzzFZZnVW0="
 											},
 											"model": {
+<<<<<<< HEAD
 												"$ref": "AAAAAAGZvu8avDsEn0I="
+=======
+												"$ref": "AAAAAAGZvvDyWKhPpfk="
+>>>>>>> ead41ba7c65b9c5e8d26de3eb5de20370cdd5604
 											},
 											"font": "Arial;13;0",
 											"parentStyle": true,
@@ -1351,7 +1359,11 @@
 											"top": 78,
 											"width": 143,
 											"height": 13,
+<<<<<<< HEAD
 											"text": "#id_facture: int",
+=======
+											"text": "#id_facture",
+>>>>>>> ead41ba7c65b9c5e8d26de3eb5de20370cdd5604
 											"horizontalAlignment": 0
 										},
 										{
@@ -4671,13 +4683,21 @@
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
+<<<<<<< HEAD
 							"_id": "AAAAAAGZvu8avDsEn0I=",
+=======
+							"_id": "AAAAAAGZvvDyWKhPpfk=",
+>>>>>>> ead41ba7c65b9c5e8d26de3eb5de20370cdd5604
 							"_parent": {
 								"$ref": "AAAAAAGZqVzzE5Zf4JA="
 							},
 							"name": "id_facture",
 							"visibility": "protected",
+<<<<<<< HEAD
 							"type": "int"
+=======
+							"type": ""
+>>>>>>> ead41ba7c65b9c5e8d26de3eb5de20370cdd5604
 						},
 						{
 							"_type": "UMLAttribute",

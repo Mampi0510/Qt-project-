@@ -64,6 +64,22 @@
                     "index": 3,
                     "name": "supprimerProduit",
                     "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idPlat",
+                            "type": "int"
+                        },
+                        {
+                            "name": "quantiteCommandee",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "reduireStockPourPlat",
+                    "returnType": "bool"
                 }
             ],
             "object": true,

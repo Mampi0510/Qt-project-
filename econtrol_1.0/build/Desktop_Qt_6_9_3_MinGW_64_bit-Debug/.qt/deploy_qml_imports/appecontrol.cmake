@@ -9,7 +9,7 @@ endif()
 
 _qt_internal_deploy_qml_imports_for_target(
     ${__qt_opts}
-    IMPORTS_FILE "E:/econtrol/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/qml_imports/appecontrol_build.cmake"
+    IMPORTS_FILE "D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/.qt/qml_imports/appecontrol_build.cmake"
     PLUGINS_FOUND __qt_internal_plugins_found
     QML_DIR     "${arg_QML_DIR}"
     PLUGINS_DIR "${arg_PLUGINS_DIR}"

@@ -75,7 +75,7 @@ void Facture::chargerFactures()
         f["id_facture"] = query.value("id_facture").toInt();
         f["id_commande"] = query.value("id_commande").toInt();
         f["id_client"] = query.value("id_client").toInt();
-        f["date_facture"] = query.value("date_facture").toString();
+        f["date_facture"] = query.value("date_facture").toDateTime().toLocalTime().toString(Qt::ISODate);
         f["montant_net"] = query.value("net_a_payer").toDouble();
         m_factures.append(f);
 
@@ -143,7 +143,7 @@ bool Facture::genererFacture(int idCommande)
     }
 
 
-    return ajouterFacture(idCommande, idClient, QDateTime::currentDateTime(), totalCommande);
+    return ajouterFacture(idCommande, idClient, QDateTime::currentDateTime().toLocalTime(), totalCommande);
 }
 
 bool Facture::supprimerFacture(int idFacture)

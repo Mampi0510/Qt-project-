@@ -4,10 +4,13 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QSqlDatabase>
+#include <QTimer>
 
 Commande::Commande(QObject *parent)
     : QAbstractListModel(parent)
 {
+    QTimer::singleShot(0, this, &Commande::chargerCommandes);
+
     m_detailsCommande = new DetailsCommande(this);
 
     auto gd = GestionData::instance();
@@ -79,17 +82,21 @@ void Commande::chargerCommandes()
         QVariantMap c;
         c["id_commande"] = query.value("id_commande").toInt();
         c["id_client"] = query.value("id_client").toInt();
-        c["date_commande"] = query.value("date_commande").toString();
+        c["date_commande"] = query.value("date_commande").toDateTime().toLocalTime().toString(Qt::ISODate);
         c["total"] = query.value("total").toDouble();
         m_commandes.append(c);
     }
 
     endResetModel();
+    emit countChanged();
     qDebug() << "Commandes chargées:" << m_commandes.size();
 }
 
-bool Commande::ajouterCommande(int clientId, const QString &date, double total)
+bool Commande::ajouterCommande(int clientId, const QString &date, double total, const QVariantList &plats)
 {
+    qDebug() << "[COMMANDE::ajouterCommande] appelé depuis QML ? clientId=" << clientId
+             << " date=" << date << " total=" << total << " plats_count=" << plats.size();
+
     if (clientId <= 0) return false;
 
     QSqlDatabase db = GestionData::instance()->getDatabase();
@@ -97,8 +104,12 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total)
 
     QSqlQuery query(db);
     query.prepare("INSERT INTO commandes (id_client, date_commande, total) VALUES (?, ?, ?)");
+
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString isoDate = currentDateTime.toString(Qt::ISODate);
+
     query.addBindValue(clientId);
-    query.addBindValue(date);
+    query.addBindValue(currentDateTime);
     query.addBindValue(total);
 
     if (!query.exec()) {
@@ -106,19 +117,45 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total)
         return false;
     }
 
-
     int newId = query.lastInsertId().toInt();
+    qDebug() << "[COMMANDE] Nouvelle commande ajoutée ID:" << newId;
+
+    if (m_detailsCommande) {
+        for (const QVariant &v : plats) {
+            QVariantMap plat = v.toMap();
+            int idPlat = plat["id_plat"].toInt();
+            int quantite = plat["quantite"].toInt();
+            double prixUnitaire = plat["prix"].toDouble();
+
+            qDebug() << "[COMMANDE] Ajout du plat" << idPlat << "x" << quantite;
+            m_detailsCommande->ajouterDetail(newId, idPlat, quantite, prixUnitaire);
+        }
+    }
+
+    // Mise à jour du modèle
     beginInsertRows(QModelIndex(), m_commandes.size(), m_commandes.size());
     QVariantMap newCmd;
     newCmd["id_commande"] = newId;
     newCmd["id_client"] = clientId;
-    newCmd["date_commande"] = date;
+    newCmd["date_commande"] = isoDate;
     newCmd["total"] = total;
     m_commandes.append(newCmd);
     endInsertRows();
 
+    emit countChanged();
+    chargerCommandes();
+
+
+    // Générer automatiquement une facture après ajout de la commande
+    auto factureModel = GestionData::instance()->factureModel();
+    if (factureModel) {
+        factureModel->genererFacture(newId);
+        qDebug() << "[COMMANDE] Facture générée automatiquement pour la commande" << newId;
+    }
+
     return true;
 }
+
 
 bool Commande::modifierCommande(int id, int clientId, const QString &date, double total)
 {
@@ -150,6 +187,9 @@ bool Commande::modifierCommande(int id, int clientId, const QString &date, doubl
             break;
         }
     }
+
+    emit countChanged();
+    chargerCommandes();
 
     return true;
 }
@@ -197,6 +237,9 @@ bool Commande::supprimerCommande(int id)
             break;
         }
     }
+
+    emit countChanged();
+    chargerCommandes();
 
     return true;
 }

@@ -48,7 +48,10 @@ template <> constexpr inline auto Stock::qt_create_metaobjectdata<qt_meta_tag_ZN
         "quantite",
         "modifierProduit",
         "id",
-        "supprimerProduit"
+        "supprimerProduit",
+        "reduireStockPourPlat",
+        "idPlat",
+        "quantiteCommandee"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -67,6 +70,10 @@ template <> constexpr inline auto Stock::qt_create_metaobjectdata<qt_meta_tag_ZN
         // Method 'supprimerProduit'
         QtMocHelpers::MethodData<bool(int)>(10, 3, QMC::AccessPublic, QMetaType::Bool, {{
             { QMetaType::Int, 9 },
+        }}),
+        // Method 'reduireStockPourPlat'
+        QtMocHelpers::MethodData<bool(int, double)>(11, 3, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 12 }, { QMetaType::Double, 13 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -99,6 +106,8 @@ void Stock::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 3: { bool _r = _t->supprimerProduit((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 4: { bool _r = _t->reduireStockPourPlat((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])));
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -123,14 +132,14 @@ int Stock::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

@@ -100,7 +100,6 @@ bool Stock::ajouterProduit(const QString &nom, double quantite)
         return false;
     }
 
-    // Mise à jour incrémentale
     int newId = query.lastInsertId().toInt();
     beginInsertRows(QModelIndex(), m_stock.size(), m_stock.size());
     QVariantMap produit;
@@ -120,7 +119,6 @@ bool Stock::modifierProduit(int id, const QString &nom, double quantite)
     QSqlDatabase db = GestionData::instance()->getDatabase();
     if (!db.isOpen()) return false;
 
-    // Trouver l'index pour mise à jour incrémentale
     int index = -1;
     for (int i = 0; i < m_stock.size(); ++i) {
         if (m_stock[i]["id_produit"].toInt() == id) {
@@ -157,7 +155,6 @@ bool Stock::supprimerProduit(int id)
     QSqlDatabase db = GestionData::instance()->getDatabase();
     if (!db.isOpen()) return false;
 
-    // Trouver l'index pour mise à jour incrémentale
     int index = -1;
     for (int i = 0; i < m_stock.size(); ++i) {
         if (m_stock[i]["id_produit"].toInt() == id) {
@@ -183,3 +180,41 @@ bool Stock::supprimerProduit(int id)
 
     return true;
 }
+
+bool Stock::reduireStockPourPlat(int idPlat, double quantiteCommandee)
+{
+    qDebug() << "[STOCK::reduireStockPourPlat] idPlat=" << idPlat << " qte=" << quantiteCommandee;
+
+    QSqlDatabase db = GestionData::instance()->getDatabase();
+    if (!db.isOpen()) return false;
+
+    QSqlQuery query(db);
+    query.prepare("SELECT id_produit, quantite_prise FROM detailsstock WHERE id_plat=?");
+    query.addBindValue(idPlat);
+
+    if (!query.exec()) {
+        qWarning() << "Erreur lecture detailsstock:" << query.lastError().text();
+        return false;
+    }
+
+    while (query.next()) {
+        int idProduit = query.value("id_produit").toInt();
+        double qteUtilisee = query.value("quantite_prise").toDouble();
+        double totalAretirer = qteUtilisee * quantiteCommandee;
+
+        QSqlQuery update(db);
+        update.prepare("UPDATE stock SET quantite = quantite - ? WHERE id_produit=?");
+        update.addBindValue(totalAretirer);
+        update.addBindValue(idProduit);
+
+        if (!update.exec()) {
+            qWarning() << "Erreur maj stock:" << update.lastError().text();
+            return false;
+        }
+    }
+
+    chargerStock();
+    return true;
+}
+
+

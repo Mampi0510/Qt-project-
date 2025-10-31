@@ -39,8 +39,9 @@ template <> constexpr inline auto DetailsCommande::qt_create_metaobjectdata<qt_m
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "DetailsCommande",
-        "ajouterDetail",
+        "countChanged",
         "",
+        "ajouterDetail",
         "idCommande",
         "idPlat",
         "quantite",
@@ -51,32 +52,40 @@ template <> constexpr inline auto DetailsCommande::qt_create_metaobjectdata<qt_m
         "QVariantMap",
         "index",
         "getDetailsByCommande",
-        "QVariantList"
+        "QVariantList",
+        "chargerDetails",
+        "count"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'countChanged'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'ajouterDetail'
-        QtMocHelpers::MethodData<bool(int, int, int, double)>(1, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 3 }, { QMetaType::Int, 4 }, { QMetaType::Int, 5 }, { QMetaType::Double, 6 },
+        QtMocHelpers::MethodData<bool(int, int, int, double)>(3, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 4 }, { QMetaType::Int, 5 }, { QMetaType::Int, 6 }, { QMetaType::Double, 7 },
         }}),
         // Method 'supprimerDetail'
-        QtMocHelpers::MethodData<bool(int, int)>(7, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 3 }, { QMetaType::Int, 4 },
+        QtMocHelpers::MethodData<bool(int, int)>(8, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 4 }, { QMetaType::Int, 5 },
         }}),
         // Method 'supprimerDetailParCommande'
-        QtMocHelpers::MethodData<bool(int)>(8, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 3 },
+        QtMocHelpers::MethodData<bool(int)>(9, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 4 },
         }}),
         // Method 'get'
-        QtMocHelpers::MethodData<QVariantMap(int) const>(9, 2, QMC::AccessPublic, 0x80000000 | 10, {{
-            { QMetaType::Int, 11 },
+        QtMocHelpers::MethodData<QVariantMap(int) const>(10, 2, QMC::AccessPublic, 0x80000000 | 11, {{
+            { QMetaType::Int, 12 },
         }}),
         // Method 'getDetailsByCommande'
-        QtMocHelpers::MethodData<QVariantList(int)>(12, 2, QMC::AccessPublic, 0x80000000 | 13, {{
-            { QMetaType::Int, 3 },
+        QtMocHelpers::MethodData<QVariantList(int)>(13, 2, QMC::AccessPublic, 0x80000000 | 14, {{
+            { QMetaType::Int, 4 },
         }}),
+        // Method 'chargerDetails'
+        QtMocHelpers::MethodData<void()>(15, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
+        // property 'count'
+        QtMocHelpers::PropertyData<int>(16, QMetaType::Int, QMC::DefaultPropertyFlags, 0),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -98,17 +107,30 @@ void DetailsCommande::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     auto *_t = static_cast<DetailsCommande *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: { bool _r = _t->ajouterDetail((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[4])));
+        case 0: _t->countChanged(); break;
+        case 1: { bool _r = _t->ajouterDetail((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[4])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 1: { bool _r = _t->supprimerDetail((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])));
+        case 2: { bool _r = _t->supprimerDetail((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 2: { bool _r = _t->supprimerDetailParCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 3: { bool _r = _t->supprimerDetailParCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 3: { QVariantMap _r = _t->get((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 4: { QVariantMap _r = _t->get((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 4: { QVariantList _r = _t->getDetailsByCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 5: { QVariantList _r = _t->getDetailsByCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 6: _t->chargerDetails(); break;
         default: ;
+        }
+    }
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (DetailsCommande::*)()>(_a, &DetailsCommande::countChanged, 0))
+            return;
+    }
+    if (_c == QMetaObject::ReadProperty) {
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: *reinterpret_cast<int*>(_v) = _t->rowCount(); break;
+        default: break;
         }
     }
 }
@@ -132,15 +154,27 @@ int DetailsCommande::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 7;
+    }
+    if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
+            || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
+            || _c == QMetaObject::RegisterPropertyMetaType) {
+        qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
     }
     return _id;
+}
+
+// SIGNAL 0
+void DetailsCommande::countChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 QT_WARNING_POP

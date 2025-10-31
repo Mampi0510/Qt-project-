@@ -2,14 +2,16 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
+#include <QQuickStyle>
 #include <QDebug>
-
 #include "headers/GestionData.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon(":/icons/resto.png"));
+
+    QQuickStyle::setStyle("Fusion");
 
     GestionData* gdManager = GestionData::instance();
 
@@ -19,8 +21,12 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    // Les modèles sont maintenant initialisés à la demande
     QQmlApplicationEngine engine;
+
+    qmlRegisterType<Client>("econtrol", 1, 0, "Client");
+    qmlRegisterType<Plat>("econtrol", 1, 0, "Plat");
+    qmlRegisterType<Commande>("econtrol", 1, 0, "Commande");
+    qmlRegisterType<DetailsCommande>("econtrol", 1, 0, "DetailsCommande");
 
     engine.rootContext()->setContextProperty("gdManager", gdManager);
     engine.rootContext()->setContextProperty("clientModel", gdManager->clientsModel());

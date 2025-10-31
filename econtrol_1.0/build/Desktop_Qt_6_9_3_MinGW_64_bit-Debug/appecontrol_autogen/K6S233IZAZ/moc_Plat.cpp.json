@@ -25,14 +25,14 @@
                             "type": "int"
                         }
                     ],
-                    "index": 0,
+                    "index": 1,
                     "isConst": true,
                     "name": "get",
                     "returnType": "QVariantMap"
                 },
                 {
                     "access": "public",
-                    "index": 1,
+                    "index": 2,
                     "name": "chargerPlats",
                     "returnType": "void"
                 },
@@ -52,7 +52,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 2,
+                    "index": 3,
                     "name": "ajouterPlat",
                     "returnType": "bool"
                 },
@@ -76,7 +76,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 3,
+                    "index": 4,
                     "name": "modifierPlat",
                     "returnType": "bool"
                 },
@@ -88,13 +88,37 @@
                             "type": "int"
                         }
                     ],
-                    "index": 4,
+                    "index": 5,
                     "name": "supprimerPlat",
                     "returnType": "bool"
                 }
             ],
             "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "count",
+                    "notify": "countChanged",
+                    "read": "rowCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                }
+            ],
             "qualifiedClassName": "Plat",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "countChanged",
+                    "returnType": "void"
+                }
+            ],
             "superClasses": [
                 {
                     "access": "public",

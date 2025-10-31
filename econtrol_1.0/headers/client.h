@@ -10,6 +10,7 @@
 class Client : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
 
 public:
     enum ClientRoles {
@@ -35,6 +36,10 @@ public:
 
 private:
     QList<QVariantMap> m_clients;
+
+signals:
+    void countChanged();
+
 };
 
 #endif // CLIENT_H

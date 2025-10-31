@@ -15,9 +15,9 @@ ApplicationWindow {
 
     Component.onCompleted: {
         clientModel.chargerClients()
-        commandeModel.chargerCommandes()
         platModel.chargerPlats()
     }
+
 
 
     // mapping des vues à l'index du StackLayout

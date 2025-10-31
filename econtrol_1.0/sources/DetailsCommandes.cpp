@@ -75,11 +75,14 @@ void DetailsCommande::chargerDetails()
     }
 
     endResetModel();
+    emit countChanged();
     qDebug() << "Détails commandes chargés:" << m_details.size();
 }
 
 bool DetailsCommande::ajouterDetail(int idCommande, int idPlat, int quantite, double prixUnitaire)
 {
+    qDebug() << "[DETAIL::ajouterDetail] idCommande=" << idCommande << " idPlat=" << idPlat << " quantite=" << quantite;
+
     if (idCommande <= 0 || idPlat <= 0 || quantite <= 0 || prixUnitaire <= 0)
         return false;
 
@@ -98,7 +101,15 @@ bool DetailsCommande::ajouterDetail(int idCommande, int idPlat, int quantite, do
         return false;
     }
 
+    qDebug() << "[DETAIL] Commande ajoutée - appel reduction stock pour plat:" << idPlat << "x" << quantite;
 
+    auto stockModel = GestionData::instance()->stockModel();
+    if (stockModel) {
+        qDebug() << "[DETAIL] stockModel trouvé, lancement de reduireStockPourPlat";
+        stockModel->reduireStockPourPlat(idPlat, quantite);
+    } else {
+        qWarning() << "[DETAIL] stockModel est NULL !";
+    }
     beginInsertRows(QModelIndex(), m_details.size(), m_details.size());
     QVariantMap newDetail;
     newDetail["id_commande"] = idCommande;
@@ -107,6 +118,7 @@ bool DetailsCommande::ajouterDetail(int idCommande, int idPlat, int quantite, do
     newDetail["prix_unitaire"] = prixUnitaire;
     m_details.append(newDetail);
     endInsertRows();
+    emit countChanged();
 
     return true;
 }
@@ -165,7 +177,7 @@ bool DetailsCommande::supprimerDetailParCommande(int idCommande)
             endRemoveRows();
         }
     }
-
+    emit countChanged();
     return true;
 }
 

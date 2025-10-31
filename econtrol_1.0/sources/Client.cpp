@@ -66,6 +66,7 @@ void Client::chargerClients() {
     }
 
     endResetModel();
+    emit countChanged();
     qDebug() << "Clients chargés:" << m_clients.size();
 }
 

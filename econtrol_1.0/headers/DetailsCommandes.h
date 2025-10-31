@@ -1,12 +1,12 @@
 #ifndef DETAILSCOMMANDE_H
 #define DETAILSCOMMANDE_H
-
 #include <QAbstractListModel>
 #include <QVariantMap>
 
 class DetailsCommande : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int count READ rowCount NOTIFY countChanged)
 
 public:
     enum Roles {
@@ -29,10 +29,12 @@ public:
     Q_INVOKABLE bool supprimerDetailParCommande(int idCommande);
     Q_INVOKABLE QVariantMap get(int index) const;
     Q_INVOKABLE QVariantList getDetailsByCommande(int idCommande);
+    Q_INVOKABLE void chargerDetails();
+
+signals:
+    void countChanged();
 
 private:
-    void chargerDetails();
-
     QVector<QVariantMap> m_details;
 };
 
