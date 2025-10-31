@@ -1,0 +1,137 @@
+{
+    "classes": [
+        {
+            "className": "Commande",
+            "lineNumber": 8,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "name": "get",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "clientId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "date",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "total",
+                            "type": "double"
+                        },
+                        {
+                            "name": "plats",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "ajouterCommande",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "clientId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "date",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "total",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "modifierCommande",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "supprimerCommande",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "isConst": true,
+                    "name": "detailsModel",
+                    "returnType": "DetailsCommande*"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "count",
+                    "notify": "countChanged",
+                    "read": "rowCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "detailsModel",
+                    "read": "detailsModel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "DetailsCommande*",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "Commande",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "countChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "Commande.h",
+    "outputRevision": 69
+}

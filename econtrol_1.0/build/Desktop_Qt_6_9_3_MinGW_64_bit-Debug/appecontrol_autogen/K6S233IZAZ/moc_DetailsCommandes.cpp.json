@@ -1,0 +1,127 @@
+{
+    "classes": [
+        {
+            "className": "DetailsCommande",
+            "lineNumber": 6,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        },
+                        {
+                            "name": "idPlat",
+                            "type": "int"
+                        },
+                        {
+                            "name": "quantite",
+                            "type": "int"
+                        },
+                        {
+                            "name": "prixUnitaire",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "ajouterDetail",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        },
+                        {
+                            "name": "idPlat",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "supprimerDetail",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "supprimerDetailParCommande",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 4,
+                    "isConst": true,
+                    "name": "get",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "idCommande",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "getDetailsByCommande",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "name": "chargerDetails",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "count",
+                    "notify": "countChanged",
+                    "read": "rowCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "DetailsCommande",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "countChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "DetailsCommandes.h",
+    "outputRevision": 69
+}
