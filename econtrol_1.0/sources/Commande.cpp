@@ -188,7 +188,7 @@ bool Commande::modifierCommande(int id, int clientId, const QString &date, doubl
         }
     }
 
-    emit countChanged();    // met à jour le compteur QML
+    emit countChanged();
     chargerCommandes();
 
     return true;
@@ -238,7 +238,7 @@ bool Commande::supprimerCommande(int id)
         }
     }
 
-    emit countChanged();    // met à jour le compteur QML
+    emit countChanged();
     chargerCommandes();
 
     return true;

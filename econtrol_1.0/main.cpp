@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    // Les modèles sont maintenant initialisés à la demande
     QQmlApplicationEngine engine;
 
     qmlRegisterType<Client>("econtrol", 1, 0, "Client");

@@ -100,7 +100,6 @@ bool Stock::ajouterProduit(const QString &nom, double quantite)
         return false;
     }
 
-    // Mise à jour incrémentale
     int newId = query.lastInsertId().toInt();
     beginInsertRows(QModelIndex(), m_stock.size(), m_stock.size());
     QVariantMap produit;
@@ -120,7 +119,6 @@ bool Stock::modifierProduit(int id, const QString &nom, double quantite)
     QSqlDatabase db = GestionData::instance()->getDatabase();
     if (!db.isOpen()) return false;
 
-    // Trouver l'index pour mise à jour incrémentale
     int index = -1;
     for (int i = 0; i < m_stock.size(); ++i) {
         if (m_stock[i]["id_produit"].toInt() == id) {
@@ -157,7 +155,6 @@ bool Stock::supprimerProduit(int id)
     QSqlDatabase db = GestionData::instance()->getDatabase();
     if (!db.isOpen()) return false;
 
-    // Trouver l'index pour mise à jour incrémentale
     int index = -1;
     for (int i = 0; i < m_stock.size(); ++i) {
         if (m_stock[i]["id_produit"].toInt() == id) {
@@ -191,7 +188,6 @@ bool Stock::reduireStockPourPlat(int idPlat, double quantiteCommandee)
     QSqlDatabase db = GestionData::instance()->getDatabase();
     if (!db.isOpen()) return false;
 
-    // Trouver les produits liés à ce plat et la quantité utilisée par unité
     QSqlQuery query(db);
     query.prepare("SELECT id_produit, quantite_prise FROM detailsstock WHERE id_plat=?");
     query.addBindValue(idPlat);
@@ -201,7 +197,6 @@ bool Stock::reduireStockPourPlat(int idPlat, double quantiteCommandee)
         return false;
     }
 
-    // Pour chaque ingrédient du plat, on diminue le stock
     while (query.next()) {
         int idProduit = query.value("id_produit").toInt();
         double qteUtilisee = query.value("quantite_prise").toDouble();
@@ -218,7 +213,6 @@ bool Stock::reduireStockPourPlat(int idPlat, double quantiteCommandee)
         }
     }
 
-    // Recharger le modèle pour mettre à jour l’affichage dans QML
     chargerStock();
     return true;
 }

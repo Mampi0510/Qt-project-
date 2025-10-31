@@ -276,7 +276,6 @@ Item {
                 categories[cat] = { category: cat, count: 0, totalSales: 0 }
             }
 
-            // Calcule les ventes pour ce plat
             for (var j = 0; j < detailsCommandeModel.count; j++) {
                 var detail = detailsCommandeModel.get(j)
                 var detailIdPlat = detail.id_plat || detail.idPlat
@@ -290,7 +289,6 @@ Item {
             }
         }
 
-        // Convertit en tableau trié par count décroissant
         var result = []
         for (var key in categories) {
             result.push(categories[key])
