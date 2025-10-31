@@ -137,47 +137,69 @@ Item {
                     anchors.margins: 20
                     spacing: 16
 
-                    Text { text: "Distribution par Catégorie"; font.pixelSize: 20; font.weight: Font.Medium; color: "#030213" }
+                    Text {
+                        text: "Distribution par Catégorie"
+                        font.pixelSize: 20
+                        font.weight: Font.Medium
+                        color: "#030213"
+                    }
 
-                    GridLayout {
+                    ScrollView {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        columns: 2
-                        rowSpacing: 16
-                        columnSpacing: 16
+                        clip: true
+                        ScrollBar.vertical.policy: ScrollBar.AsNeeded
+                        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
-                        Repeater {
-                            model: getCategoryStats()
+                        contentWidth: parent.width
 
-                            delegate: Rectangle {
-                                Layout.fillWidth: true
-                                Layout.preferredHeight: 100
-                                color: "#f9f9fa"
-                                radius: 8
+                        GridLayout {
+                            width: parent.width - 20
+                            columns: 2
+                            rowSpacing: 16
+                            columnSpacing: 16
 
-                                ColumnLayout {
-                                    anchors.fill: parent
-                                    anchors.margins: 16
-                                    spacing: 8
+                            Repeater {
+                                model: getCategoryStats()
 
-                                    Text { text: modelData.category; font.pixelSize: 16; font.weight: Font.Medium; color: "#030213" }
-                                    Text {
-                                        text: modelData.count + " vendu(s) — " + modelData.totalSales.toFixed(2) + " €"
-                                        font.pixelSize: 14
-                                        color: "#717182"
-                                    }
+                                delegate: Rectangle {
+                                    width: (parent.width / 2) - 12
+                                    height: 100
+                                    color: "#f9f9fa"
+                                    radius: 8
 
-                                    Rectangle {
-                                        Layout.fillWidth: true
-                                        Layout.preferredHeight: 8
-                                        color: "#e5e5e5"
-                                        radius: 4
+                                    ColumnLayout {
+                                        anchors.fill: parent
+                                        anchors.margins: 16
+                                        spacing: 8
+
+                                        Text {
+                                            text: modelData.category
+                                            font.pixelSize: 16
+                                            font.weight: Font.Medium
+                                            color: "#030213"
+                                            wrapMode: Text.Wrap
+                                        }
+
+                                        Text {
+                                            text: modelData.count + " vendu(s) — " + modelData.totalSales.toFixed(2) + " €"
+                                            font.pixelSize: 14
+                                            color: "#717182"
+                                            wrapMode: Text.Wrap
+                                        }
 
                                         Rectangle {
-                                            width: parent.width * (modelData.count / (Math.max(1, detailsCommandeModel.count)))
-                                            height: parent.height
-                                            color: "#030213"
+                                            Layout.fillWidth: true
+                                            Layout.preferredHeight: 8
+                                            color: "#e5e5e5"
                                             radius: 4
+
+                                            Rectangle {
+                                                width: parent.width * (modelData.count / Math.max(1, detailsCommandeModel.count))
+                                                height: parent.height
+                                                color: "#030213"
+                                                radius: 4
+                                            }
                                         }
                                     }
                                 }
@@ -186,6 +208,7 @@ Item {
                     }
                 }
             }
+
         }
     }
 

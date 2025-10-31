@@ -82,7 +82,7 @@ void Commande::chargerCommandes()
         QVariantMap c;
         c["id_commande"] = query.value("id_commande").toInt();
         c["id_client"] = query.value("id_client").toInt();
-        c["date_commande"] = query.value("date_commande").toString();
+        c["date_commande"] = query.value("date_commande").toDateTime().toLocalTime().toString(Qt::ISODate);
         c["total"] = query.value("total").toDouble();
         m_commandes.append(c);
     }
@@ -104,8 +104,12 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total, 
 
     QSqlQuery query(db);
     query.prepare("INSERT INTO commandes (id_client, date_commande, total) VALUES (?, ?, ?)");
+
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString isoDate = currentDateTime.toString(Qt::ISODate);
+
     query.addBindValue(clientId);
-    query.addBindValue(date);
+    query.addBindValue(currentDateTime);
     query.addBindValue(total);
 
     if (!query.exec()) {
@@ -133,7 +137,7 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total, 
     QVariantMap newCmd;
     newCmd["id_commande"] = newId;
     newCmd["id_client"] = clientId;
-    newCmd["date_commande"] = date;
+    newCmd["date_commande"] = isoDate;
     newCmd["total"] = total;
     m_commandes.append(newCmd);
     endInsertRows();
