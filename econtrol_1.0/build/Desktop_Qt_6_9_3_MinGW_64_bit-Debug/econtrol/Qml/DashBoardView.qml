@@ -65,7 +65,7 @@ Item {
                         spacing: 8
 
                         Text { text: "Total Clients"; font.pixelSize: 14; color: "#717182" }
-                        Text { text: clientModel.count; font.pixelSize: 36; font.weight: Font.Medium; color: "#030213";     onTextChanged: console.log("Total clients mis à jour:", text)}
+                        Text { text: clientModel.count; font.pixelSize: 36; font.weight: Font.Medium; color: "#030213";}
                         Text { text: "clients enregistrés"; font.pixelSize: 12; color: "#717182" }
                     }
                 }

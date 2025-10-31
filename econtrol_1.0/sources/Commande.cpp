@@ -4,10 +4,13 @@
 #include <QSqlError>
 #include <QDebug>
 #include <QSqlDatabase>
+#include <QTimer>
 
 Commande::Commande(QObject *parent)
     : QAbstractListModel(parent)
 {
+    QTimer::singleShot(0, this, &Commande::chargerCommandes);
+
     m_detailsCommande = new DetailsCommande(this);
 
     auto gd = GestionData::instance();
@@ -135,6 +138,10 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total, 
     m_commandes.append(newCmd);
     endInsertRows();
 
+    emit countChanged();
+    chargerCommandes();
+
+
     // Générer automatiquement une facture après ajout de la commande
     auto factureModel = GestionData::instance()->factureModel();
     if (factureModel) {
@@ -176,6 +183,9 @@ bool Commande::modifierCommande(int id, int clientId, const QString &date, doubl
             break;
         }
     }
+
+    emit countChanged();    // met à jour le compteur QML
+    chargerCommandes();
 
     return true;
 }
@@ -223,6 +233,9 @@ bool Commande::supprimerCommande(int id)
             break;
         }
     }
+
+    emit countChanged();    // met à jour le compteur QML
+    chargerCommandes();
 
     return true;
 }

@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QIcon>
+#include <QQuickStyle>
 #include <QDebug>
 #include "headers/GestionData.h"
 
@@ -9,6 +10,8 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon(":/icons/resto.png"));
+
+    QQuickStyle::setStyle("Fusion");
 
     GestionData* gdManager = GestionData::instance();
 

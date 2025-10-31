@@ -187,8 +187,6 @@ Item {
             editIndex = index
 
             let item = platModel.get(index)
-            console.log("ITEM:", JSON.stringify(item)) // debug
-
             nomPlatField.text = item.nom_plat
             prixField.text = Number(item.prix).toFixed(2)
             categorieCombo.currentIndex = categorieCombo.model.indexOf(item.categorie)

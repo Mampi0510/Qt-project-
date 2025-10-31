@@ -9,11 +9,11 @@ Item {
 
     property var factureData: ({})
     property var detailsData: ({})
+    property int commandeCount: 0
 
     Connections {
             target: commandeModel
             function onCountChanged() {
-                console.log("Commande rowCount changed:", commandeModel.rowCount())
                 commandeCount = commandeModel.rowCount()
             }
         }
@@ -231,7 +231,6 @@ Item {
                     onClicked: {
                         if (dishCombo.currentIndex >= 0) {
                             let dish = platModel.get(dishCombo.currentIndex)
-                            console.log("[QML] Plat sélectionné :", JSON.stringify(dish))
                             orderItems.append({
                                 id_plat: dish.id_plat,
                                 nom_plat: dish.nom_plat,
@@ -239,8 +238,6 @@ Item {
                                 quantite: qtySpin.value
                             })
                             updateTotal()
-                        } else {
-                            console.log("[QML] Aucun plat sélectionné !")
                         }
                     }
                 }
@@ -323,7 +320,6 @@ Item {
                     "prix": item.prix
                 })
             }
-            console.log("[QML] Envoi commande avec", plats.length, "plats ->", JSON.stringify(plats))
             commandeModel.ajouterCommande(client.id_client, dateTime, total, plats)
             orderItems.clear()
             orderDialog.orderTotal = 0
@@ -511,7 +507,6 @@ Item {
 
         // Fonction pour ouvrir et remplir la facture
         function openFacture(idCommande) {
-            console.log("[FACTURE] openFacture idCommande =", idCommande)
             factureData = {}
             factureItemsModel.clear()
 
@@ -519,8 +514,6 @@ Item {
             var rawDetails = []
             if (detailsCommandeModel && typeof detailsCommandeModel.getDetailsByCommande === "function") {
                 rawDetails = detailsCommandeModel.getDetailsByCommande(idCommande)
-            } else {
-                console.warn("[FACTURE] detailsCommandeModel non disponible ou getDetailsByCommande manquant")
             }
 
             // recherche de la commande dans commandeModel (par id_commande)
@@ -541,7 +534,6 @@ Item {
                 }
             } else {
                 factureData = { id: idCommande, client: "Inconnu", date: "", total: 0 }
-                console.warn("[FACTURE] commande introuvable pour id =", idCommande)
             }
 
             // remplir factureItemsModel depuis rawDetails

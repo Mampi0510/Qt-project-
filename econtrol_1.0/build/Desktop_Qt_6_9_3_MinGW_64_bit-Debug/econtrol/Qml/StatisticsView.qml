@@ -16,7 +16,7 @@ Item {
             spacing: 24
 
             Text {
-                text: "Statistiques & Analytics"
+                text: "Statistiques "
                 font.pixelSize: 32
                 font.weight: Font.Medium
                 color: "#030213"
@@ -200,11 +200,6 @@ Item {
 
     function getPlatStats() {
         var stats = []
-        console.log("→ Chargement statistiques des plats...")
-
-        // Vérifie la présence des données
-        console.log("plats:", platModel.count, "détails:", detailsCommandeModel.count)
-
         for (var i = 0; i < platModel.count; i++) {
             var platItem = platModel.get(i)
             var nb = 0
@@ -240,7 +235,6 @@ Item {
         // Tri décroissant par nombre de commandes
         stats.sort(function(a,b){ return b.nb_commandes - a.nb_commandes })
 
-        console.log("→ Résultat stats plats:", JSON.stringify(stats))
         return stats
     }
 

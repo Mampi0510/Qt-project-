@@ -76,8 +76,8 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "Produit"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.45 }
-                            Text { text: "Quantité"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
+                            Text { text: "Produit"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.62 }
+                            Text { text: "Quantité"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.20 }
                             Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.30 }
                         }
                     }
@@ -113,12 +113,6 @@ Item {
                                         color: "#030213"
                                         elide: Text.ElideRight
                                     }
-
-                                    Text {
-                                        text: (Number(quantite).toFixed(quantite % 1 === 0 ? 0 : 2)) + " unités"
-                                        font.pixelSize: 13
-                                        color: "#717182"
-                                    }
                                 }
 
                                 // Colonne quantité
@@ -134,7 +128,7 @@ Item {
 
                                 // Actions
                                 RowLayout {
-                                    Layout.preferredWidth: parent.width * 0.30
+                                    Layout.preferredWidth: parent.width * 0.10
                                     spacing: 8
                                     Button {
                                         text: "Modifier"
@@ -193,6 +187,7 @@ Item {
         standardButtons: Dialog.Save | Dialog.Cancel
         modal: true
         width: 400
+        height: 200
         anchors.centerIn: parent
 
         property bool editMode: false
@@ -200,8 +195,9 @@ Item {
 
         ColumnLayout {
             anchors.fill: parent
-            spacing: 16
-            anchors.margins: 16
+            spacing: 12
+            anchors.topMargin: 8
+            anchors.margins: 10
 
             TextField {
                 id: nomProduitField

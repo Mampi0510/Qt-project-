@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
+find_package(Qt6 REQUIRED COMPONENTS Quick QuickControls2)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -62,8 +63,10 @@ set_target_properties(appecontrol PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+
+
 target_link_libraries(appecontrol
-    PRIVATE Qt6::Quick Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql
+    PRIVATE Qt6::Quick Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql Qt6::QuickControls2
 )
 target_link_libraries(appecontrol PRIVATE Qt6::Core)
 
