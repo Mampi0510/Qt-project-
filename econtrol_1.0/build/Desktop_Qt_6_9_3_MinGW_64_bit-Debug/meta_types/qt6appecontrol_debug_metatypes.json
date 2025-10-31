@@ -1,0 +1,758 @@
+[
+    {
+        "classes": [
+            {
+                "className": "Commande",
+                "lineNumber": 8,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 1,
+                        "isConst": true,
+                        "name": "get",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "clientId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "date",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "total",
+                                "type": "double"
+                            },
+                            {
+                                "name": "plats",
+                                "type": "QVariantList"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "ajouterCommande",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            },
+                            {
+                                "name": "clientId",
+                                "type": "int"
+                            },
+                            {
+                                "name": "date",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "total",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "modifierCommande",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "supprimerCommande",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "isConst": true,
+                        "name": "detailsModel",
+                        "returnType": "DetailsCommande*"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "count",
+                        "notify": "countChanged",
+                        "read": "rowCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    },
+                    {
+                        "constant": true,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "name": "detailsModel",
+                        "read": "detailsModel",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "DetailsCommande*",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "Commande",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "countChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "Commande.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "DetailsCommande",
+                "lineNumber": 6,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            },
+                            {
+                                "name": "idPlat",
+                                "type": "int"
+                            },
+                            {
+                                "name": "quantite",
+                                "type": "int"
+                            },
+                            {
+                                "name": "prixUnitaire",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "ajouterDetail",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            },
+                            {
+                                "name": "idPlat",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "supprimerDetail",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "supprimerDetailParCommande",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 4,
+                        "isConst": true,
+                        "name": "get",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "getDetailsByCommande",
+                        "returnType": "QVariantList"
+                    },
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "name": "chargerDetails",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "count",
+                        "notify": "countChanged",
+                        "read": "rowCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "DetailsCommande",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "countChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "DetailsCommandes.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Facture",
+                "lineNumber": 8,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 0,
+                        "isConst": true,
+                        "name": "get",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            },
+                            {
+                                "name": "idClient",
+                                "type": "int"
+                            },
+                            {
+                                "name": "dateFacture",
+                                "type": "QDateTime"
+                            },
+                            {
+                                "name": "montantNet",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "ajouterFacture",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "genererFacture",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idFacture",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "supprimerFacture",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idCommande",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "supprimerFactureParCommande",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "Facture",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "Facture.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "GestionData",
+                "lineNumber": 13,
+                "object": true,
+                "qualifiedClassName": "GestionData",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "databaseConnected",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "databaseError",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "GestionData.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Plat",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "PlatRoles",
+                        "values": [
+                            "IdRole",
+                            "NomRole",
+                            "PrixRole",
+                            "CategorieRole"
+                        ]
+                    }
+                ],
+                "lineNumber": 10,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 1,
+                        "isConst": true,
+                        "name": "get",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "chargerPlats",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "prix",
+                                "type": "double"
+                            },
+                            {
+                                "name": "categorie",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "ajouterPlat",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            },
+                            {
+                                "name": "nom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "prix",
+                                "type": "double"
+                            },
+                            {
+                                "name": "categorie",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "modifierPlat",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "supprimerPlat",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "count",
+                        "notify": "countChanged",
+                        "read": "rowCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "Plat",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "countChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "Plat.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Stock",
+                "lineNumber": 7,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 0,
+                        "isConst": true,
+                        "name": "get",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "quantite",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 1,
+                        "name": "ajouterProduit",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            },
+                            {
+                                "name": "nom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "quantite",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 2,
+                        "name": "modifierProduit",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "supprimerProduit",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "idPlat",
+                                "type": "int"
+                            },
+                            {
+                                "name": "quantiteCommandee",
+                                "type": "double"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "reduireStockPourPlat",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "Stock",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "Stock.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "Client",
+                "enums": [
+                    {
+                        "isClass": false,
+                        "isFlag": false,
+                        "name": "ClientRoles",
+                        "values": [
+                            "IdRole",
+                            "NomRole",
+                            "PrenomRole",
+                            "TelephoneRole"
+                        ]
+                    }
+                ],
+                "lineNumber": 10,
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 1,
+                        "isConst": true,
+                        "name": "get",
+                        "returnType": "QVariantMap"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "name": "chargerClients",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "nom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "prenom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "telephone",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 3,
+                        "name": "ajouterClient",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            },
+                            {
+                                "name": "nom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "prenom",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "telephone",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "name": "modifierClient",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 5,
+                        "name": "supprimerClient",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "count",
+                        "notify": "countChanged",
+                        "read": "rowCount",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false
+                    }
+                ],
+                "qualifiedClassName": "Client",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "countChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QAbstractListModel"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "client.h",
+        "outputRevision": 69
+    }
+]

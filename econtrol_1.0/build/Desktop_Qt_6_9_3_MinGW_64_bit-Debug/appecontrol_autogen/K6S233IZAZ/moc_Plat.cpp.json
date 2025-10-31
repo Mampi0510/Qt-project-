@@ -1,0 +1,132 @@
+{
+    "classes": [
+        {
+            "className": "Plat",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "PlatRoles",
+                    "values": [
+                        "IdRole",
+                        "NomRole",
+                        "PrixRole",
+                        "CategorieRole"
+                    ]
+                }
+            ],
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "name": "get",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "name": "chargerPlats",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prix",
+                            "type": "double"
+                        },
+                        {
+                            "name": "categorie",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "ajouterPlat",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "nom",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "prix",
+                            "type": "double"
+                        },
+                        {
+                            "name": "categorie",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "modifierPlat",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "name": "supprimerPlat",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "count",
+                    "notify": "countChanged",
+                    "read": "rowCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "Plat",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "countChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QAbstractListModel"
+                }
+            ]
+        }
+    ],
+    "inputFile": "Plat.h",
+    "outputRevision": 69
+}
