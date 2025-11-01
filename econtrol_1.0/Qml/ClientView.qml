@@ -8,6 +8,7 @@ Item {
 
     ScrollView {
         anchors.fill: parent
+        Layout.preferredHeight: Screen.height - 24
         contentWidth: availableWidth
         clip: true
 
@@ -78,11 +79,41 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "ID"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth:  parent.width * 0.07 }
-                            Text { text: "Nom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Prénom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Téléphone"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.22 }
-                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
+                            Text {
+                                text: "ID"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth:  parent.width * 0.07
+                            }
+                            Text {
+                                text: "Nom"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: parent.width * 0.23
+                            }
+                            Text {
+                                text: "Prénom"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: parent.width * 0.23
+                            }
+                            Text {
+                                text: "Téléphone"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: parent.width * 0.22
+                            }
+                            Text {
+                                text: "Actions"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: parent.width * 0.25
+                            }
                         }
                     }
 
@@ -118,7 +149,8 @@ Item {
                                         text: "Modifier"
                                         Layout.preferredHeight: 32
                                         background: Rectangle {
-                                            color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
+                                            color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
+                                            // color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
                                         }
                                         contentItem: Text {
