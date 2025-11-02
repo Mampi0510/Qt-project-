@@ -38,6 +38,7 @@ private:
     DetailsCommande* m_detailsCommande;
 
 signals:
+    void commandeAjoutee(int idCommande);
     void countChanged();
 };
 

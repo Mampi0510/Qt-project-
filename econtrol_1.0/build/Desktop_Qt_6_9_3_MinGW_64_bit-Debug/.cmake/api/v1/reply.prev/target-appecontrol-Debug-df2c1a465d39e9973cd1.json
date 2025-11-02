@@ -454,7 +454,7 @@
 			{
 				"command" : 14,
 				"file" : 12,
-				"line" : 3607,
+				"line" : 3613,
 				"parent" : 68
 			},
 			{
@@ -466,7 +466,7 @@
 			{
 				"command" : 14,
 				"file" : 12,
-				"line" : 3613,
+				"line" : 3607,
 				"parent" : 68
 			},
 			{
@@ -1189,14 +1189,11 @@
 	[
 		{
 			"backtrace" : 70,
-			"id" : "appecontrol_copy_qml::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 72,
 			"id" : "appecontrol_copy_res::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "appecontrol_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 72,
+			"id" : "appecontrol_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 79,
@@ -1205,6 +1202,9 @@
 		{
 			"backtrace" : 0,
 			"id" : "appecontrol_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "appecontrol_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "appecontrol::@6890427a1f51a3e7e1df",

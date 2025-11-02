@@ -78,11 +78,39 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "ID"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth:  parent.width * 0.07 }
-                            Text { text: "Nom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Prénom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Téléphone"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.22 }
-                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
+                            Text {
+                                text: "ID";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth:  parent.width * 0.07
+                            }
+                            Text {
+                                text: "Nom";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.23
+                            }
+                            Text {
+                                text: "Prénom";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.23
+                            }
+                            Text {
+                                text: "Téléphone";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.22 }
+                            Text {
+                                text: "Actions";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.25 }
                         }
                     }
 

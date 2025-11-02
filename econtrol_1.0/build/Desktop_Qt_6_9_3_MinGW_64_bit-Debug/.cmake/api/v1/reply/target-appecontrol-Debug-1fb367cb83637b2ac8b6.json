@@ -454,18 +454,6 @@
 			{
 				"command" : 14,
 				"file" : 12,
-				"line" : 3607,
-				"parent" : 68
-			},
-			{
-				"command" : 13,
-				"file" : 12,
-				"line" : 2976,
-				"parent" : 69
-			},
-			{
-				"command" : 14,
-				"file" : 12,
 				"line" : 3613,
 				"parent" : 68
 			},
@@ -473,7 +461,7 @@
 				"command" : 13,
 				"file" : 12,
 				"line" : 2976,
-				"parent" : 71
+				"parent" : 69
 			},
 			{
 				"file" : 1,
@@ -484,36 +472,48 @@
 				"command" : 20,
 				"file" : 23,
 				"line" : 1,
-				"parent" : 73
+				"parent" : 71
 			},
 			{
 				"command" : 19,
 				"file" : 0,
 				"line" : 877,
-				"parent" : 74
+				"parent" : 72
 			},
 			{
 				"command" : 18,
 				"file" : 0,
 				"line" : 799,
-				"parent" : 75
+				"parent" : 73
 			},
 			{
 				"command" : 17,
 				"file" : 0,
 				"line" : 799,
-				"parent" : 76
+				"parent" : 74
 			},
 			{
 				"command" : 16,
 				"file" : 12,
 				"line" : 4516,
-				"parent" : 77
+				"parent" : 75
 			},
 			{
 				"command" : 13,
 				"file" : 12,
 				"line" : 4291,
+				"parent" : 76
+			},
+			{
+				"command" : 14,
+				"file" : 12,
+				"line" : 3607,
+				"parent" : 68
+			},
+			{
+				"command" : 13,
+				"file" : 12,
+				"line" : 2976,
 				"parent" : 78
 			},
 			{
@@ -736,7 +736,7 @@
 				"command" : 30,
 				"file" : 0,
 				"line" : 871,
-				"parent" : 74
+				"parent" : 72
 			},
 			{
 				"command" : 23,
@@ -1189,18 +1189,18 @@
 	[
 		{
 			"backtrace" : 70,
+			"id" : "appecontrol_copy_res::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 77,
+			"id" : "appecontrol_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 79,
 			"id" : "appecontrol_copy_qml::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "appecontrol_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 72,
-			"id" : "appecontrol_copy_res::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 79,
-			"id" : "appecontrol_qmlimportscan::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 0,

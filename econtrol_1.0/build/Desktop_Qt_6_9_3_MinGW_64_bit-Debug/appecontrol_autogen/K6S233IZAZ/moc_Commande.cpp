@@ -39,8 +39,10 @@ template <> constexpr inline auto Commande::qt_create_metaobjectdata<qt_meta_tag
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "Commande",
-        "countChanged",
+        "commandeAjoutee",
         "",
+        "idCommande",
+        "countChanged",
         "get",
         "QVariantMap",
         "index",
@@ -59,32 +61,36 @@ template <> constexpr inline auto Commande::qt_create_metaobjectdata<qt_meta_tag
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'commandeAjoutee'
+        QtMocHelpers::SignalData<void(int)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 3 },
+        }}),
         // Signal 'countChanged'
-        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'get'
-        QtMocHelpers::MethodData<QVariantMap(int) const>(3, 2, QMC::AccessPublic, 0x80000000 | 4, {{
-            { QMetaType::Int, 5 },
+        QtMocHelpers::MethodData<QVariantMap(int) const>(5, 2, QMC::AccessPublic, 0x80000000 | 6, {{
+            { QMetaType::Int, 7 },
         }}),
         // Method 'ajouterCommande'
-        QtMocHelpers::MethodData<bool(int, const QString &, double, const QVariantList &)>(6, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 7 }, { QMetaType::QString, 8 }, { QMetaType::Double, 9 }, { 0x80000000 | 10, 11 },
+        QtMocHelpers::MethodData<bool(int, const QString &, double, const QVariantList &)>(8, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 9 }, { QMetaType::QString, 10 }, { QMetaType::Double, 11 }, { 0x80000000 | 12, 13 },
         }}),
         // Method 'modifierCommande'
-        QtMocHelpers::MethodData<bool(int, int, const QString &, double)>(12, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 13 }, { QMetaType::Int, 7 }, { QMetaType::QString, 8 }, { QMetaType::Double, 9 },
+        QtMocHelpers::MethodData<bool(int, int, const QString &, double)>(14, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 15 }, { QMetaType::Int, 9 }, { QMetaType::QString, 10 }, { QMetaType::Double, 11 },
         }}),
         // Method 'supprimerCommande'
-        QtMocHelpers::MethodData<bool(int)>(14, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::Int, 13 },
+        QtMocHelpers::MethodData<bool(int)>(16, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::Int, 15 },
         }}),
         // Method 'detailsModel'
-        QtMocHelpers::MethodData<DetailsCommande *() const>(15, 2, QMC::AccessPublic, 0x80000000 | 16),
+        QtMocHelpers::MethodData<DetailsCommande *() const>(17, 2, QMC::AccessPublic, 0x80000000 | 18),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'count'
-        QtMocHelpers::PropertyData<int>(17, QMetaType::Int, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<int>(19, QMetaType::Int, QMC::DefaultPropertyFlags, 1),
         // property 'detailsModel'
-        QtMocHelpers::PropertyData<DetailsCommande*>(15, 0x80000000 | 16, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<DetailsCommande*>(17, 0x80000000 | 18, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -106,22 +112,25 @@ void Commande::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     auto *_t = static_cast<Commande *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->countChanged(); break;
-        case 1: { QVariantMap _r = _t->get((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 0: _t->commandeAjoutee((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->countChanged(); break;
+        case 2: { QVariantMap _r = _t->get((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 2: { bool _r = _t->ajouterCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QVariantList>>(_a[4])));
+        case 3: { bool _r = _t->ajouterCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<QVariantList>>(_a[4])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 3: { bool _r = _t->modifierCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[4])));
+        case 4: { bool _r = _t->modifierCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[4])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 4: { bool _r = _t->supprimerCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 5: { bool _r = _t->supprimerCommande((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 5: { DetailsCommande* _r = _t->detailsModel();
+        case 6: { DetailsCommande* _r = _t->detailsModel();
             if (_a[0]) *reinterpret_cast< DetailsCommande**>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (Commande::*)()>(_a, &Commande::countChanged, 0))
+        if (QtMocHelpers::indexOfMethod<void (Commande::*)(int )>(_a, &Commande::commandeAjoutee, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (Commande::*)()>(_a, &Commande::countChanged, 1))
             return;
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
@@ -160,14 +169,14 @@ int Commande::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -179,8 +188,14 @@ int Commande::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
+void Commande::commandeAjoutee(int _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
+}
+
+// SIGNAL 1
 void Commande::countChanged()
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

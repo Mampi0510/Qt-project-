@@ -12,12 +12,16 @@ Item {
     property int commandeCount: 0
 
     Connections {
-            target: commandeModel
-            function onCountChanged() {
-                commandeCount = commandeModel.rowCount()
-            }
+        target: commandeModel
+        function onCountChanged() {
+            commandeCount = commandeModel.rowCount()
         }
 
+        function onCommandeAjoutee(idCommande) {
+            orderDialog.close()
+            factureDialog.openFacture(idCommande)
+        }
+    }
 
     function updateTotal() {
         var total = 0
@@ -321,6 +325,18 @@ Item {
                 })
             }
             commandeModel.ajouterCommande(client.id_client, dateTime, total, plats)
+
+            Qt.callLater(function() {
+                // Récupérer la dernière commande ajoutée
+                var lastIndex = commandeModel.rowCount() - 1
+                if (lastIndex >= 0) {
+                    var lastCommande = commandeModel.get(lastIndex)
+                    if (lastCommande && lastCommande.id_commande !== undefined) {
+                        factureDialog.openFacture(lastCommande.id_commande)
+                    }
+                }
+            })
+
             orderItems.clear()
             orderDialog.orderTotal = 0
         }
@@ -569,5 +585,4 @@ Item {
             open()
         }
     }
-
 }
