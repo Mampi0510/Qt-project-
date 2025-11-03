@@ -6,6 +6,8 @@ Item {
     id: root
     anchors.fill: parent
 
+    property string searchText: ""
+
     ScrollView {
         anchors.fill: parent
         contentWidth: availableWidth
@@ -21,17 +23,31 @@ Item {
                 Layout.topMargin: 24
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
+                spacing: 12
 
                 Text {
                     text: "Gestion des Plats"
                     font.pixelSize: 32
                     font.weight: Font.Medium
                     color: "#030213"
-                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
                 }
+
+                Item { Layout.fillWidth: true }
+
+                TextField {
+                                   id: searchField
+                                   Layout.preferredWidth: 200
+                                   Layout.preferredHeight: 30
+                                   placeholderText: "Rechercher un plat..."
+                                   font.pixelSize: 14
+                                   padding: 4
+                                   onTextChanged: root.searchText = text
+                               }
 
                 Button {
                     text: "+ Ajouter un plat"
+                    Layout.preferredHeight: 40
                     background: Rectangle {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
@@ -48,7 +64,6 @@ Item {
                 }
             }
 
-
             GridLayout {
                 Layout.fillWidth: true
                 columns: 2
@@ -58,6 +73,9 @@ Item {
                 Repeater {
                     model: platModel
                     delegate: Rectangle {
+                        visible: searchField.text === "" ||
+                                nom_plat.toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                categorie.toLowerCase().includes(searchField.text.toLowerCase())
                         Layout.fillWidth: true
                         Layout.preferredHeight: 140
                         color: "#ffffff"

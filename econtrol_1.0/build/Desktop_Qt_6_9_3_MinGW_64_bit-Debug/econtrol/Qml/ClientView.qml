@@ -6,6 +6,8 @@ Item {
     id: root
     anchors.fill: parent
 
+    property string searchText: ""
+
     ScrollView {
         anchors.fill: parent
         contentWidth: availableWidth
@@ -21,17 +23,31 @@ Item {
                 Layout.topMargin: 24
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
+                spacing: 12
 
                 Text {
                     text: "Gestion des Clients"
                     font.pixelSize: 32
                     font.weight: Font.Medium
                     color: "#030213"
-                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
                 }
+
+                Item { Layout.fillWidth: true }
+
+                TextField {
+                                    id: searchField
+                                    Layout.preferredWidth: 200
+                                    Layout.preferredHeight: 30
+                                    placeholderText: "Rechercher un client..."
+                                    font.pixelSize: 14
+                                    padding: 4
+                                    onTextChanged: root.searchText = text
+                                }
 
                 Button {
                     text: "+ Ajouter un client"
+                    Layout.preferredHeight: 40
                     background: Rectangle {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
@@ -124,7 +140,11 @@ Item {
 
                         delegate: Rectangle {
                             width: ListView.view.width
-                            height: 60
+                            height: visible ? 60 : 0
+                            visible: searchField.text === "" ||
+                                     nom.toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                     prenom.toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                     telephone.toLowerCase().includes(searchField.text.toLowerCase())
                             color: "transparent"
 
                             RowLayout {

@@ -35,7 +35,7 @@ Item {
                 TextField {
                     id: searchField
                     Layout.preferredWidth: 250
-                    Layout.preferredHeight: 28
+                    Layout.preferredHeight: 30
                     placeholderText: "Rechercher un produit..."
                     font.pixelSize: 14
                     padding: 4
@@ -43,7 +43,7 @@ Item {
 
                 Button {
                     text: "+ Ajouter un produit"
-                    Layout.preferredHeight: 36
+                    Layout.preferredHeight: 40
                     background: Rectangle {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
@@ -89,8 +89,8 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "Produit"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.62 }
-                            Text { text: "Quantité"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.20 }
+                            Text { text: "Produit"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.55 }
+                            Text { text: "Quantité"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
                             Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.30 }
                         }
                     }
@@ -205,7 +205,7 @@ Item {
         standardButtons: Dialog.Save | Dialog.Cancel
         modal: true
         width: 400
-        height: 200
+        height: 300
         anchors.centerIn: parent
 
         property bool editMode: false
