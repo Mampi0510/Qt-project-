@@ -35,8 +35,10 @@ Item {
                 TextField {
                     id: searchField
                     Layout.preferredWidth: 250
+                    Layout.preferredHeight: 28
                     placeholderText: "Rechercher un produit..."
                     font.pixelSize: 14
+                    padding: 4
                 }
 
                 Button {
@@ -144,7 +146,7 @@ Item {
                                     spacing: 8
                                     Button {
                                         text: "Modifier"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
@@ -154,14 +156,16 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#030213"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
                                         onClicked: stockDialog.openForEdit(index)
                                     }
 
                                     Button {
                                         text: "Supprimer"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                             radius: 6
@@ -171,7 +175,9 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
                                         onClicked: stockModel.supprimerProduit(id_produit)
                                     }

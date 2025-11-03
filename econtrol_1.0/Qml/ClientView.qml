@@ -76,35 +76,35 @@ Item {
                             anchors.fill: parent
                             anchors.leftMargin: 16
                             anchors.rightMargin: 16
-                            spacing: 16
+                            spacing: 12
 
                             Text {
                                 text: "ID";
                                 font.pixelSize: 14;
                                 font.weight: Font.Medium;
                                 color: "#030213";
-                                Layout.preferredWidth:  parent.width * 0.07
+                                Layout.preferredWidth:  parent.width * 0.075
                             }
                             Text {
                                 text: "Nom";
                                 font.pixelSize: 14;
                                 font.weight: Font.Medium;
                                 color: "#030213";
-                                Layout.preferredWidth: parent.width * 0.23
+                                Layout.preferredWidth: parent.width * 0.22
                             }
                             Text {
                                 text: "Prénom";
                                 font.pixelSize: 14;
                                 font.weight: Font.Medium;
                                 color: "#030213";
-                                Layout.preferredWidth: parent.width * 0.23
+                                Layout.preferredWidth: parent.width * 0.20
                             }
                             Text {
                                 text: "Téléphone";
                                 font.pixelSize: 14;
                                 font.weight: Font.Medium;
                                 color: "#030213";
-                                Layout.preferredWidth: parent.width * 0.22 }
+                                Layout.preferredWidth: parent.width * 0.20 }
                             Text {
                                 text: "Actions";
                                 font.pixelSize: 14;
@@ -134,9 +134,9 @@ Item {
                                 spacing: 16
 
                                 Text { text: id_client; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.07 }
-                                Text { text: nom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                                Text { text: prenom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                                Text { text: telephone; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: parent.width * 0.22 }
+                                Text { text: nom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.22 }
+                                Text { text: prenom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.19 }
+                                Text { text: telephone; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: parent.width * 0.19 }
 
                                 RowLayout {
                                     Layout.preferredWidth: parent.width * 0.25
@@ -144,7 +144,7 @@ Item {
 
                                     Button {
                                         text: "Modifier"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
@@ -154,15 +154,16 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#030213"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
-
                                         onClicked: clientDialog.openForEdit(index)
                                     }
 
                                     Button {
                                         text: "Supprimer"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                             radius: 6
@@ -172,9 +173,10 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
-
                                         onClicked: clientModel.supprimerClient(id_client)
                                     }
                                 }

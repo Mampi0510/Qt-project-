@@ -140,7 +140,7 @@ Item {
 
                                     Button {
                                         text: "Facture"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
                                             radius: 6
@@ -150,14 +150,16 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
                                         onClicked: factureDialog.openFacture(id_commande)
                                     }
 
                                     Button {
                                         text: "Supprimer"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                             radius: 6
@@ -167,7 +169,9 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
                                         onClicked: commandeModel.supprimerCommande(id_commande)
                                     }

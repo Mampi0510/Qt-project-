@@ -91,7 +91,7 @@ Item {
 
                                 Button {
                                     text: "Modifier"
-                                    Layout.preferredHeight: 32
+                                    Layout.preferredHeight: 36
                                     background: Rectangle {
                                         color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                         radius: 6
@@ -101,14 +101,16 @@ Item {
                                         font.pixelSize: 13
                                         font.weight: Font.Medium
                                         color: "#030213"
-                                        anchors.centerIn: parent
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        anchors.fill: parent
                                     }
                                     onClicked: dishDialog.openForEdit(index)
                                 }
 
                                 Button {
                                     text: "Supprimer"
-                                    Layout.preferredHeight: 32
+                                    Layout.preferredHeight: 36
                                     background: Rectangle {
                                         color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                         radius: 6
@@ -118,9 +120,13 @@ Item {
                                         font.pixelSize: 13
                                         font.weight: Font.Medium
                                         color: "#ffffff"
-                                        anchors.centerIn: parent
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        anchors.fill: parent                                     }
+                                    onClicked: {
+                                        confirmDeleteDialog.platId = id_plat
+                                        confirmDeleteDialog.open()
                                     }
-                                    onClicked: platModel.supprimerPlat(id_plat)
                                 }
                             }
                         }
@@ -194,4 +200,34 @@ Item {
             open()
         }
     }
+    Dialog {
+        id: confirmDeleteDialog
+        title: "Confirmation"
+        modal: true
+        standardButtons: Dialog.Yes | Dialog.No
+        width: 350
+        anchors.centerIn: parent
+
+        property int platId: -1
+
+        contentItem: ColumnLayout {
+            spacing: 16
+            Label {
+                text: "Voulez-vous vraiment supprimer ce plat ?"
+                wrapMode: Text.Wrap
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+
+        onAccepted: {
+            if (platId !== -1) {
+                platModel.supprimerPlat(platId)
+                platId = -1
+            }
+        }
+
+        onRejected: platId = -1
+    }
+
 }
