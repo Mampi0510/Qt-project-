@@ -5,15 +5,15 @@ Un projet de fin d'année illustrant la conception et le développement d'un sys
 ## 📅 Roadmap Sprint (01-25 Octobre)
 
 ### Phase 1: Modélisation & Conception (01-06 Oct)
-- [ ] **Mampiadana**: Élaboration des MCD, MLD, UML et planification des étapes du modèle
+- ✅ **Mampiadana**: Élaboration des MCD, MLD, UML et planification des étapes du modèle
 
-### Phase 2: Développement UI/UX (07-25 Oct)
-- [ ] **Delicia**: Élaboration de l'interface utilisateur (UI/UX)
-- [ ] **Tsiky**: Élaboration de l'interface utilisateur (UI/UX)
+### Phase 2: Développement UI/UX (07-31 Oct)
+- ✅ **Delicia**: Élaboration de l'interface utilisateur (UI/UX)
+- ✅ **Tsiky**: Élaboration de l'interface utilisateur (UI/UX)
 
-### Phase 3: Base de données (07-25 Oct)
-- [ ] **Mampiadana**: Création et mise à jour de la base de données MySQL
-- [ ] **Fitahiantsoa**: Création et mise à jour de la base de données MySQL
+### Phase 3: Base de données (07-31 Oct)
+- ✅ **Mampiadana**: Création et mise à jour de la base de données MySQL
+- ✅ **Fitahiantsoa**: Création et mise à jour de la base de données MySQL
 
 ## 🎯 Objectifs Prioritaires
 

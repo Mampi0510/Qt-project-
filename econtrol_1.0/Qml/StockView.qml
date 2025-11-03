@@ -20,17 +20,28 @@ Item {
                 Layout.topMargin: 24
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
+                spacing: 12
 
                 Text {
                     text: "Gestion des Stocks"
-                    font.pixelSize: 32
+                    font.pixelSize: 28
                     font.weight: Font.Medium
                     color: "#030213"
-                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
+                }
+
+                Item { Layout.fillWidth: true }
+
+                TextField {
+                    id: searchField
+                    Layout.preferredWidth: 250
+                    placeholderText: "Rechercher un produit..."
+                    font.pixelSize: 14
                 }
 
                 Button {
                     text: "+ Ajouter un produit"
+                    Layout.preferredHeight: 36
                     background: Rectangle {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
@@ -92,7 +103,8 @@ Item {
 
                         delegate: Rectangle {
                             width: ListView.view.width
-                            height: 70
+                            height: visible ? 70 : 0
+                            visible: searchField.text === "" || nom_produit.toLowerCase().includes(searchField.text.toLowerCase())
                             color: "transparent"
 
                             RowLayout {

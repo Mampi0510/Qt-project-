@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon(":assets/icons/resto.png"));
 
-    QQuickStyle::setStyle("Fusion");
+    QQuickStyle::setStyle("Material");
 
     GestionData* gdManager = GestionData::instance();
 
