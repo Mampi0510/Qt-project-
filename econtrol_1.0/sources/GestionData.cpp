@@ -62,7 +62,7 @@ bool GestionData::connectToDatabase()
         gd.setPort(3306);
         gd.setDatabaseName("eoy_project");
         gd.setUserName("root");
-        gd.setPassword("azerty12");
+        gd.setPassword("login");
     }
 
     if (gd.open()) {

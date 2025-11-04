@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 191,
+                        "durationMicroseconds": 165,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 7
@@ -30,7 +30,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 88,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 15
@@ -38,7 +38,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 34,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 69,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 28
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 90,
+                        "durationMicroseconds": 68,
                         "errorMessage": "",
                         "functionName": "alignment",
                         "line": 30
@@ -62,7 +62,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 74,
+                        "durationMicroseconds": 59,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "color",
                         "line": 48
@@ -70,7 +70,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 31,
-                        "durationMicroseconds": 13,
+                        "durationMicroseconds": 10,
                         "errorMessage": "Cannot access value for name parent",
                         "functionName": "text",
                         "line": 52
@@ -78,7 +78,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 245,
+                        "durationMicroseconds": 197,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "horizontalAlignment",
                         "line": 56
@@ -86,7 +86,7 @@
                     {
                         "codegenSuccessful": false,
                         "column": 44,
-                        "durationMicroseconds": 191,
+                        "durationMicroseconds": 151,
                         "errorMessage": "Cannot access value for name Text",
                         "functionName": "verticalAlignment",
                         "line": 57
@@ -94,15 +94,23 @@
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 184,
+                        "durationMicroseconds": 149,
                         "errorMessage": "Cannot access value for name Font",
                         "functionName": "weight",
                         "line": 54
                     },
                     {
                         "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 126,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 147,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 75
@@ -110,290 +118,266 @@
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 63,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 87
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 86,
-                        "durationMicroseconds": 118,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 92
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 140,
-                        "durationMicroseconds": 251,
-                        "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 92
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 87,
-                        "durationMicroseconds": 145,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 93
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 141,
-                        "durationMicroseconds": 176,
-                        "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 93
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 86,
-                        "durationMicroseconds": 84,
+                        "column": 49,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 94
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 140,
-                        "durationMicroseconds": 121,
-                        "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 94
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 32,
-                        "durationMicroseconds": 527,
-                        "errorMessage": "Cannot access value for name stockModel",
-                        "functionName": "model",
-                        "line": 102
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 36,
-                        "durationMicroseconds": 112,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 107
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 37,
-                        "durationMicroseconds": 134,
-                        "errorMessage": "",
-                        "functionName": "height",
-                        "line": 108
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 38,
-                        "durationMicroseconds": 326,
-                        "errorMessage": "Cannot access value for name searchField",
-                        "functionName": "visible",
-                        "line": 109
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 47,
-                        "durationMicroseconds": 66,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 113
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 60,
-                        "durationMicroseconds": 152,
-                        "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 120
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 47,
-                        "durationMicroseconds": 307,
-                        "errorMessage": "Cannot access value for name nom_produit",
-                        "functionName": "text",
-                        "line": 124
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 48,
-                        "durationMicroseconds": 79,
-                        "errorMessage": "",
-                        "functionName": "elide",
-                        "line": 128
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 54,
-                        "durationMicroseconds": 73,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 126
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 60,
-                        "durationMicroseconds": 122,
-                        "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 134
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 47,
-                        "durationMicroseconds": 549,
-                        "errorMessage": "Cannot access value for name quantite",
-                        "functionName": "text",
-                        "line": 137
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 59,
-                        "durationMicroseconds": 61,
-                        "errorMessage": "",
-                        "functionName": "centerIn",
-                        "line": 136
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 60,
-                        "durationMicroseconds": 125,
-                        "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 145
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 52,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find signal \"clicked\".",
-                        "functionName": "onClicked",
-                        "line": 163
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 52,
-                        "durationMicroseconds": 53,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "color",
-                        "line": 151
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 51,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "text",
-                        "line": 155
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 66,
-                        "durationMicroseconds": 195,
-                        "errorMessage": "Cannot access value for name Text",
-                        "functionName": "horizontalAlignment",
-                        "line": 159
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 64,
-                        "durationMicroseconds": 190,
-                        "errorMessage": "Cannot access value for name Text",
-                        "functionName": "verticalAlignment",
-                        "line": 160
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 58,
-                        "durationMicroseconds": 212,
-                        "errorMessage": "Cannot access value for name Font",
-                        "functionName": "weight",
-                        "line": 157
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 59,
-                        "durationMicroseconds": 12,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "fill",
-                        "line": 161
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 52,
-                        "durationMicroseconds": 0,
-                        "errorMessage": "Could not find signal \"clicked\".",
-                        "functionName": "onClicked",
-                        "line": 182
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 52,
-                        "durationMicroseconds": 46,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "color",
-                        "line": 170
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 51,
-                        "durationMicroseconds": 14,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "text",
-                        "line": 174
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 66,
-                        "durationMicroseconds": 214,
-                        "errorMessage": "Cannot access value for name Text",
-                        "functionName": "horizontalAlignment",
-                        "line": 178
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 64,
-                        "durationMicroseconds": 183,
-                        "errorMessage": "Cannot access value for name Text",
-                        "functionName": "verticalAlignment",
-                        "line": 179
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 58,
-                        "durationMicroseconds": 185,
-                        "errorMessage": "Cannot access value for name Font",
-                        "functionName": "weight",
-                        "line": 176
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 59,
-                        "durationMicroseconds": 10,
-                        "errorMessage": "Cannot access value for name parent",
-                        "functionName": "fill",
-                        "line": 180
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 40,
-                        "durationMicroseconds": 79,
-                        "errorMessage": "",
-                        "functionName": "width",
-                        "line": 190
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 49,
-                        "durationMicroseconds": 95,
+                        "durationMicroseconds": 66,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 49,
+                        "durationMicroseconds": 67,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 106
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 435,
+                        "errorMessage": "Cannot access value for name stockModel",
+                        "functionName": "model",
+                        "line": 117
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 88,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 103,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 123
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 222,
+                        "errorMessage": "Cannot access value for name searchField",
+                        "functionName": "visible",
+                        "line": 124
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 128
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 60,
+                        "durationMicroseconds": 112,
+                        "errorMessage": "",
+                        "functionName": "preferredWidth",
+                        "line": 135
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 252,
+                        "errorMessage": "Cannot access value for name nom_produit",
+                        "functionName": "text",
+                        "line": 139
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 48,
+                        "durationMicroseconds": 64,
+                        "errorMessage": "",
+                        "functionName": "elide",
+                        "line": 143
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 54,
+                        "durationMicroseconds": 59,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 141
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 60,
+                        "durationMicroseconds": 98,
+                        "errorMessage": "",
+                        "functionName": "preferredWidth",
+                        "line": 149
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 47,
+                        "durationMicroseconds": 482,
+                        "errorMessage": "Cannot access value for name quantite",
+                        "functionName": "text",
+                        "line": 152
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 52,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 151
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 60,
+                        "durationMicroseconds": 121,
+                        "errorMessage": "",
+                        "functionName": "preferredWidth",
+                        "line": 160
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 52,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 52,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "color",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 51,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "text",
+                        "line": 171
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 186,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 175
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 64,
+                        "durationMicroseconds": 153,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 153,
+                        "errorMessage": "Cannot access value for name Font",
+                        "functionName": "weight",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 59,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "fill",
+                        "line": 177
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 52,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
+                        "functionName": "onClicked",
+                        "line": 198
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 52,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "color",
+                        "line": 186
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 51,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "text",
+                        "line": 190
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 66,
+                        "durationMicroseconds": 163,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
+                        "line": 194
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 64,
+                        "durationMicroseconds": 153,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 195
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 58,
+                        "durationMicroseconds": 152,
+                        "errorMessage": "Cannot access value for name Font",
+                        "functionName": "weight",
+                        "line": 192
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 59,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot access value for name parent",
+                        "functionName": "fill",
+                        "line": 196
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 65,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 206
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 49,
+                        "durationMicroseconds": 92,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 189
+                        "line": 205
                     },
                     {
                         "codegenSuccessful": false,
@@ -401,7 +385,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"title\".",
                         "functionName": "title",
-                        "line": 204
+                        "line": 220
                     },
                     {
                         "codegenSuccessful": false,
@@ -409,7 +393,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"standardButtons\".",
                         "functionName": "standardButtons",
-                        "line": 205
+                        "line": 221
                     },
                     {
                         "codegenSuccessful": false,
@@ -417,7 +401,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"accepted\".",
                         "functionName": "onAccepted",
-                        "line": 234
+                        "line": 250
                     },
                     {
                         "codegenSuccessful": false,
@@ -425,15 +409,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find signal \"rejected\".",
                         "functionName": "onRejected",
-                        "line": 253
+                        "line": 269
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 9,
-                        "durationMicroseconds": 37,
+                        "durationMicroseconds": 32,
                         "errorMessage": "Cannot retrieve a non-object type by ID: nomProduitField",
                         "functionName": "resetFields",
-                        "line": 255
+                        "line": 271
                     },
                     {
                         "codegenSuccessful": false,
@@ -441,7 +425,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "openForEdit",
-                        "line": 262
+                        "line": 278
                     },
                     {
                         "codegenSuccessful": false,
@@ -449,15 +433,15 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Could not find property \"centerIn\".",
                         "functionName": "centerIn",
-                        "line": 209
+                        "line": 225
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 215
+                        "line": 231
                     }
                 ],
                 "filePath": "D:/Kampf/EOY/econtrol_1.0/Qml/StockView.qml"

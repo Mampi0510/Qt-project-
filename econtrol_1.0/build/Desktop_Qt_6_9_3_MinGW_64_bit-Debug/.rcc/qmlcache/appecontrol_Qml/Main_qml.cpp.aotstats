@@ -22,137 +22,137 @@
                     {
                         "codegenSuccessful": true,
                         "column": 27,
-                        "durationMicroseconds": 351,
+                        "durationMicroseconds": 412,
                         "errorMessage": "",
                         "functionName": "viewMap",
-                        "line": 24
+                        "line": 17
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 28,
-                        "durationMicroseconds": 76,
+                        "durationMicroseconds": 74,
                         "errorMessage": "Cannot access value for name clientModel",
                         "functionName": "onCompleted",
-                        "line": 16
+                        "line": 26
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 23,
-                        "durationMicroseconds": 72,
+                        "durationMicroseconds": 73,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 34
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "Cannot access value for name menuVisible",
+                        "functionName": "preferredWidth",
+                        "line": 37
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 36,
-                        "durationMicroseconds": 136,
+                        "column": 63,
+                        "durationMicroseconds": 71,
                         "errorMessage": "",
-                        "functionName": "preferredWidth",
-                        "line": 39
+                        "functionName": "type",
+                        "line": 43
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "Cannot access value for name menuVisible",
+                        "functionName": "opacity",
+                        "line": 50
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 48,
+                        "durationMicroseconds": 49,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 44
+                        "line": 49
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 43,
-                        "durationMicroseconds": 44,
+                        "column": 48,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 72
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 50,
                         "errorMessage": "",
                         "functionName": "centerIn",
-                        "line": 55
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 28,
-                        "durationMicroseconds": 59,
-                        "errorMessage": "",
-                        "functionName": "model",
                         "line": 67
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 31,
+                        "column": 28,
                         "durationMicroseconds": 58,
                         "errorMessage": "",
-                        "functionName": "delegate",
-                        "line": 68
+                        "functionName": "model",
+                        "line": 80
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 36,
-                        "durationMicroseconds": 140,
+                        "column": 31,
+                        "durationMicroseconds": 62,
                         "errorMessage": "",
-                        "functionName": "width",
-                        "line": 85
+                        "functionName": "delegate",
+                        "line": 81
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 36,
-                        "durationMicroseconds": 211,
-                        "errorMessage": "Cannot access value for name currentView",
-                        "functionName": "color",
-                        "line": 89
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 46,
-                        "durationMicroseconds": 75,
-                        "errorMessage": "",
-                        "functionName": "cursorShape",
+                        "column": 23,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"text\".",
+                        "functionName": "text",
                         "line": 99
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 44,
-                        "durationMicroseconds": 171,
-                        "errorMessage": "Cannot access value for name menuId",
+                        "column": 28,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find signal \"clicked\".",
                         "functionName": "onClicked",
-                        "line": 100
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 47,
-                        "durationMicroseconds": 49,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 97
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 47,
-                        "durationMicroseconds": 46,
-                        "errorMessage": "",
-                        "functionName": "fill",
-                        "line": 104
+                        "line": 116
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 43,
-                        "durationMicroseconds": 193,
-                        "errorMessage": "Cannot access value for name label",
+                        "column": 35,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"centerIn\".",
+                        "functionName": "centerIn",
+                        "line": 96
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name parent",
                         "functionName": "text",
-                        "line": 112
+                        "line": 109
                     },
                     {
                         "codegenSuccessful": false,
-                        "column": 44,
-                        "durationMicroseconds": 215,
-                        "errorMessage": "Cannot access value for name currentView",
-                        "functionName": "color",
-                        "line": 115
+                        "column": 40,
+                        "durationMicroseconds": 202,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "verticalAlignment",
+                        "line": 113
                     },
                     {
-                        "codegenSuccessful": true,
-                        "column": 50,
-                        "durationMicroseconds": 65,
-                        "errorMessage": "",
-                        "functionName": "weight",
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 154,
+                        "errorMessage": "Cannot access value for name Text",
+                        "functionName": "horizontalAlignment",
                         "line": 114
                     },
                     {
@@ -161,15 +161,111 @@
                         "durationMicroseconds": 41,
                         "errorMessage": "Cannot access value for name viewMap",
                         "functionName": "currentIndex",
-                        "line": 135
+                        "line": 130
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 31,
-                        "durationMicroseconds": 52,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 133
+                        "line": 129
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 141,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 158
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 179,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 161
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 171
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 166,
+                        "errorMessage": "Cannot access value for name menuId",
+                        "functionName": "onClicked",
+                        "line": 172
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 53,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 176
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 174,
+                        "errorMessage": "Cannot access value for name menuId",
+                        "functionName": "source",
+                        "line": 184
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 62,
+                        "errorMessage": "",
+                        "functionName": "fillMode",
+                        "line": 185
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 27,
+                        "durationMicroseconds": 171,
+                        "errorMessage": "Cannot access value for name label",
+                        "functionName": "text",
+                        "line": 190
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 212,
+                        "errorMessage": "Cannot access value for name currentView",
+                        "functionName": "color",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "verticalAlignment",
+                        "line": 195
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 76,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 192
                     }
                 ],
                 "filePath": "D:/Kampf/EOY/econtrol_1.0/Qml/Main.qml"

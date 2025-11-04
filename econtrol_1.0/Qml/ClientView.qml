@@ -68,7 +68,7 @@ Item {
             // Table
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 500
+                height: Screen.height - 34
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
                 Layout.bottomMargin: 24

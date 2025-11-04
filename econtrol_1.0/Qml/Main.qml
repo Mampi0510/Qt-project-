@@ -88,25 +88,35 @@ ApplicationWindow {
 
         Rectangle {
             id: toggleButton
-            width: 20
+            width: 24
             Layout.fillHeight: true
             color: "transparent"
 
             Button {
                 anchors.centerIn: parent
+                width: 30
+                height: 30
                 text: menuVisible ? "⮜" : "⮞"
-                background: Rectangle { color: "#030213"; radius: 6 }
-                font.pixelSize: 18
-                onClicked: menuVisible = !menuVisible
+                background: Rectangle {
+                    color: "#0f172a"
+                    radius: 6
+                    border.color: "#1e293b"
+                    border.width: 1
+                    layer.enabled: true
+                }
+
                 contentItem: Text {
                     text: parent.text
-                    color: "#ffffff"
-                    font.pixelSize: 20
+                    color: "white"
+                    font.pixelSize: 14
+                    font.bold: true
                     verticalAlignment: Text.AlignVCenter
                     horizontalAlignment: Text.AlignHCenter
                 }
+                onClicked: menuVisible = !menuVisible
             }
         }
+
 
 
         Rectangle {

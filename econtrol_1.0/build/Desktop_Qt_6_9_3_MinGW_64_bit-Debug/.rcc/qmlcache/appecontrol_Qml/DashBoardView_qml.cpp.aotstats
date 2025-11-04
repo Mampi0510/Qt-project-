@@ -9,7 +9,7 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "getClientName",
-                        "line": 167
+                        "line": 179
                     },
                     {
                         "codegenSuccessful": false,
@@ -17,12 +17,12 @@
                         "durationMicroseconds": 0,
                         "errorMessage": "Functions without type annotations won't be compiled",
                         "functionName": "formatDate",
-                        "line": 178
+                        "line": 189
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 19,
-                        "durationMicroseconds": 189,
+                        "durationMicroseconds": 165,
                         "errorMessage": "",
                         "functionName": "fill",
                         "line": 7
@@ -46,7 +46,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 20,
-                        "durationMicroseconds": 106,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "width",
                         "line": 15
@@ -54,7 +54,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 30,
-                        "durationMicroseconds": 85,
+                        "durationMicroseconds": 86,
                         "errorMessage": "",
                         "functionName": "weight",
                         "line": 21
@@ -62,226 +62,162 @@
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 80,
+                        "durationMicroseconds": 54,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 44
+                        "line": 45
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 309,
+                        "durationMicroseconds": 266,
                         "errorMessage": "Cannot access value for name platModel",
                         "functionName": "text",
-                        "line": 49
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 88,
-                        "durationMicroseconds": 75,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 49
+                        "line": 50
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 59,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 63
+                        "line": 65
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 314,
+                        "durationMicroseconds": 233,
                         "errorMessage": "Cannot access value for name clientModel",
                         "functionName": "text",
-                        "line": 68
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 90,
-                        "durationMicroseconds": 82,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 68
+                        "line": 70
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 39,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 52,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 82
+                        "line": 85
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 38,
-                        "durationMicroseconds": 310,
+                        "durationMicroseconds": 276,
                         "errorMessage": "Cannot access value for name commandeModel",
                         "functionName": "text",
-                        "line": 87
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 92,
-                        "durationMicroseconds": 73,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 87
+                        "line": 90
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 35,
-                        "durationMicroseconds": 58,
+                        "durationMicroseconds": 53,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 105
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 89,
-                        "durationMicroseconds": 68,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 109
+                        "line": 107
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 43,
-                        "durationMicroseconds": 56,
+                        "durationMicroseconds": 48,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 118
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 81,
-                        "durationMicroseconds": 66,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 123
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 85,
-                        "durationMicroseconds": 72,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 124
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 83,
-                        "durationMicroseconds": 68,
-                        "errorMessage": "",
-                        "functionName": "weight",
                         "line": 125
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 164,
-                        "durationMicroseconds": 68,
+                        "column": 155,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
-                        "line": 126
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 84,
-                        "durationMicroseconds": 79,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 126
+                        "line": 133
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 32,
-                        "durationMicroseconds": 578,
+                        "durationMicroseconds": 482,
                         "errorMessage": "Cannot access value for name commandeModel",
                         "functionName": "model",
-                        "line": 133
+                        "line": 140
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 36,
-                        "durationMicroseconds": 107,
+                        "durationMicroseconds": 93,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 138
+                        "line": 145
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "color",
+                        "line": 147
                     },
                     {
                         "codegenSuccessful": true,
                         "column": 47,
-                        "durationMicroseconds": 57,
+                        "durationMicroseconds": 51,
                         "errorMessage": "",
                         "functionName": "fill",
-                        "line": 143
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 46,
-                        "durationMicroseconds": 360,
-                        "errorMessage": "Cannot access value for name id_commande",
-                        "functionName": "text",
-                        "line": 148
-                    },
-                    {
-                        "codegenSuccessful": false,
-                        "column": 43,
-                        "durationMicroseconds": 533,
-                        "errorMessage": "Cannot access value for name id_client",
-                        "functionName": "text",
                         "line": 150
                     },
                     {
                         "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 603,
-                        "errorMessage": "Cannot access value for name date_commande",
+                        "durationMicroseconds": 228,
+                        "errorMessage": "Cannot access value for name id_commande",
                         "functionName": "text",
                         "line": 155
                     },
                     {
                         "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 442,
+                        "errorMessage": "Cannot access value for name id_client",
+                        "functionName": "text",
+                        "line": 157
+                    },
+                    {
+                        "codegenSuccessful": false,
                         "column": 46,
-                        "durationMicroseconds": 215,
+                        "durationMicroseconds": 444,
+                        "errorMessage": "Cannot access value for name date_commande",
+                        "functionName": "text",
+                        "line": 162
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 177,
                         "errorMessage": "Cannot access value for name total",
                         "functionName": "text",
-                        "line": 156
+                        "line": 163
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 184,
-                        "durationMicroseconds": 80,
+                        "column": 175,
+                        "durationMicroseconds": 65,
                         "errorMessage": "",
                         "functionName": "horizontalAlignment",
-                        "line": 156
+                        "line": 163
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 104,
-                        "durationMicroseconds": 69,
-                        "errorMessage": "",
-                        "functionName": "weight",
-                        "line": 156
-                    },
-                    {
-                        "codegenSuccessful": true,
-                        "column": 79,
-                        "durationMicroseconds": 74,
+                        "column": 40,
+                        "durationMicroseconds": 63,
                         "errorMessage": "",
                         "functionName": "width",
-                        "line": 159
+                        "line": 168
                     },
                     {
                         "codegenSuccessful": true,
-                        "column": 57,
-                        "durationMicroseconds": 111,
+                        "column": 49,
+                        "durationMicroseconds": 81,
                         "errorMessage": "",
                         "functionName": "bottom",
-                        "line": 159
+                        "line": 167
                     }
                 ],
                 "filePath": "D:/Kampf/EOY/econtrol_1.0/Qml/DashBoardView.qml"

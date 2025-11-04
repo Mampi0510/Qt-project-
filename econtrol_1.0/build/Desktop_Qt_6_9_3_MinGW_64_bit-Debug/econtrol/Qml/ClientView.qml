@@ -10,6 +10,7 @@ Item {
 
     ScrollView {
         anchors.fill: parent
+        Layout.preferredHeight: Screen.height - 24
         contentWidth: availableWidth
         clip: true
 
@@ -67,7 +68,7 @@ Item {
             // Table
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 500
+                height: Screen.height - 34
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
                 Layout.bottomMargin: 24
@@ -166,7 +167,8 @@ Item {
                                         text: "Modifier"
                                         Layout.preferredHeight: 36
                                         background: Rectangle {
-                                            color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
+                                            color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
+                                            // color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
                                         }
                                         contentItem: Text {

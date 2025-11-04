@@ -7,7 +7,17 @@
 	"CROSS_CONFIG" : false,
 	"GENERATOR" : "Ninja",
 	"INCLUDE_DIR" : "D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/appecontrol_autogen/include",
-	"INPUTS" : [ "D:/Kampf/EOY/econtrol_1.0/assets/icons/resto.png" ],
+	"INPUTS" : 
+	[
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/orders.svg",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/dashboard.svg",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/dishes.svg",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/clients.svg",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/statistics.svg",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/stock.svg",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/resto.png",
+		"D:/Kampf/EOY/econtrol_1.0/assets/icons/resto.png"
+	],
 	"LOCK_FILE" : "D:/Kampf/EOY/econtrol_1.0/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/appecontrol_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],

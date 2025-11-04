@@ -39,15 +39,16 @@ Item {
                     radius: 12
                     color: "#095eac"
                     border.color: "#4338CA"
+                    border.width: 1
 
                     ColumnLayout {
                         anchors.fill: parent
                         anchors.margins: 20
                         spacing: 8
 
-                        Text { text: "Total Plats"; font.pixelSize: 16; color: "#E0E7FF" }
+                        Text { text: "Total Plats"; font.pixelSize: 16; color: "#FFFFFF" }
                         Text { text: platModel.count; font.pixelSize: 36; font.bold: true; color: "#FFFFFF" }
-                        Text { text: "plats au menu"; font.pixelSize: 12; color: "#C7D2FE" }
+                        // Text { text: "plats au menu"; font.pixelSize: 12; color: "#C7D2FE" }
                     }
                 }
 
@@ -57,16 +58,17 @@ Item {
                     Layout.preferredHeight: 120
                     radius: 12
                     color: "#018dc6"
-                    border.color: "#059669"
+                    border.color: "#016a97"
+                    border.width : 1
 
                     ColumnLayout {
                         anchors.fill: parent
                         anchors.margins: 20
                         spacing: 8
 
-                        Text { text: "Total Clients"; font.pixelSize: 16; color: "#D1FAE5" }
+                        Text { text: "Total Clients"; font.pixelSize: 16; color: "#FFFFFF" }
                         Text { text: clientModel.count; font.pixelSize: 36; font.bold: true; color: "#FFFFFF" }
-                        Text { text: "clients enregistrés"; font.pixelSize: 12; color: "#A7F3D0" }
+                        // Text { text: "clients enregistrés"; font.pixelSize: 12; color: "#A7F3D0" }
                     }
                 }
 
@@ -76,21 +78,21 @@ Item {
                     Layout.preferredHeight: 120
                     radius: 12
                     color: "#11ba92"
-                    border.color: "#000000"
+                    border.color: "#0e9b7a"
+                    border.width: 1
 
                     ColumnLayout {
                         anchors.fill: parent
                         anchors.margins: 20
                         spacing: 8
 
-                        Text { text: "Commandes Total"; font.pixelSize: 16; color: "#FEF3C7" }
+                        Text { text: "Commandes Total"; font.pixelSize: 16; color: "#FFFFFF" }
                         Text { text: commandeModel.count; font.pixelSize: 36; font.bold: true; color: "#FFFFFF" }
-                        Text { text: "commandes passées"; font.pixelSize: 12; color: "#FDE68A" }
+                        // Text { text: "commandes passées"; font.pixelSize: 12; color: "#FDE68A" }
                     }
                 }
             }
 
-            // ==== TABLE CARD ====
             Rectangle {
                 Layout.fillWidth: true
                 Layout.preferredHeight: 550

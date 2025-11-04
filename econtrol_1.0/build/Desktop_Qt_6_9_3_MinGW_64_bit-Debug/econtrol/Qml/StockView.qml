@@ -62,7 +62,7 @@ Item {
 
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 500
+                height: Screen.height - 34
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
                 Layout.bottomMargin: 24
@@ -89,9 +89,24 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "Produit"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.58 }
-                            Text { text: "Quantité"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.30 }
+                            Text { text: "Produit"
+                                   font.pixelSize: 14
+                                   font.weight: Font.Bold
+                                   color: "#030213"
+                                   Layout.preferredWidth: 450
+                            }
+                            Text { text: "Quantité"
+                                   font.pixelSize: 14
+                                   font.weight: Font.Bold
+                                   color: "#030213"
+                                   Layout.preferredWidth: 150
+                            }
+                            Text { text: "Actions"
+                                   font.pixelSize: 14
+                                   font.weight: Font.Bold
+                                   color: "#030213"
+                                   Layout.preferredWidth: 160
+                            }
                         }
                     }
 
@@ -148,7 +163,8 @@ Item {
                                         text: "Modifier"
                                         Layout.preferredHeight: 36
                                         background: Rectangle {
-                                            color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
+                                            color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
+                                           // color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
                                         }
                                         contentItem: Text {
