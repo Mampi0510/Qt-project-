@@ -35,7 +35,7 @@ Item {
                 Rectangle {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 120
-                    color: "#ffffff"
+                    color: "#095eac"
                     radius: 10
                     border.color: "#e5e5e5"
                     border.width: 1
@@ -45,9 +45,9 @@ Item {
                         anchors.margins: 20
                         spacing: 8
 
-                        Text { text: "Total Plats"; font.pixelSize: 14; color: "#717182" }
+                        Text { text: "Total Plats"; font.pixelSize: 14; color: "#000000" }
                         Text { text: platModel.count; font.pixelSize: 36; font.weight: Font.Medium; color: "#030213" }
-                        Text { text: "plats au menu"; font.pixelSize: 12; color: "#717182" }
+                        Text { text: "plats au menu"; font.pixelSize: 12; color: "#000000" }
                     }
                 }
 
@@ -92,7 +92,7 @@ Item {
 
             Rectangle {
                 Layout.fillWidth: true
-                Layout.preferredHeight: 400
+                Layout.preferredHeight: 550
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
                 Layout.bottomMargin: 24
