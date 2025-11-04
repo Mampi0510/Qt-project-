@@ -6,6 +6,8 @@ Item {
     id: root
     anchors.fill: parent
 
+    property string searchText: ""
+
     ScrollView {
         anchors.fill: parent
         contentWidth: availableWidth
@@ -21,17 +23,31 @@ Item {
                 Layout.topMargin: 24
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
+                spacing: 12
 
                 Text {
                     text: "Gestion des Clients"
                     font.pixelSize: 32
                     font.weight: Font.Medium
                     color: "#030213"
-                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
                 }
+
+                Item { Layout.fillWidth: true }
+
+                TextField {
+                                    id: searchField
+                                    Layout.preferredWidth: 200
+                                    Layout.preferredHeight: 30
+                                    placeholderText: "Rechercher un client..."
+                                    font.pixelSize: 14
+                                    padding: 4
+                                    onTextChanged: root.searchText = text
+                                }
 
                 Button {
                     text: "+ Ajouter un client"
+                    Layout.preferredHeight: 40
                     background: Rectangle {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
@@ -76,13 +92,41 @@ Item {
                             anchors.fill: parent
                             anchors.leftMargin: 16
                             anchors.rightMargin: 16
-                            spacing: 16
+                            spacing: 12
 
-                            Text { text: "ID"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth:  parent.width * 0.07 }
-                            Text { text: "Nom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Prénom"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                            Text { text: "Téléphone"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.22 }
-                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: parent.width * 0.25 }
+                            Text {
+                                text: "ID";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth:  parent.width * 0.075
+                            }
+                            Text {
+                                text: "Nom";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.22
+                            }
+                            Text {
+                                text: "Prénom";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.20
+                            }
+                            Text {
+                                text: "Téléphone";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.20 }
+                            Text {
+                                text: "Actions";
+                                font.pixelSize: 14;
+                                font.weight: Font.Medium;
+                                color: "#030213";
+                                Layout.preferredWidth: parent.width * 0.25 }
                         }
                     }
 
@@ -96,7 +140,11 @@ Item {
 
                         delegate: Rectangle {
                             width: ListView.view.width
-                            height: 60
+                            height: visible ? 60 : 0
+                            visible: searchField.text === "" ||
+                                     nom.toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                     prenom.toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                     telephone.toLowerCase().includes(searchField.text.toLowerCase())
                             color: "transparent"
 
                             RowLayout {
@@ -106,9 +154,9 @@ Item {
                                 spacing: 16
 
                                 Text { text: id_client; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.07 }
-                                Text { text: nom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                                Text { text: prenom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.23 }
-                                Text { text: telephone; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: parent.width * 0.22 }
+                                Text { text: nom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.22 }
+                                Text { text: prenom; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: parent.width * 0.19 }
+                                Text { text: telephone; font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: parent.width * 0.19 }
 
                                 RowLayout {
                                     Layout.preferredWidth: parent.width * 0.25
@@ -116,7 +164,7 @@ Item {
 
                                     Button {
                                         text: "Modifier"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
@@ -126,15 +174,16 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#030213"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
-
                                         onClicked: clientDialog.openForEdit(index)
                                     }
 
                                     Button {
                                         text: "Supprimer"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                             radius: 6
@@ -144,9 +193,10 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
-
                                         onClicked: clientModel.supprimerClient(id_client)
                                     }
                                 }

@@ -10,14 +10,19 @@ Item {
     property var factureData: ({})
     property var detailsData: ({})
     property int commandeCount: 0
+    property string searchText: ""
 
     Connections {
-            target: commandeModel
-            function onCountChanged() {
-                commandeCount = commandeModel.rowCount()
-            }
+        target: commandeModel
+        function onCountChanged() {
+            commandeCount = commandeModel.rowCount()
         }
 
+        function onCommandeAjoutee(idCommande) {
+            orderDialog.close()
+            factureDialog.openFacture(idCommande)
+        }
+    }
 
     function updateTotal() {
         var total = 0
@@ -43,13 +48,26 @@ Item {
                 Layout.topMargin: 24
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
+                spacing: 12
 
                 Text {
                     text: "Gestion des Commandes"
                     font.pixelSize: 32
                     font.weight: Font.Medium
                     color: "#030213"
-                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
+                }
+
+                Item { Layout.fillWidth: true}
+
+                TextField {
+                    id: searchField
+                    Layout.preferredWidth: 220
+                    Layout.preferredHeight: 30
+                    placeholderText: "Rechercher une commande..."
+                    font.pixelSize: 14
+                    padding: 4
+                    onTextChanged: root.searchText = text
                 }
 
                 Button {
@@ -58,6 +76,7 @@ Item {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
                     }
+                    Layout.preferredHeight: 40
                     contentItem: Text {
                         text: parent.text
                         font.pixelSize: 14
@@ -141,7 +160,11 @@ Item {
 
                         delegate: Rectangle {
                             width: ListView.view.width
-                            height: 60
+                            height: visible ? 60 : 0
+                            visible: searchField.text === "" ||
+                                     getClientName(id_client).toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                     formatDateTime(date_commande).toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                     ("#" + id_commande).toLowerCase().includes(searchField.text.toLowerCase())
                             color: "transparent"
 
                             RowLayout {
@@ -175,7 +198,7 @@ Item {
 
                                     Button {
                                         text: "Facture"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
                                             radius: 6
@@ -185,14 +208,16 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
                                         onClicked: factureDialog.openFacture(id_commande)
                                     }
 
                                     Button {
                                         text: "Supprimer"
-                                        Layout.preferredHeight: 32
+                                        Layout.preferredHeight: 36
                                         background: Rectangle {
                                             color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                             radius: 6
@@ -202,7 +227,9 @@ Item {
                                             font.pixelSize: 13
                                             font.weight: Font.Medium
                                             color: "#ffffff"
-                                            anchors.centerIn: parent
+                                            horizontalAlignment: Text.AlignHCenter
+                                            verticalAlignment: Text.AlignVCenter
+                                            anchors.fill: parent
                                         }
                                         onClicked: commandeModel.supprimerCommande(id_commande)
                                     }
@@ -225,7 +252,7 @@ Item {
         modal: true
         anchors.centerIn: parent
         width: 500
-        height: 450
+        height: 700
 
         property real orderTotal: 0
 
@@ -240,22 +267,24 @@ Item {
                 id: clientCombo
                 Layout.fillWidth: true
                 model: clientModel
-                textRole: "nom"
-                displayText: currentIndex >= 0 ? clientModel.get(currentIndex).prenom + " " + clientModel.get(currentIndex).nom : "Choisir un client"
-            }
+                delegate: ItemDelegate {
+                       width: parent.width
+                       text: prenom + " " + nom
+                   }
 
-            Text {
-                text: "Ajouter un plat"
-                font.pixelSize: 14
-                font.weight: Font.Medium
-            }
+                   displayText: currentIndex >= 0
+                       ? clientModel.get(currentIndex).prenom + " " + clientModel.get(currentIndex).nom
+                       : "Choisir un client"
+               }
+
+            Text { text: "Ajouter un plat"; font.pixelSize: 14; font.weight: Font.Medium}
 
             RowLayout {
                 Layout.fillWidth: true
                 spacing: 8
 
-                ComboBox { id: dishCombo; Layout.fillWidth: true; model: platModel; textRole: "nom_plat" }
-                SpinBox { id: qtySpin; from: 1; to: 99; value: 1; Layout.preferredWidth: 80 }
+                ComboBox { id: dishCombo; Layout.preferredWidth: 200; Layout.preferredHeight: 39; model: platModel; textRole: "nom_plat"; popup.width: dishCombo.width * 1.25}
+                SpinBox { id: qtySpin; from: 1; to: 99; value: 1; Layout.preferredWidth: 100; Layout.preferredHeight: 39 }
 
                 Button {
                     text: "Ajouter"
@@ -376,6 +405,18 @@ Item {
                 })
             }
             commandeModel.ajouterCommande(client.id_client, dateTime, total, plats)
+
+            Qt.callLater(function() {
+                // Récupérer la dernière commande ajoutée
+                var lastIndex = commandeModel.rowCount() - 1
+                if (lastIndex >= 0) {
+                    var lastCommande = commandeModel.get(lastIndex)
+                    if (lastCommande && lastCommande.id_commande !== undefined) {
+                        factureDialog.openFacture(lastCommande.id_commande)
+                    }
+                }
+            })
+
             orderItems.clear()
             orderDialog.orderTotal = 0
         }
@@ -624,5 +665,4 @@ Item {
             open()
         }
     }
-
 }

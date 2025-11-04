@@ -72,7 +72,7 @@ void Commande::chargerCommandes()
     }
 
     QSqlQuery query(db);
-    if (!query.exec("SELECT id_commande, id_client, date_commande, total FROM commandes")) {
+    if (!query.exec("SELECT id_commande, id_client, date_commande, total FROM commandes ORDER BY date_commande DESC")) {
         qWarning() << "Erreur SELECT commandes:" << query.lastError().text();
         endResetModel();
         return;
@@ -143,15 +143,21 @@ bool Commande::ajouterCommande(int clientId, const QString &date, double total, 
     endInsertRows();
 
     emit countChanged();
-    chargerCommandes();
 
+    QTimer::singleShot(150, this, [this, newId]() {
+        chargerCommandes();
 
-    // Générer automatiquement une facture après ajout de la commande
-    auto factureModel = GestionData::instance()->factureModel();
-    if (factureModel) {
-        factureModel->genererFacture(newId);
-        qDebug() << "[COMMANDE] Facture générée automatiquement pour la commande" << newId;
-    }
+        auto factureModel = GestionData::instance()->factureModel();
+        if (factureModel) {
+            if (factureModel->genererFacture(newId)) {
+                qDebug() << "[COMMANDE] Facture générée et prête pour la commande" << newId;
+            } else {
+                qWarning() << "[COMMANDE] Échec génération facture pour commande" << newId;
+            }
+        }
+
+        emit commandeAjoutee(newId);
+    });
 
     return true;
 }

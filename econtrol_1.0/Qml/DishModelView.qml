@@ -6,6 +6,8 @@ Item {
     id: root
     anchors.fill: parent
 
+    property string searchText: ""
+
     ScrollView {
         anchors.fill: parent
         contentWidth: availableWidth
@@ -21,17 +23,31 @@ Item {
                 Layout.topMargin: 24
                 Layout.leftMargin: 24
                 Layout.rightMargin: 24
+                spacing: 12
 
                 Text {
                     text: "Gestion des Plats"
                     font.pixelSize: 32
                     font.weight: Font.Medium
                     color: "#030213"
-                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignVCenter
                 }
+
+                Item { Layout.fillWidth: true }
+
+                TextField {
+                                   id: searchField
+                                   Layout.preferredWidth: 200
+                                   Layout.preferredHeight: 30
+                                   placeholderText: "Rechercher un plat..."
+                                   font.pixelSize: 14
+                                   padding: 4
+                                   onTextChanged: root.searchText = text
+                               }
 
                 Button {
                     text: "+ Ajouter un plat"
+                    Layout.preferredHeight: 40
                     background: Rectangle {
                         color: parent.pressed ? "#1a1a2e" : (parent.hovered ? "#2a2a3e" : "#030213")
                         radius: 6
@@ -48,7 +64,6 @@ Item {
                 }
             }
 
-
             GridLayout {
                 Layout.fillWidth: true
                 columns: 2
@@ -58,6 +73,9 @@ Item {
                 Repeater {
                     model: platModel
                     delegate: Rectangle {
+                        visible: searchField.text === "" ||
+                                nom_plat.toLowerCase().includes(searchField.text.toLowerCase()) ||
+                                categorie.toLowerCase().includes(searchField.text.toLowerCase())
                         Layout.fillWidth: true
                         Layout.preferredHeight: 140
                         color: "#ffffff"
@@ -91,7 +109,7 @@ Item {
 
                                 Button {
                                     text: "Modifier"
-                                    Layout.preferredHeight: 32
+                                    Layout.preferredHeight: 36
                                     background: Rectangle {
                                         color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
                                       //  color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
@@ -102,14 +120,16 @@ Item {
                                         font.pixelSize: 13
                                         font.weight: Font.Medium
                                         color: "#030213"
-                                        anchors.centerIn: parent
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        anchors.fill: parent
                                     }
                                     onClicked: dishDialog.openForEdit(index)
                                 }
 
                                 Button {
                                     text: "Supprimer"
-                                    Layout.preferredHeight: 32
+                                    Layout.preferredHeight: 36
                                     background: Rectangle {
                                         color: parent.pressed ? "#b81633" : (parent.hovered ? "#c01838" : "#d4183d")
                                         radius: 6
@@ -119,9 +139,13 @@ Item {
                                         font.pixelSize: 13
                                         font.weight: Font.Medium
                                         color: "#ffffff"
-                                        anchors.centerIn: parent
+                                        horizontalAlignment: Text.AlignHCenter
+                                        verticalAlignment: Text.AlignVCenter
+                                        anchors.fill: parent                                     }
+                                    onClicked: {
+                                        confirmDeleteDialog.platId = id_plat
+                                        confirmDeleteDialog.open()
                                     }
-                                    onClicked: platModel.supprimerPlat(id_plat)
                                 }
                             }
                         }
@@ -195,4 +219,34 @@ Item {
             open()
         }
     }
+    Dialog {
+        id: confirmDeleteDialog
+        title: "Confirmation"
+        modal: true
+        standardButtons: Dialog.Yes | Dialog.No
+        width: 350
+        anchors.centerIn: parent
+
+        property int platId: -1
+
+        contentItem: ColumnLayout {
+            spacing: 16
+            Label {
+                text: "Voulez-vous vraiment supprimer ce plat ?"
+                wrapMode: Text.Wrap
+                Layout.fillWidth: true
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+
+        onAccepted: {
+            if (platId !== -1) {
+                platModel.supprimerPlat(platId)
+                platId = -1
+            }
+        }
+
+        onRejected: platId = -1
+    }
+
 }

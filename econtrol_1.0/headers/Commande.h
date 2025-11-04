@@ -31,13 +31,15 @@ public:
     Q_INVOKABLE bool supprimerCommande(int id);
     Q_INVOKABLE DetailsCommande* detailsModel() const { return m_detailsCommande; }
 
-private:
+public:
     void chargerCommandes();
 
+private:
     QVector<QVariantMap> m_commandes;
     DetailsCommande* m_detailsCommande;
 
 signals:
+    void commandeAjoutee(int idCommande);
     void countChanged();
 };
 

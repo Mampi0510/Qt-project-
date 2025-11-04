@@ -6,8 +6,8 @@ import QtQuick.Window
 ApplicationWindow {
     id: window
     visible: true
-    width: screen.width
-    height: screen.height
+    width: screen.width * 0.8
+    height: screen.height * 0.8
     color: "#f8f8f8"
     title: "Econtrol - Système de gestion"
 

@@ -5,7 +5,6 @@
 Client::Client(QObject *parent)
     : QAbstractListModel(parent)
 {
-
     QTimer::singleShot(0, this, &Client::chargerClients);
 }
 
@@ -50,7 +49,7 @@ void Client::chargerClients() {
     m_clients.clear();
 
     QSqlQuery query(GestionData::instance()->getDatabase());
-    if (!query.exec("SELECT id_client, nom, prenom, telephone FROM clients")) {
+    if (!query.exec("SELECT id_client, nom, prenom, telephone FROM clients ORDER BY id_client DESC")) {
         qWarning() << "Erreur SELECT clients:" << query.lastError().text();
         endResetModel();
         return;
@@ -116,5 +115,10 @@ bool Client::supprimerClient(int id) {
     }
 
     chargerClients();
+
+    auto gd = GestionData::instance();
+    if (gd && gd->ordersModel()) {
+        gd->ordersModel()->chargerCommandes();
+    }
     return true;
 }
