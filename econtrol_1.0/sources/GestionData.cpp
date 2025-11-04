@@ -1,6 +1,6 @@
 #include "headers/GestionData.h"
 #include <QDebug>
-#include <QTimer>  // AJOUTER CETTE LIGNE
+#include <QTimer>
 
 GestionData* GestionData::m_instance = nullptr;
 
@@ -62,7 +62,7 @@ bool GestionData::connectToDatabase()
         gd.setPort(3306);
         gd.setDatabaseName("eoy_project");
         gd.setUserName("root");
-        gd.setPassword("login");
+        gd.setPassword("azerty12");
     }
 
     if (gd.open()) {

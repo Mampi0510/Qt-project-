@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
+	<file>assets/icons/resto.png</file>
+        <file>assets/icons/dashboard.svg</file>
+        <file>assets/icons/dishes.svg</file>
+        <file>assets/icons/clients.svg</file>
+        <file>assets/icons/orders.svg</file>
+        <file>assets/icons/statistics.svg</file>
+        <file>assets/icons/stock.svg</file>
         <file>assets/icons/resto.png</file>
     </qresource>
 </RCC>

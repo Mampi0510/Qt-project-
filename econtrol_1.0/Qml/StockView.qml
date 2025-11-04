@@ -148,7 +148,8 @@ Item {
                                         text: "Modifier"
                                         Layout.preferredHeight: 36
                                         background: Rectangle {
-                                            color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
+                                            color: parent.pressed ? "#0c8040" : (parent.hovered ? "#13a057" : "#17b863")
+                                           // color: parent.pressed ? "#d9d9dc" : (parent.hovered ? "#e5e5e8" : "#f3f3f5")
                                             radius: 6
                                         }
                                         contentItem: Text {

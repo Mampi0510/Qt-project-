@@ -119,10 +119,34 @@ Item {
                             anchors.rightMargin: 16
                             spacing: 16
 
-                            Text { text: "N°"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 60 }
-                            Text { text: "Client"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.fillWidth: true }
-                            Text { text: "Date"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 140 }
-                            Text { text: "Actions"; font.pixelSize: 14; font.weight: Font.Medium; color: "#030213"; Layout.preferredWidth: 160 }
+                            Text {
+                                text: "N°"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: 60
+                            }
+                            Text {
+                                text: "Client"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.fillWidth: true
+                            }
+                            Text {
+                                text: "Date"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: 140
+                            }
+                            Text {
+                                text: "Actions"
+                                font.pixelSize: 14
+                                font.weight: Font.Bold
+                                color: "#030213"
+                                Layout.preferredWidth: 160
+                            }
                         }
                     }
 
@@ -149,9 +173,24 @@ Item {
                                 anchors.rightMargin: 16
                                 spacing: 16
 
-                                Text { text: "#" + id_commande; font.pixelSize: 14; color: "#030213"; Layout.preferredWidth: 60 }
-                                Text { text: getClientName(id_client); font.pixelSize: 14; color: "#030213"; Layout.fillWidth: true }
-                                Text { text: formatDateTime(date_commande); font.pixelSize: 14; color: "#717182"; Layout.preferredWidth: 140 }
+                                Text {
+                                    text: "#" + id_commande
+                                    font.pixelSize: 14
+                                    color: "#030213"
+                                    Layout.preferredWidth: 60
+                                }
+                                Text {
+                                    text: getClientName(id_client)
+                                    font.pixelSize: 14
+                                    color: "#030213"
+                                    Layout.fillWidth: true
+                                }
+                                Text {
+                                    text: formatDateTime(date_commande)
+                                    font.pixelSize: 14
+                                    color: "#717182"
+                                    Layout.preferredWidth: 140
+                                }
 
                                 RowLayout {
                                     Layout.preferredWidth: 200
@@ -300,9 +339,21 @@ Item {
                         anchors.fill: parent
                         anchors.margins: 8
                         spacing: 8
-                        Text { text: nom_plat; font.pixelSize: 14; color: "#030213"; Layout.fillWidth: true }
-                        Text { text: "x" + quantite; font.pixelSize: 14; color: "#030213" }
-                        Text { text: (prix * quantite).toFixed(2) + " €"; font.pixelSize: 14; color: "#030213" }
+                        Text {
+                            text: nom_plat
+                            font.pixelSize: 14
+                            color: "#030213"
+                            Layout.fillWidth: true
+                        }
+                        Text {
+                            text: "x" + quantite
+                            font.pixelSize: 14
+                            color: "#030213"
+                        }
+                        Text {
+                            text: (prix * quantite).toFixed(2) + " €"
+                            font.pixelSize: 14; color: "#030213"
+                        }
 
                         Button {
                             text: "×"

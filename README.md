@@ -41,3 +41,4 @@ Un projet de fin d'année illustrant la conception et le développement d'un sys
 mysql --version
 python --version  # si utilisation de scripts pour tests
 git --version
+
