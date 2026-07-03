@@ -335,7 +335,7 @@ mysql -u root -p restaurant_db < database/schema.sql
 ## 📞 Support et contact
 
 - **Développeur principal** : Mampiadana
-- **Email** : mampi0510@example.com
+- **Email** : tonimanantoky@gmail.com
 - **GitHub** : [Mampi0510/Qt-project-](https://github.com/Mampi0510/Qt-project-)
 
 ---
