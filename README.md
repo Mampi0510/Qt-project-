@@ -335,7 +335,6 @@ mysql -u root -p restaurant_db < database/schema.sql
 ## 📞 Support et contact
 
 - **Développeur principal** : Mampiadana
-- **Email** : tonimanantoky@gmail.com
 - **GitHub** : [Mampi0510/Qt-project-](https://github.com/Mampi0510/Qt-project-)
 
 ---
@@ -352,9 +351,8 @@ mysql -u root -p restaurant_db < database/schema.sql
 ## 🎓 Version
 
 **Version actuelle** : 1.0.0  
-**Date de mise à jour** : Juillet 2026  
-**Licence** : MIT
+**Date de mise à jour** : Novembre 2025  
 
 ---
 
-**Dernière mise à jour** : 2026-07-03
+**Dernière mise à jour** : 2025-11-06
